@@ -42,5 +42,5 @@ mental health care so if a patient is suffering from some other unrelated
 condition (such as high blood pressure) this would not be formally recorded in
 the system.
 
-## Project topic
-We will therefore only address a small part of the MHC-PMS , in the form of dedicated and independent applications specifically for XXXXXXXXXXXX and for the following mental health problem XXXXXXXXXXXXXXXXXXX .
+## Project Topic
+We will therefore only address a small part of the MHC-PMS , in the form of dedicated and independent applications specifically for "health visitor for ambulant patients" and for the following mental health problem "social anxiety disorder" .
