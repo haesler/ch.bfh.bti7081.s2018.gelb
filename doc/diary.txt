@@ -17,3 +17,24 @@ nächster Termin: 28.03.2018, 1600
 #############################################################
 
 
+
+28.03.2018:
+#############################################################
+Anwesend: Alle (ausser Michaelis)
+
+-Interview besprochen
+-Scoping eingeschränkt
+-User-Stories besprochen
+-Persona zugeteilt
+
+Todo gemäss Besprechung:
+-Scoping abschliessen (Marc)
+-Personas (Kevin, Stefan, Fabian)
+-UserStories erstellen (alle)
+
+nächster Termin: 04.04.2018
+-Prototypen
+-Validate
+-Präsentation vorbereiten
+-fertigstellen des Dokumentes
+#############################################################
