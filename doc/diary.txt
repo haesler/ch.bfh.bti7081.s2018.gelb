@@ -38,3 +38,18 @@ nächster Termin: 04.04.2018
 -Präsentation vorbereiten
 -fertigstellen des Dokumentes
 #############################################################
+
+
+04.04.2018:
+#############################################################
+Anwesend: Alle (ausser Schranz)
+
+-User-Stories besprochen
+-Prototypen realisiert und besprochen
+-Präsentation aufgeteilt
+
+nächster Termin: 06.04.2018
+-Validate
+-Präsentation besprechen
+-fertigstellen des Dokumentes
+#############################################################
