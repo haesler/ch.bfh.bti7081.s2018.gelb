@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_zv-kUD71EeiJR8VGP1svHA" name="Use-Case_1">
+  <packagedElement xmi:type="uml:Actor" xmi:id="_M8v8gD77EeiJR8VGP1svHA" name="Spitex-Person">
+    <eAnnotations xmi:id="_M8wjkD77EeiJR8VGP1svHA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details xmi:id="_M8wjkT77EeiJR8VGP1svHA" key="Human"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_qxmYUECbEei9JtvvMShm8g" name="HMS" isLeaf="true" isActive="true" isIndirectlyInstantiated="false">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_0xaQYECbEei9JtvvMShm8g" name="UseCase1"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Artifact" xmi:id="_YUiVMECdEei9JtvvMShm8g" name="HMS" useCase="_tVV_AD78EeiJR8VGP1svHA _wDg1cD78EeiJR8VGP1svHA _71LFoD78EeiJR8VGP1svHA _C9NgOj79EeiJR8VGP1svHA">
+    <ownedUseCase xmi:id="_tVV_AD78EeiJR8VGP1svHA" name="Patientensuche" isLeaf="true" subject="_YUiVMECdEei9JtvvMShm8g"/>
+    <ownedUseCase xmi:id="_wDg1cD78EeiJR8VGP1svHA" name="Patientenwahl" subject="_YUiVMECdEei9JtvvMShm8g"/>
+    <ownedUseCase xmi:id="_71LFoD78EeiJR8VGP1svHA" name="Krankheitsverlauf-Bearbeitung" subject="_YUiVMECdEei9JtvvMShm8g"/>
+    <ownedUseCase xmi:id="_C9NgOj79EeiJR8VGP1svHA" name="Datenabspeicherung" subject="_YUiVMECdEei9JtvvMShm8g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_p0ascECdEei9JtvvMShm8g" name="Patient">
+    <eAnnotations xmi:id="_p0bTgECdEei9JtvvMShm8g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details xmi:id="_p0bTgUCdEei9JtvvMShm8g" key="Human"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_s1G2QECdEei9JtvvMShm8g" memberEnd="_s1G2QUCdEei9JtvvMShm8g _s1G2QkCdEei9JtvvMShm8g">
+    <ownedEnd xmi:id="_s1G2QUCdEei9JtvvMShm8g" type="_p0ascECdEei9JtvvMShm8g" association="_s1G2QECdEei9JtvvMShm8g"/>
+    <ownedEnd xmi:id="_s1G2QkCdEei9JtvvMShm8g" type="_M8v8gD77EeiJR8VGP1svHA" association="_s1G2QECdEei9JtvvMShm8g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_5oMRwECeEei9JtvvMShm8g" memberEnd="_5oMRwUCeEei9JtvvMShm8g _5oMRwkCeEei9JtvvMShm8g">
+    <ownedEnd xmi:id="_5oMRwUCeEei9JtvvMShm8g" type="_C9NgOj79EeiJR8VGP1svHA" association="_5oMRwECeEei9JtvvMShm8g"/>
+    <ownedEnd xmi:id="_5oMRwkCeEei9JtvvMShm8g" type="_M8v8gD77EeiJR8VGP1svHA" association="_5oMRwECeEei9JtvvMShm8g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_A7zpUECfEei9JtvvMShm8g" memberEnd="_A7zpUUCfEei9JtvvMShm8g _A7zpUkCfEei9JtvvMShm8g">
+    <ownedEnd xmi:id="_A7zpUUCfEei9JtvvMShm8g" type="_wDg1cD78EeiJR8VGP1svHA" association="_A7zpUECfEei9JtvvMShm8g"/>
+    <ownedEnd xmi:id="_A7zpUkCfEei9JtvvMShm8g" type="_M8v8gD77EeiJR8VGP1svHA" association="_A7zpUECfEei9JtvvMShm8g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_DzPJcECfEei9JtvvMShm8g" memberEnd="_DzPJcUCfEei9JtvvMShm8g _DzPJckCfEei9JtvvMShm8g">
+    <ownedEnd xmi:id="_DzPJcUCfEei9JtvvMShm8g" type="_71LFoD78EeiJR8VGP1svHA" association="_DzPJcECfEei9JtvvMShm8g"/>
+    <ownedEnd xmi:id="_DzPJckCfEei9JtvvMShm8g" type="_M8v8gD77EeiJR8VGP1svHA" association="_DzPJcECfEei9JtvvMShm8g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_IBmnUECfEei9JtvvMShm8g" memberEnd="_IBmnUUCfEei9JtvvMShm8g _IBmnUkCfEei9JtvvMShm8g">
+    <ownedEnd xmi:id="_IBmnUUCfEei9JtvvMShm8g" type="_tVV_AD78EeiJR8VGP1svHA" association="_IBmnUECfEei9JtvvMShm8g"/>
+    <ownedEnd xmi:id="_IBmnUkCfEei9JtvvMShm8g" type="_M8v8gD77EeiJR8VGP1svHA" association="_IBmnUECfEei9JtvvMShm8g"/>
+  </packagedElement>
+</uml:Model>
