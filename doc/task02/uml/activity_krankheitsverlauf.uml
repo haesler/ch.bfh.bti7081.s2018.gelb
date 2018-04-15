@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_S2kkkECFEeiTUs5wtjUROA" name="NewModel">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_eGARcECFEeiTUs5wtjUROA" name="Eintrag in Krankheitsverlauf" node="_5yVcUECKEeiTUs5wtjUROA _dmDXUECLEeiTUs5wtjUROA _o_zd0ECLEeiTUs5wtjUROA _wAfSUECLEeiTUs5wtjUROA _4p_ewECLEeiTUs5wtjUROA _-azm0ECLEeiTUs5wtjUROA _wRRD0ECMEeiTUs5wtjUROA _3uGo0ECMEeiTUs5wtjUROA _BswqUECNEeiTUs5wtjUROA _ILuR0ECNEeiTUs5wtjUROA _ZU8ckECNEeiTUs5wtjUROA _iq-X0ECNEeiTUs5wtjUROA _Gslk4ECOEeiTUs5wtjUROA">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_jJDs4ECLEeiTUs5wtjUROA" target="_dmDXUECLEeiTUs5wtjUROA" source="_5yVcUECKEeiTUs5wtjUROA">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_jJDs4UCLEeiTUs5wtjUROA" name="Start_To_OpaqueAction1_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_jJET8ECLEeiTUs5wtjUROA" name="Start_To_OpaqueAction1_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_tJxj4ECLEeiTUs5wtjUROA" target="_o_zd0ECLEeiTUs5wtjUROA" source="_dmDXUECLEeiTUs5wtjUROA">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_tJyK8ECLEeiTUs5wtjUROA" name="Pflegeperson sucht nach Patient im System_To_System zeigt Liste von Patienten an_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_tJyK8UCLEeiTUs5wtjUROA" name="Pflegeperson sucht nach Patient im System_To_System zeigt Liste von Patienten an_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_4GFgcECLEeiTUs5wtjUROA" target="_wAfSUECLEeiTUs5wtjUROA" source="_o_zd0ECLEeiTUs5wtjUROA">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_4GGHgECLEeiTUs5wtjUROA" name="System zeigt Liste von Patienten an_To_Patient vorhanden?_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_4GGHgUCLEeiTUs5wtjUROA" name="System zeigt Liste von Patienten an_To_Patient vorhanden?_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="__iKQcECLEeiTUs5wtjUROA" name="Nein" target="_4p_ewECLEeiTUs5wtjUROA" source="_wAfSUECLEeiTUs5wtjUROA">
+      <guard xmi:type="uml:OpaqueExpression" xmi:id="_AMfm4ECMEeiTUs5wtjUROA" name="null_guard">
+        <body>Nein</body>
+      </guard>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="__iK3gUCLEeiTUs5wtjUROA" name="Patient vorhanden?_To_Patient wird erfasst_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_VTDw8ECMEeiTUs5wtjUROA" name="Ja" target="_-azm0ECLEeiTUs5wtjUROA" source="_wAfSUECLEeiTUs5wtjUROA">
+      <eAnnotations xmi:id="_dRMFIECMEeiTUs5wtjUROA"/>
+      <guard xmi:type="uml:OpaqueExpression" xmi:id="_s4ETYECMEeiTUs5wtjUROA" name="null_guard">
+        <body>Ja</body>
+      </guard>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_VTEYAUCMEeiTUs5wtjUROA" name="Patient vorhanden?_To_OpaqueAction5_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_lE88YECMEeiTUs5wtjUROA" name="Nein">
+      <guard xmi:type="uml:OpaqueExpression" xmi:id="_lE88YUCMEeiTUs5wtjUROA" name="null_guard">
+        <body>Nein</body>
+      </guard>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_lE88YkCMEeiTUs5wtjUROA" name="Patient vorhanden?_To_Patient wird erfasst_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_2HR08ECMEeiTUs5wtjUROA" target="_wRRD0ECMEeiTUs5wtjUROA" source="_-azm0ECLEeiTUs5wtjUROA">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_2HR08UCMEeiTUs5wtjUROA" name="Patientenakte wird geöffnet_To_Pflegeperson navigiert zum Bereich Krankheitsverlauf_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_2HScAECMEeiTUs5wtjUROA" name="Patientenakte wird geöffnet_To_Pflegeperson navigiert zum Bereich Krankheitsverlauf_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Au1pgECNEeiTUs5wtjUROA" target="_3uGo0ECMEeiTUs5wtjUROA" source="_wRRD0ECMEeiTUs5wtjUROA">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_Au1pgUCNEeiTUs5wtjUROA" name="Pflegeperson navigiert zum Bereich Krankheitsverlauf_To_Neuer Eintrag wird erstellt_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_Au1pgkCNEeiTUs5wtjUROA" name="Pflegeperson navigiert zum Bereich Krankheitsverlauf_To_Neuer Eintrag wird erstellt_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_dAI78ECNEeiTUs5wtjUROA" target="_BswqUECNEeiTUs5wtjUROA" source="_ZU8ckECNEeiTUs5wtjUROA">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_dAI78UCNEeiTUs5wtjUROA" name="Fehlerhafte Daten werden markiert_To_Daten werden eingegeben_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_dAI78kCNEeiTUs5wtjUROA" name="Fehlerhafte Daten werden markiert_To_Daten werden eingegeben_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_fkeg8ECNEeiTUs5wtjUROA" name="Nein" target="_ZU8ckECNEeiTUs5wtjUROA" source="_ILuR0ECNEeiTUs5wtjUROA">
+      <guard xmi:type="uml:OpaqueExpression" xmi:id="_gfOR8ECNEeiTUs5wtjUROA" name="null_guard">
+        <body>Nein</body>
+      </guard>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_fkfIAUCNEeiTUs5wtjUROA" name="Validierung erfolgreich?_To_Fehlerhafte Daten werden markiert_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_mJoQAECNEeiTUs5wtjUROA" name="Ja" target="_iq-X0ECNEeiTUs5wtjUROA" source="_ILuR0ECNEeiTUs5wtjUROA">
+      <guard xmi:type="uml:OpaqueExpression" xmi:id="_mlKVcECNEeiTUs5wtjUROA" name="null_guard">
+        <body>Ja</body>
+      </guard>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_mJo3EECNEeiTUs5wtjUROA" name="Validierung erfolgreich?_To_Eintrag wird gespeichert_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_n5FbcECNEeiTUs5wtjUROA" target="_ILuR0ECNEeiTUs5wtjUROA" source="_BswqUECNEeiTUs5wtjUROA">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_n5FbcUCNEeiTUs5wtjUROA" name="Daten werden eingegeben_To_Validierung erfolgreich?_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_n5FbckCNEeiTUs5wtjUROA" name="Daten werden eingegeben_To_Validierung erfolgreich?_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ofnP8ECNEeiTUs5wtjUROA" target="_BswqUECNEeiTUs5wtjUROA" source="_3uGo0ECMEeiTUs5wtjUROA">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_ofnP8UCNEeiTUs5wtjUROA" name="Neuer Eintrag wird erstellt_To_Daten werden eingegeben_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_ofnP8kCNEeiTUs5wtjUROA" name="Neuer Eintrag wird erstellt_To_Daten werden eingegeben_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_1mdxcECNEeiTUs5wtjUROA" target="_-azm0ECLEeiTUs5wtjUROA" source="_4p_ewECLEeiTUs5wtjUROA">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_1meYgECNEeiTUs5wtjUROA" name="Patient wird erfasst_To_Patientenakte wird geöffnet_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_1meYgUCNEeiTUs5wtjUROA" name="Patient wird erfasst_To_Patientenakte wird geöffnet_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Hk-lcECOEeiTUs5wtjUROA" target="_Gslk4ECOEeiTUs5wtjUROA" source="_iq-X0ECNEeiTUs5wtjUROA">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_Hk-lcUCOEeiTUs5wtjUROA" name="Eintrag wird gespeichert_To_ActivityFinal1_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_Hk-lckCOEeiTUs5wtjUROA" name="Eintrag wird gespeichert_To_ActivityFinal1_weight"/>
+    </edge>
+    <node xmi:type="uml:InitialNode" xmi:id="_5yVcUECKEeiTUs5wtjUROA" name="Start" outgoing="_jJDs4ECLEeiTUs5wtjUROA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_dmDXUECLEeiTUs5wtjUROA" name="Pflegeperson sucht nach Patient im System" incoming="_jJDs4ECLEeiTUs5wtjUROA" outgoing="_tJxj4ECLEeiTUs5wtjUROA">
+      <body>// TODO body of OpaqueAction1</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_o_zd0ECLEeiTUs5wtjUROA" name="System zeigt Liste von Patienten an" incoming="_tJxj4ECLEeiTUs5wtjUROA" outgoing="_4GFgcECLEeiTUs5wtjUROA">
+      <body>// TODO body of OpaqueAction2</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_wAfSUECLEeiTUs5wtjUROA" name="Patient vorhanden?" incoming="_4GFgcECLEeiTUs5wtjUROA" outgoing="__iKQcECLEeiTUs5wtjUROA _VTDw8ECMEeiTUs5wtjUROA">
+      <body>// TODO body of OpaqueAction3</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_4p_ewECLEeiTUs5wtjUROA" name="Patient wird erfasst" incoming="__iKQcECLEeiTUs5wtjUROA" outgoing="_1mdxcECNEeiTUs5wtjUROA">
+      <body>// TODO body of OpaqueAction4</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_-azm0ECLEeiTUs5wtjUROA" name="Patientenakte wird geöffnet" incoming="_VTDw8ECMEeiTUs5wtjUROA _1mdxcECNEeiTUs5wtjUROA" outgoing="_2HR08ECMEeiTUs5wtjUROA">
+      <body>// TODO body of OpaqueAction5</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_wRRD0ECMEeiTUs5wtjUROA" name="Pflegeperson navigiert zum Bereich Krankheitsverlauf" incoming="_2HR08ECMEeiTUs5wtjUROA" outgoing="_Au1pgECNEeiTUs5wtjUROA">
+      <body>// TODO body of OpaqueAction6</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_3uGo0ECMEeiTUs5wtjUROA" name="Neuer Eintrag wird erstellt" incoming="_Au1pgECNEeiTUs5wtjUROA" outgoing="_ofnP8ECNEeiTUs5wtjUROA">
+      <body>// TODO body of OpaqueAction7</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_BswqUECNEeiTUs5wtjUROA" name="Daten werden eingegeben" incoming="_dAI78ECNEeiTUs5wtjUROA _ofnP8ECNEeiTUs5wtjUROA" outgoing="_n5FbcECNEeiTUs5wtjUROA">
+      <body>// TODO body of OpaqueAction8</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_ILuR0ECNEeiTUs5wtjUROA" name="Validierung erfolgreich?" incoming="_n5FbcECNEeiTUs5wtjUROA" outgoing="_fkeg8ECNEeiTUs5wtjUROA _mJoQAECNEeiTUs5wtjUROA">
+      <body>// TODO body of OpaqueAction9</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_ZU8ckECNEeiTUs5wtjUROA" name="Fehlerhafte Daten werden markiert" incoming="_fkeg8ECNEeiTUs5wtjUROA" outgoing="_dAI78ECNEeiTUs5wtjUROA">
+      <body>// TODO body of OpaqueAction10</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_iq-X0ECNEeiTUs5wtjUROA" name="Eintrag wird gespeichert" incoming="_mJoQAECNEeiTUs5wtjUROA" outgoing="_Hk-lcECOEeiTUs5wtjUROA">
+      <body>// TODO body of OpaqueAction11</body>
+    </node>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_Gslk4ECOEeiTUs5wtjUROA" name="Ende" incoming="_Hk-lcECOEeiTUs5wtjUROA"/>
+  </packagedElement>
+</uml:Model>
