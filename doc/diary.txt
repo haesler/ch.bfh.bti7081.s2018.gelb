@@ -4,15 +4,15 @@ Anwesend: Alle
 
 -Scoping
 -Interview vorbereitet
--weitere Planung: Interview durchführen, Recherche
+-weitere Planung: Interview durchfï¿½hren, Recherche
 
-nächster Termin: 28.03.2018, 1600
--Scoping überarbeiten
+nï¿½chster Termin: 28.03.2018, 1600
+-Scoping ï¿½berarbeiten
 -Interview auswerten
 -User-Stories
 -Persona
 
-übernächster Termin: 04.04.2018 (Schule)
+ï¿½bernï¿½chster Termin: 04.04.2018 (Schule)
 -fertigstellen des Dokumentes
 #############################################################
 
@@ -23,19 +23,19 @@ nächster Termin: 28.03.2018, 1600
 Anwesend: Alle (ausser Michaelis)
 
 -Interview besprochen
--Scoping eingeschränkt
+-Scoping eingeschrï¿½nkt
 -User-Stories besprochen
 -Persona zugeteilt
 
-Todo gemäss Besprechung:
+Todo gemï¿½ss Besprechung:
 -Scoping abschliessen (Marc)
 -Personas (Kevin, Stefan, Fabian)
 -UserStories erstellen (alle)
 
-nächster Termin: 04.04.2018
+nï¿½chster Termin: 04.04.2018
 -Prototypen
 -Validate
--Präsentation vorbereiten
+-Prï¿½sentation vorbereiten
 -fertigstellen des Dokumentes
 #############################################################
 
@@ -46,11 +46,11 @@ Anwesend: Alle (ausser Schranz)
 
 -User-Stories besprochen
 -Prototypen realisiert und besprochen
--Präsentation aufgeteilt
+-Prï¿½sentation aufgeteilt
 
-nächster Termin: 06.04.2018
+nï¿½chster Termin: 06.04.2018
 -Validate
--Präsentation besprechen
+-Prï¿½sentation besprechen
 -fertigstellen des Dokumentes
 #############################################################
 
@@ -59,12 +59,12 @@ nächster Termin: 06.04.2018
 #############################################################
 Anwesend: Alle (ausser Schranz)
 
--Präsentation besprochen
+-Prï¿½sentation besprochen
 -Dokument fertiggestellt
 -Validate
 
-nächster Termin: 09.04.2018
--Präsentation von Task 1
+nï¿½chster Termin: 09.04.2018
+-Prï¿½sentation von Task 1
 
 #############################################################
 
@@ -74,10 +74,10 @@ nächster Termin: 09.04.2018
 Anwesend: Alle (ausser von Allmen)
 
 -Task 02 besprochen
--Dokument eröffnet
+-Dokument erï¿½ffnet
 -Arbeit am Task
 
-nächster Termin: 13.04.2018
+nï¿½chster Termin: 13.04.2018
 -Fertigstellung Dokument
 
 #############################################################
@@ -89,8 +89,8 @@ Anwesend: Alle
 -Arbeit am Task
 -Aufteilung der Arbeiten
 
-nächster Termin: 16.04.2018
--Präsentation der Ergebnisse
+nï¿½chster Termin: 16.04.2018
+-Prï¿½sentation der Ergebnisse
 
 #############################################################
 
@@ -98,10 +98,10 @@ nächster Termin: 16.04.2018
 #############################################################
 Anwesend: Alle
 
--Präsentation Task 02
+-Prï¿½sentation Task 02
 -Task 03 gefasst
 
-nächster Termin: 18.04.2018
+nï¿½chster Termin: 18.04.2018
 -Abgabe Task 03
 
 #############################################################
@@ -117,7 +117,7 @@ Anwesend: Alle
 
 23.04.2018:
 #############################################################
-Anwesend: Alle (ausser Schranz, Köfer)
+Anwesend: Alle (ausser Schranz, Kï¿½fer)
 
 -Task 04 gefasst
 -Arbeit am Task04
@@ -137,6 +137,15 @@ Anwesend: Alle
 #############################################################
 Anwesend: Alle (ausser von Allmen)
 
--Task 04 fertiggestellt und präsentiert
+-Task 04 fertiggestellt und prï¿½sentiert
+
+#############################################################
+
+30.04.2018:
+#############################################################
+Anwesend: Alle (ausser von Allmen und Schranz)
+
+-Task 05 und 06 gefasst
+-Tasks besprochen
 
 #############################################################
