@@ -158,3 +158,12 @@ Anwesend: Alle (ausser Haldi)
 -Präsentation Tasks
 
 #############################################################
+
+04.05.2018:
+#############################################################
+Anwesend: Alle (ausser von Allmen)
+
+-Scrum überarbeitet
+-Start Software-Entwicklung
+
+#############################################################
