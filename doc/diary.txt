@@ -167,3 +167,12 @@ Anwesend: Alle (ausser von Allmen)
 -Start Software-Entwicklung
 
 #############################################################
+
+07.05.2018:
+#############################################################
+Anwesend: Alle (ausser von Allmen)
+
+-Scrum überarbeitet
+-Daily Scrum
+
+#############################################################
