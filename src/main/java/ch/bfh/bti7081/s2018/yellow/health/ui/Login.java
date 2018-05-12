@@ -30,19 +30,13 @@ public class Login extends AbsoluteLayout implements View {
 	private Label lbl_Password;
 	private TextField txt_Username;
 	private PasswordField txt_Password;
-	private Label lbl_Test;
+	private Label lbl_Notification;
 
 
 	
 	public Login() {
 		Design.read(this);
 		
-		but_login.addClickListener(new ClickListener(){
-			
-			public void buttonClick(ClickEvent event) {
-				lbl_Test.setValue(txt_Username.getValue()+" "+txt_Password.getValue());
-			}
-		});
 	}
 
 	public Label getLbl_Username() {
@@ -65,8 +59,8 @@ public class Login extends AbsoluteLayout implements View {
 		return txt_Password;
 	}
 
-	public Label getLbl_Test() {
-		return lbl_Test;
+	public Label getLbl_Notification() {
+		return lbl_Notification;
 	}
 
 
