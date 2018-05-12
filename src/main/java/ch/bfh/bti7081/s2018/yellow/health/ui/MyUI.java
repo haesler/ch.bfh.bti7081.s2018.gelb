@@ -1,17 +1,21 @@
-package ch.bfh.bti7081.s2018.yellow.health;
+package ch.bfh.bti7081.s2018.yellow.health.ui;
 
 import javax.servlet.annotation.WebServlet;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
+import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
-import Check.CheckLogin;
+import ch.bfh.bti7081.s2018.yellow.health.models.User;
+import ch.bfh.bti7081.s2018.yellow.health.repo.UserRepository;
 
 
 /**
@@ -21,9 +25,11 @@ import Check.CheckLogin;
  * The UI is initialized using {@link #init(VaadinRequest)}. This method is intended to be 
  * overridden to add component to the user interface and initialize non-component functionality.
  */
+
+@SpringUI
 @Theme("mytheme")
 public class MyUI extends UI {
-
+	
     /*@Override
     protected void init(VaadinRequest vaadinRequest) {
         final VerticalLayout layout = new VerticalLayout();
