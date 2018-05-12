@@ -11,6 +11,8 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+import Check.CheckLogin;
+
 
 /**
  * This UI is the application entry point. A UI may either represent a browser window 
@@ -22,7 +24,7 @@ import com.vaadin.ui.VerticalLayout;
 @Theme("mytheme")
 public class MyUI extends UI {
 
-    @Override
+    /*@Override
     protected void init(VaadinRequest vaadinRequest) {
         final VerticalLayout layout = new VerticalLayout();
         
@@ -38,6 +40,17 @@ public class MyUI extends UI {
         layout.addComponents(name, button);
         
         setContent(layout);
+    }*/
+    public boolean isAuthenticated = false;
+	
+    @Override
+    protected void init(VaadinRequest vaadinRequest) {
+    	if (isAuthenticated!=true){
+    		setContent(new Login());
+    	}
+    	else{
+    		setContent(new MainView());
+    	}
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
