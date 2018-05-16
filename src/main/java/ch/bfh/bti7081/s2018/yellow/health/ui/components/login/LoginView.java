@@ -8,5 +8,9 @@ public interface LoginView {
 		
 	}
 	public void addListener(LoginViewListener listener);
+	void buttonClick();
+	void setNotification(String value);
+	String getUsername();
+	String getPassword();
 
 }

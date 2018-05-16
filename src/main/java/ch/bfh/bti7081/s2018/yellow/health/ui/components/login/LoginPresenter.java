@@ -14,8 +14,7 @@ public class LoginPresenter implements LoginView.LoginViewListener {
     LoginView  view;
 
 
-	public LoginPresenter(LoginLayout model,
-            LoginView  view){
+	public LoginPresenter(LoginLayout model, LoginView  view){
 		this.model = model;
         this.view  = view;
 
@@ -24,13 +23,13 @@ public class LoginPresenter implements LoginView.LoginViewListener {
 	}
 	
 	public void buttonClick(){
-		if( model.getTxt_Username().getValue() == "demo" && model.getTxt_Password().getValue() == "demo" )
+		if( view.getUsername() == "demo" && view.getPassword() == "demo" )
 		{
-		       model.getLbl_Notification().setValue("success");
+			view.setNotification("success");
 		       //öffnen von Mainview...
 		} else {
-		       model.getLbl_Notification().setValue("Login failed");
-		       model.getTxt_Username().focus();
+				view.setNotification("Login failed");
+
 		                        
 		}     
 		
