@@ -23,7 +23,7 @@ public class LoginPresenter implements LoginView.LoginViewListener {
     UserRepository repo;
 
 
-	public LoginPresenter(LoginLayout model, LoginView  view,  UserRepository repo){
+	public LoginPresenter(LoginLayout model, LoginView  view){
 		this.model = model;
         this.view  = view;
 
