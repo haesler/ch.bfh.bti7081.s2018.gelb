@@ -31,6 +31,8 @@ import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.LoginLayout;
 @Theme("mytheme")
 public class MyUI extends UI {
 	
+    @Autowired
+    UserRepository repo;
 
     public boolean isAuthenticated = false;
 	

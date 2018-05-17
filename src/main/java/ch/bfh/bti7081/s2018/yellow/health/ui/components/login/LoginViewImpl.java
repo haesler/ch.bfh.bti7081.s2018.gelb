@@ -5,40 +5,37 @@ import java.util.List;
 
 import javax.servlet.ServletContextAttributeEvent;
 
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Alignment;
 
 import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.LoginLayout;
 
-@SuppressWarnings("serial")
-public class LoginViewImpl extends VerticalLayout implements LoginView{
+public class LoginViewImpl extends VerticalLayout implements LoginView, ClickListener{
 	
 	//getBut_login().addClickListener(e -> loginViewListeners.forEach(l -> l.eventFired()));
 	//addComponent(getBut_login());
 	List<LoginViewListener> listeners = new ArrayList<LoginViewListener>();
 
 	public LoginViewImpl(){
-		setSizeFull();
+        setSizeFull();
         setMargin(false);
         setSpacing(false);
 		loginForm = new LoginLayout();
-		loginForm.getBut_login().addClickListener(e -> this.buttonClick());
 		addComponent(loginForm);
 		setComponentAlignment(loginForm, Alignment.MIDDLE_CENTER);
-		//loginForm.getBut_login().addClickListener(this);
-		
+		loginForm.getBut_login().addClickListener(this);
 	}
 
 	private LoginLayout loginForm;
 	
 	@Override
-	public void buttonClick() {
-			for (LoginViewListener listener: listeners)
+	public void buttonClick(ClickEvent event) {
+		for (LoginViewListener listener: listeners)
 			listener.buttonClick();
 	}
 
@@ -54,11 +51,5 @@ public class LoginViewImpl extends VerticalLayout implements LoginView{
 	public String getPassword(){
 		return loginForm.getTxt_Password().getValue();
 	}
-	
-	public void setNotification(String value){
-		loginForm.getLbl_Notification().setValue(value);
-	}
-	
-	
 	
 }
