@@ -31,7 +31,8 @@ import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.LoginLayout;
 @Theme("mytheme")
 public class MyUI extends UI {
 	
-
+	@Autowired
+	UserRepository repo;
     public boolean isAuthenticated = false;
 	
     @Override
@@ -42,7 +43,7 @@ public class MyUI extends UI {
     		LoginViewImpl view  = new LoginViewImpl();
 
     		// The presenter binds the model and view together
-    		new LoginPresenter(model,view);
+    		new LoginPresenter(model,view,repo);
     		setContent(view);
     	}
     	else{
