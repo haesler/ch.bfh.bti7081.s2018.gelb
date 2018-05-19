@@ -3,9 +3,11 @@ package ch.bfh.bti7081.s2018.yellow.health.ui.components.login;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
+import com.vaadin.ui.UI;
 import com.vaadin.ui.declarative.Design;
 
 import ch.bfh.bti7081.s2018.yellow.health.repo.UserRepository;
+import ch.bfh.bti7081.s2018.yellow.health.ui.MyUI;
 import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.LoginLayout;
 
 
@@ -30,7 +32,8 @@ public class LoginPresenter implements LoginView.LoginViewListener {
 		if(view.getPassword().equals(pw))
 		{
 			view.setNotification("success");
-		       //öffnen von Mainview...
+			((MyUI)UI.getCurrent()).isAuthenticated=true;
+		    ((MyUI)UI.getCurrent()).updateContent();
 		} else {
 				view.setNotification("Login failed");
 

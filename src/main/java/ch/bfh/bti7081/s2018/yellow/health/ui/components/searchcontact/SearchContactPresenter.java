@@ -1,4 +1,6 @@
-package ch.bfh.bti7081.s2018.yellow.health.ui;
+package ch.bfh.bti7081.s2018.yellow.health.ui.components.searchcontact;
+
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchcontact.SearchContactView.SearchContactViewListener;
 
 public class SearchContactPresenter implements SearchContactView.SearchContactViewListener{
 

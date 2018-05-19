@@ -1,4 +1,4 @@
-package ch.bfh.bti7081.s2018.yellow.health.ui;
+package ch.bfh.bti7081.s2018.yellow.health.ui.components.searchcontact;
 
 import java.util.ArrayList;
 import java.util.List;
