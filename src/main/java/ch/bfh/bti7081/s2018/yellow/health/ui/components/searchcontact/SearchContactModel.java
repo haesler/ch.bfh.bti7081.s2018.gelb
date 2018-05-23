@@ -1,46 +1,25 @@
 package ch.bfh.bti7081.s2018.yellow.health.ui.components.searchcontact;
 
+
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.init.RepositoriesPopulatedEvent;
-
-import com.vaadin.data.Binder;
-import com.vaadin.ui.Grid;
-
+import org.springframework.stereotype.Component;
+import com.vaadin.data.provider.DataProvider;
+import com.vaadin.data.provider.ListDataProvider;
 import ch.bfh.bti7081.s2018.yellow.health.models.Contact;
 import ch.bfh.bti7081.s2018.yellow.health.repo.ContactRepository;
 
+@Component
 public class SearchContactModel {
 
-	@Autowired
-	ContactRepository repo;
-
+	
+	public ContactRepository repo;
 	List<Contact> contacts;
+	ListDataProvider<Contact> dataProvider;
 	
-	private Binder<Contact> binder = new Binder<>(Contact.class);
-	
-	public SearchContactModel(){
+	public SearchContactModel(ContactRepository repo){
+		this.repo =repo;
 		contacts = repo.findAll();
+		dataProvider =  DataProvider.ofCollection(contacts);
 	}
-	
-	public List<Contact> findLastname(String searchString){
-		contacts = repo.findByLastname(searchString);
-		return contacts;
-	}
-	
-	public List<Contact> findFirstname(String searchString){
-		contacts = repo.findByFirstname(searchString);
-		return contacts;
-	}
-	
-	public List<Contact> findStreet(String searchString){
-		contacts = repo.findByStreet(searchString);
-		return contacts;
-	}
-	
-	public List<Contact> findCity(String searchString){
-		contacts = repo.findByCity(searchString);
-		return contacts;
-	}
+
 }
