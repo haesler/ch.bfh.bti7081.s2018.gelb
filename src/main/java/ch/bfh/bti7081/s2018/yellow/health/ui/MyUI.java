@@ -3,9 +3,11 @@ package ch.bfh.bti7081.s2018.yellow.health.ui;
 import javax.servlet.annotation.WebServlet;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
+import com.vaadin.server.Responsive;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.spring.annotation.SpringUI;
@@ -14,6 +16,8 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.themes.ValoTheme;
+
 import ch.bfh.bti7081.s2018.yellow.health.models.User;
 import ch.bfh.bti7081.s2018.yellow.health.repo.UserRepository;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.login.Login;
@@ -33,12 +37,20 @@ import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.LoginLayout;
 @SpringUI
 @Theme("mytheme")
 public class MyUI extends UI {
-	
-	@Autowired
 	UserRepository repo;
-	
+	ApplicationContext context;
     public boolean isAuthenticated = false;
 	
+    @Autowired
+    public MyUI(UserRepository repo, ApplicationContext context) {
+		this.repo = repo;
+		this.context = context;
+		
+        Responsive.makeResponsive(this);
+        addStyleName(ValoTheme.UI_WITH_MENU);
+		
+	}
+    
 	
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -57,7 +69,7 @@ public class MyUI extends UI {
     	}
     	else{
     		
-    		setContent(new MainView());
+    		setContent(new MainView(context));
     	}
     }
 

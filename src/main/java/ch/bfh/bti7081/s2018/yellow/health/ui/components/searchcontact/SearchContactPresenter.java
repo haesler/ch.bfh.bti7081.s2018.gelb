@@ -1,5 +1,7 @@
 package ch.bfh.bti7081.s2018.yellow.health.ui.components.searchcontact;
 
+import org.springframework.stereotype.Component;
+
 import com.vaadin.data.ValueProvider;
 
 import ch.bfh.bti7081.s2018.yellow.health.models.Contact;
@@ -8,6 +10,7 @@ public class SearchContactPresenter implements SearchContactView.SearchContactVi
 
 	SearchContactModel model;
 	SearchContactViewImpl view;
+	
 	
 	public SearchContactPresenter(SearchContactModel model,SearchContactViewImpl view) {
 		this.model = model;

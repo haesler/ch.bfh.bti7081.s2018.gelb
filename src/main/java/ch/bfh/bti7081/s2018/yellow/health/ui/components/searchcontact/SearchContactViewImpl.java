@@ -3,6 +3,9 @@ package ch.bfh.bti7081.s2018.yellow.health.ui.components.searchcontact;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.vaadin.data.ValueProvider;
 import com.vaadin.data.HasValue.ValueChangeEvent;
 import com.vaadin.data.HasValue.ValueChangeListener;
@@ -29,22 +32,29 @@ import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.shared.ui.ValueChangeMode;
 
 import ch.bfh.bti7081.s2018.yellow.health.models.Contact;
+import ch.bfh.bti7081.s2018.yellow.health.repo.ContactRepository;
 
 
+@Component
 public class SearchContactViewImpl extends VerticalLayout implements SearchContactView, 
 											ClickListener, ValueChangeListener<String>{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
+	
+	private SearchContactPresenter presenter;
 
 	
 	public Grid<Contact> grid = new Grid(Contact.class);
 	List<SearchContactViewListener> listeners = new ArrayList<SearchContactViewListener>();
-
-	public SearchContactViewImpl(){
+	
+	@Autowired
+	public SearchContactViewImpl(SearchContactModel service){
+		this.presenter = new SearchContactPresenter(service, this);
 		
+		loadView();
+	}
+	
+	private void loadView() {
 		setSizeFull();
         setMargin(false);
         setSpacing(false);
@@ -69,7 +79,7 @@ public class SearchContactViewImpl extends VerticalLayout implements SearchConta
 		}
 
         addComponent(layout);
-        setComponentAlignment(layout, Alignment.MIDDLE_CENTER);
+        setComponentAlignment(layout, Alignment.MIDDLE_CENTER);		
 	}
 	
 	private void refresh(String text, ValueProvider<Contact, ?> valueProvider) {
