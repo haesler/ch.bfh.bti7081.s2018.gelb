@@ -1,6 +1,8 @@
 package ch.bfh.bti7081.s2018.yellow.health.models;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -19,7 +21,6 @@ public class Contact implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int contactID;
 
-	@Temporal(TemporalType.DATE)
 	private Date birthday;
 
 	private String city;
@@ -30,9 +31,9 @@ public class Contact implements Serializable {
 
 	private String mail;
 
-	private int mobile;
+	private String mobile;
 
-	private int phone;
+	private String phone;
 
 	private int plz;
 
@@ -65,8 +66,8 @@ public class Contact implements Serializable {
 		return this.birthday;
 	}
 
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
+	public void setBirthday(java.sql.Date date) {
+		this.birthday = date;
 	}
 
 	public String getCity() {
@@ -101,19 +102,19 @@ public class Contact implements Serializable {
 		this.mail = mail;
 	}
 
-	public int getMobile() {
+	public String getMobile() {
 		return this.mobile;
 	}
 
-	public void setMobile(int mobile) {
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
 
-	public int getPhone() {
+	public String getPhone() {
 		return this.phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
@@ -183,6 +184,19 @@ public class Contact implements Serializable {
 
 	public void setPatients2(List<Patient> patients2) {
 		this.patients2 = patients2;
+	}
+	
+	//Temp save all attribute
+	public void createContact(String fn, String ln, String str, int plz, String City, String Phone, String Mobile, String Mail, java.sql.Date date){
+		this.setFirstname(fn);
+		this.setLastname(ln);
+		this.setStreet(str);
+		this.setPlz(plz);
+		this.setCity(City);
+		this.setPhone(Phone);
+		this.setMobile(Mobile);
+		this.setMail(Mail);
+		this.setBirthday(date);
 	}
 
 }

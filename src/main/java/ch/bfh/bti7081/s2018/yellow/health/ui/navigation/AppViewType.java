@@ -3,10 +3,13 @@ package ch.bfh.bti7081.s2018.yellow.health.ui.navigation;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.View;
 import com.vaadin.server.Resource;
+
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.patient.AddPatientView;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchcontact.SearchContactView;
 
 public enum AppViewType {
-    CONTACT("Kontakte",SearchContactView.class, VaadinIcons.HOME);
+    CONTACT("Kontakte",SearchContactView.class, VaadinIcons.HOME),
+	ADDPATIENT("Neuer Patient",AddPatientView.class, VaadinIcons.HOME);
 
     private final String viewName;
     private final Class<? extends View> viewClass;
