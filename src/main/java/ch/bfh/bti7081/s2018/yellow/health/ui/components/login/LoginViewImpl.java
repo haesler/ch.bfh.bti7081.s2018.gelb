@@ -11,6 +11,9 @@ import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.event.ShortcutAction;
+import com.vaadin.event.ShortcutAction.KeyCode;
+import com.vaadin.event.ShortcutListener;
 import com.vaadin.ui.Alignment;
 
 import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.LoginLayout;
@@ -28,6 +31,7 @@ public class LoginViewImpl extends VerticalLayout implements LoginView{
         setSpacing(false);
 		loginForm = new LoginLayout();
 		loginForm.getBut_login().addClickListener(e -> this.buttonClick());
+		loginForm.getBut_login().setClickShortcut(KeyCode.ENTER);
 		addComponent(loginForm);
 		setComponentAlignment(loginForm, Alignment.MIDDLE_CENTER);
 		//loginForm.getBut_login().addClickListener(this);
@@ -58,7 +62,8 @@ public class LoginViewImpl extends VerticalLayout implements LoginView{
 	public void setNotification(String value){
 		loginForm.getLbl_Notification().setValue(value);
 	}
-	
+
+
 	
 	
 }

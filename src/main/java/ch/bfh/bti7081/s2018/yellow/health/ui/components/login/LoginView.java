@@ -5,6 +5,7 @@ public interface LoginView {
 	interface LoginViewListener{
 
 		void buttonClick();
+
 		
 	}
 	public void addListener(LoginViewListener listener);

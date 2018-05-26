@@ -19,6 +19,7 @@ import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 
 import ch.bfh.bti7081.s2018.yellow.health.models.User;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.login.AuthService;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.login.Login;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.login.LoginPresenter;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.login.LoginViewImpl;

@@ -35,7 +35,7 @@ public class UserService {
     
     public static boolean isAuthenticUser(String username, String password) {
     	System.out.println(username);    
-    	String pw = repo.findPassword(username);  // Hier kommt absturz
+    	String pw = repo.findPassword(username);
 		if(password.equals(pw))
 		{
 			return true;

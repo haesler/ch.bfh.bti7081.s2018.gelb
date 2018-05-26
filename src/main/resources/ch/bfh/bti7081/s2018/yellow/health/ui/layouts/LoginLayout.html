@@ -7,25 +7,25 @@
  </head>
  <body>
   <vaadin-absolute-layout style-name="friendly">
-   <vaadin-grid-layout spacing width="45.31%" height="38.46%" :top="302px" :left="502px">
+   <vaadin-grid-layout spacing width-full height="38.46%" :top="302px">
     <row>
      <column>
-      <vaadin-label style-name="huge" plain-text _id="lbl_Username">
+      <vaadin-label style-name="huge" responsive plain-text _id="lbl_Username" :right>
         Username 
       </vaadin-label>
      </column>
      <column>
-      <vaadin-text-field _id="txt_Username"></vaadin-text-field>
+      <vaadin-text-field responsive _id="txt_Username"></vaadin-text-field>
      </column>
     </row>
     <row>
      <column>
-      <vaadin-label style-name="huge" plain-text _id="lbl_Password">
+      <vaadin-label style-name="huge" responsive plain-text _id="lbl_Password" :right>
         Password 
       </vaadin-label>
      </column>
      <column>
-      <vaadin-password-field _id="txt_Password"></vaadin-password-field>
+      <vaadin-password-field responsive _id="txt_Password"></vaadin-password-field>
      </column>
     </row>
     <row>
@@ -37,12 +37,10 @@
      </column>
     </row>
    </vaadin-grid-layout>
-   <vaadin-label style-name="h1" responsive width="461px" height="109px" plain-text :top="119px" :left="492px">
+   <vaadin-label style-name="h1 align-center" responsive width-full height="109px" plain-text :top="119px" :left="0px">
      Health Management System 
    </vaadin-label>
-   <vaadin-label style-name="colored large h1" width-full height="168px" plain-text _id="lbl_Notification" :top="610px" :left="502px">
-     test 
-   </vaadin-label>
+   <vaadin-label style-name="colored large h1 align-center error" width-full height="168px" plain-text _id="lbl_Notification" :top="610px"></vaadin-label>
   </vaadin-absolute-layout>
  </body>
 </html>

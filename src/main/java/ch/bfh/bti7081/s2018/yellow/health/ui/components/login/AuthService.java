@@ -22,6 +22,7 @@ public class AuthService {
     }
 
     public static boolean login(String username, String password) {
+    	if (username.length() == 0 && password.length()==0) return false;
         if (UserService.isAuthenticUser(username, password)) {
             VaadinSession.getCurrent().setAttribute(SESSION_USERNAME, username);
                 rememberUser(username);

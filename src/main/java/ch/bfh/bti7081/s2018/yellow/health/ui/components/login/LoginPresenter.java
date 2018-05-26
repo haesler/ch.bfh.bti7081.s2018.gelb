@@ -26,8 +26,6 @@ public class LoginPresenter implements LoginView.LoginViewListener {
 	}
 	
 	public void buttonClick(){
-		//String pw = repo.findPassword(view.getUsername());
-		//if(view.getPassword().equals(pw))
 		if (AuthService.login(view.getUsername(), view.getPassword()))
 		{
 			view.setNotification("success");

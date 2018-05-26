@@ -26,9 +26,9 @@ public class AddPatientViewImpl extends AbsoluteLayout implements AddPatientView
 	@Autowired
 	public AddPatientViewImpl(ContactRepository repo){
 		this.presenter = new AddPatientPresenter(this, repo);
-        addPatientForm = new AddPatientLayout();
-        addPatientForm.getBut_Save().addClickListener(e -> this.buttonClick());
-		addComponent(addPatientForm);
+        ///addPatientForm = new AddPatientLayout();
+        //addPatientForm.getBut_Save().addClickListener(e -> this.buttonClick());
+		//addComponent(addPatientForm);
 		//setComponentAlignment(addPatientForm, Alignment.MIDDLE_CENTER);
 	}
 	
