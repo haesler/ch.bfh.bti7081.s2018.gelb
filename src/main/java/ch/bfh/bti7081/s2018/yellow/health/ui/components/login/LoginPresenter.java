@@ -15,29 +15,27 @@ import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.LoginLayout;
 public class LoginPresenter implements LoginView.LoginViewListener {
 	LoginLayout model;
     LoginView  view;
-    UserRepository repo;
 
 
-	public LoginPresenter(LoginLayout model, LoginView  view, UserRepository repo){
+	public LoginPresenter(LoginLayout model, LoginView  view){
 		this.model = model;
         this.view  = view;
-        this.repo = repo;
 
         view.addListener(this);
 		
 	}
 	
 	public void buttonClick(){
-		String pw = repo.findPassword(view.getUsername());
-		if(view.getPassword().equals(pw))
+		//String pw = repo.findPassword(view.getUsername());
+		//if(view.getPassword().equals(pw))
+		if (AuthService.login(view.getUsername(), view.getPassword()))
 		{
 			view.setNotification("success");
 			((MyUI)UI.getCurrent()).isAuthenticated=true;
 		    ((MyUI)UI.getCurrent()).updateContent();
 		} else {
 				view.setNotification("Login failed");
-
-		                        
+				           
 		}     
 		
 	}

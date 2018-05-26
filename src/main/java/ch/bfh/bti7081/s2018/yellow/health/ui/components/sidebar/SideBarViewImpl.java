@@ -6,6 +6,8 @@ import com.vaadin.ui.DragAndDropWrapper.DragStartMode;
 import com.vaadin.ui.MenuBar.Command;
 import com.vaadin.ui.MenuBar.MenuItem;
 import com.vaadin.ui.themes.ValoTheme;
+
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.login.AuthService;
 import ch.bfh.bti7081.s2018.yellow.health.ui.navigation.AppViewType;
 
 import java.util.Collection;
@@ -103,7 +105,7 @@ public class SideBarViewImpl extends CustomComponent implements SideBarView, Cli
 	    settingsItem.addItem("Sign Out", new Command() {
 	        @Override
 	        public void menuSelected(final MenuItem selectedItem) {
-	            //DashboardEventBus.post(new UserLoggedOutEvent());
+	            AuthService.logOut();
 	        }
 	    });
 	    return settings;

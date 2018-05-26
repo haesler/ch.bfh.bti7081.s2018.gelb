@@ -19,7 +19,6 @@ import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 
 import ch.bfh.bti7081.s2018.yellow.health.models.User;
-import ch.bfh.bti7081.s2018.yellow.health.repo.UserRepository;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.login.Login;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.login.LoginPresenter;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.login.LoginViewImpl;
@@ -37,13 +36,11 @@ import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.LoginLayout;
 @SpringUI
 @Theme("mytheme")
 public class MyUI extends UI {
-	UserRepository repo;
 	ApplicationContext context;
     public boolean isAuthenticated = false;
 	
     @Autowired
-    public MyUI(UserRepository repo, ApplicationContext context) {
-		this.repo = repo;
+    public MyUI(ApplicationContext context) {
 		this.context = context;
 		
         Responsive.makeResponsive(this);
@@ -58,13 +55,13 @@ public class MyUI extends UI {
     }
     
     public void updateContent() {
-    	if (isAuthenticated!=true){
+    	if (!AuthService.isAuthenticated()){
     		// Create the model and the Vaadin view implementation
     		LoginLayout model = new LoginLayout();
     		LoginViewImpl view  = new LoginViewImpl();
 
     		// The presenter binds the model and view together
-    		new LoginPresenter(model,view,repo);
+    		new LoginPresenter(model,view);
     		setContent(view);
     	}
     	else{
