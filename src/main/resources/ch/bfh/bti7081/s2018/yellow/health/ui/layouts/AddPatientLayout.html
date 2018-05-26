@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:true,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+ </head>
+ <body>
+  <vaadin-absolute-layout>
+   <vaadin-label visible="false" style-name="failure" width="542px" height="50px" plain-text _id="lbl_Message" :top="664px" :left="243px">
+     Please fill out the required fields 
+   </vaadin-label>
+   <vaadin-grid-layout width="1261px" height="687px" :top="133px" :left="64px">
+    <row>
+     <column>
+      <vaadin-label style-name="h1" responsive width="461px" height="53px" plain-text>
+        Contact Information 
+      </vaadin-label>
+     </column>
+     <column>
+      <vaadin-label style-name="h1" responsive width="461px" height="53px" plain-text>
+        Add Patient 
+      </vaadin-label>
+     </column>
+    </row>
+    <row>
+     <column>
+      <vaadin-grid-layout width="546px" height="497px">
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_Name">
+           Name 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-field width="284px" _id="txt_Name" :middle></vaadin-text-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_FirstName" :middle>
+           FirstName 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-field width="284px" _id="txt_FirstName" :middle></vaadin-text-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_Street" :middle>
+           Street 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-field width="284px" _id="txt_Street" :middle></vaadin-text-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_PLZ">
+           PLZ 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-field width="284px" _id="txt_PLZ"></vaadin-text-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_City">
+           City 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-field width="284px" _id="txt_City"></vaadin-text-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_Phone">
+           Phone 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-field width="284px" _id="txt_Phone"></vaadin-text-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_Mobile">
+           Mobile 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-field width="284px" _id="txt_Mobile"></vaadin-text-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_Mail">
+           Mail 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-field width="284px" _id="txt_Mail"></vaadin-text-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_Birthday">
+           Birthday 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-date-field _id="df_Birhday"></vaadin-date-field>
+        </column>
+       </row>
+       <row>
+        <column></column>
+        <column>
+         <vaadin-button style-name="friendly" responsive width="190px" plain-text _id="but_Save" :center>
+           Save 
+         </vaadin-button>
+        </column>
+       </row>
+      </vaadin-grid-layout>
+     </column>
+     <column>
+      <vaadin-grid-layout width="517px" height="467px">
+       <row>
+        <column>
+         <vaadin-label width="145px" height="56px" plain-text>
+           start Date 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-date-field></vaadin-date-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label width="145px" height="56px" plain-text>
+           end Date 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-date-field></vaadin-date-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label width="145px" height="56px" plain-text>
+           Insurance 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-native-select data-item-type="java.lang.String">
+          <option item="Option1">Option 1</option>
+          <option item="Option2">Option 2</option>
+          <option item="Option3">Option 3</option>
+         </vaadin-native-select>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label width="145px" height="56px" plain-text>
+           Doctor 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-native-select data-item-type="java.lang.String">
+          <option item="Option1">Option 1</option>
+          <option item="Option2">Option 2</option>
+          <option item="Option3">Option 3</option>
+         </vaadin-native-select>
+        </column>
+       </row>
+      </vaadin-grid-layout>
+     </column>
+    </row>
+   </vaadin-grid-layout>
+  </vaadin-absolute-layout>
+ </body>
+</html>
