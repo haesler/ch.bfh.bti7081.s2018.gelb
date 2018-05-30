@@ -11,6 +11,7 @@ import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchpatient.SearchPati
 public enum AppViewType {
     CONTACT("Kontakte",SearchContactView.class, VaadinIcons.HOME),
     PATIENT("Patienten",SearchPatientView.class, VaadinIcons.HOME),
+    ADDCONTACT("neuer Kontakt",AddContactView.class, VaadinIcons.HOME),
 	ADDPATIENT("Neuer Patient",AddPatientView.class, VaadinIcons.HOME);
 
     private final String viewName;

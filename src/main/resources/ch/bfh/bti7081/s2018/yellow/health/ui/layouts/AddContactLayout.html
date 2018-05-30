@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:true,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+ </head>
+ <body>
+  <vaadin-absolute-layout responsive>
+   <vaadin-label visible="false" style-name="failure" width="542px" height="50px" plain-text _id="lbl_Message" :top="797px" :left="232px">
+     Please fill out the required fields 
+   </vaadin-label>
+   <vaadin-grid-layout width="800px" height="687px" :top="133px" :left="64px">
+    <row>
+     <column>
+      <vaadin-label style-name="h1" responsive width="461px" height="53px" plain-text>
+        Add Contact Information 
+      </vaadin-label>
+     </column>
+    </row>
+    <row>
+     <column>
+      <vaadin-grid-layout width="546px" height="497px">
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_Name" :middle>
+           Name 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-field width="284px" _id="txt_Name" :middle></vaadin-text-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_FirstName" :middle>
+           FirstName 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-field width="284px" _id="txt_FirstName" :middle></vaadin-text-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_Street" :middle>
+           Street 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-field width="284px" _id="txt_Street" :middle></vaadin-text-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_PLZ">
+           PLZ 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-field width="284px" _id="txt_PLZ"></vaadin-text-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_City">
+           City 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-field width="284px" _id="txt_City"></vaadin-text-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_Phone">
+           Phone 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-field width="284px" _id="txt_Phone"></vaadin-text-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_Mobile">
+           Mobile 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-field width="284px" _id="txt_Mobile"></vaadin-text-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_Mail">
+           Mail 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-field width="284px" _id="txt_Mail"></vaadin-text-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_Birthday">
+           Birthday 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-date-field _id="df_Birhday"></vaadin-date-field>
+        </column>
+       </row>
+       <row>
+        <column></column>
+        <column>
+         <vaadin-button style-name="friendly" responsive width="190px" plain-text _id="but_Save" :center>
+           Save 
+         </vaadin-button>
+        </column>
+       </row>
+      </vaadin-grid-layout>
+     </column>
+    </row>
+   </vaadin-grid-layout>
+  </vaadin-absolute-layout>
+ </body>
+</html>
