@@ -7,6 +7,7 @@ import com.vaadin.server.Resource;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.patient.AddPatientView;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchcontact.SearchContactView;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchpatient.SearchPatientView;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.contact.AddContactView;
 
 public enum AppViewType {
     CONTACT("Kontakte",SearchContactView.class, VaadinIcons.HOME),
