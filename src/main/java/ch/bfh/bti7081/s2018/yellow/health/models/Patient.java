@@ -154,7 +154,49 @@ public class Patient implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	
+	public String getFirstname() {
+		return this.contact.getFirstname();
+	}
 
+	public void setFirstname(String firstname ) {
+		this.contact.setFirstname(firstname);
+	}
+
+	public String getLastname() {
+		return this.contact.getLastname();
+	}
+
+	public void setLastname(String lastname ) {
+		this.contact.setLastname(lastname);
+	}
+	
+	public String getStreet() {
+		return this.contact.getStreet();
+	}
+
+	public void setStreet(String street) {
+		this.contact.setStreet(street);
+	}
+	
+	public int getPlz() {
+		return this.contact.getPlz();
+	}
+
+	public void setPlz(int plz ) {
+		this.contact.setPlz(plz);
+	}
+	
+	public String getCity() {
+		return this.contact.getCity();
+	}
+
+	public void setCity(String city ) {
+		this.contact.setCity(city);
+	}
+	
+	
+	
 	public Contact getContact() {
 		return this.contact;
 	}

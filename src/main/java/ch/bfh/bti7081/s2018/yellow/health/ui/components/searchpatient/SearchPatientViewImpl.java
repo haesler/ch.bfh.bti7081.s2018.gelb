@@ -67,16 +67,17 @@ public class SearchPatientViewImpl extends VerticalLayout implements SearchPatie
 		HeaderRow filterRow = grid.appendHeaderRow();
 		layout.addComponent(grid);
 		
-        grid.setColumns("active", "end", "start");
+        grid.setColumns("firstname", "lastname", "street", "plz", "city", "active", "end", "start");
 		// Set up a filter for all columns
 		for (Column<Patient, ?> pid: grid.getColumns()) {
-		    HeaderCell cell = filterRow.getCell(pid.getId());
-		    final TextField filter = new TextField();
-		    filter.setPlaceholder("Filter");
-		    filter.addValueChangeListener(e -> {refresh(filter.getValue(),  pid.getValueProvider());});
-		    filter.addStyleName(ValoTheme.TEXTFIELD_TINY);
-		    cell.setComponent(filter);
+			    HeaderCell cell = filterRow.getCell(pid.getId());
+			    final TextField filter = new TextField();
+			    filter.setPlaceholder("Filter");
+			    filter.addValueChangeListener(e -> {refresh(filter.getValue(),  pid.getValueProvider());});
+			    filter.addStyleName(ValoTheme.TEXTFIELD_TINY);
+			    cell.setComponent(filter);
 		}
+
 
         addComponent(layout);
         setComponentAlignment(layout, Alignment.MIDDLE_CENTER);		
