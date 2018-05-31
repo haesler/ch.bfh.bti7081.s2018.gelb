@@ -30,8 +30,9 @@ public class LoginViewImpl extends VerticalLayout implements LoginView{
         setMargin(false);
         setSpacing(false);
 		loginForm = new LoginLayout();
-		loginForm.getBut_login().addClickListener(e -> this.buttonClick());
+		loginForm.getBut_login().addClickListener(e -> this.but_loginClick());
 		loginForm.getBut_login().setClickShortcut(KeyCode.ENTER);
+		loginForm.getBut_register1().addClickListener(e -> this.but_registerClick());
 		addComponent(loginForm);
 		setComponentAlignment(loginForm, Alignment.MIDDLE_CENTER);
 		//loginForm.getBut_login().addClickListener(this);
@@ -39,11 +40,16 @@ public class LoginViewImpl extends VerticalLayout implements LoginView{
 	}
 
 	private LoginLayout loginForm;
-	
+
 	@Override
-	public void buttonClick() {
+	public void but_registerClick() {
+		for (LoginViewListener listener: listeners)
+			listener.but_registerClick();
+	}
+	@Override
+	public void but_loginClick() {
 			for (LoginViewListener listener: listeners)
-			listener.buttonClick();
+			listener.but_loginClick();
 	}
 
 	@Override

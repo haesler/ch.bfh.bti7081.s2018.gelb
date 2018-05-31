@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:true,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+ </head>
+ <body>
+  <vaadin-absolute-layout>
+   <vaadin-grid-layout width="458px" height="185px" :top="232px" :left="217px">
+    <row>
+     <column>
+      <vaadin-label plain-text _id="lbl_Name">
+        Username 
+      </vaadin-label>
+     </column>
+     <column>
+      <vaadin-text-field _id="txt_Name"></vaadin-text-field>
+     </column>
+    </row>
+    <row>
+     <column>
+      <vaadin-label plain-text _id="lbl_Password1">
+        Password 
+      </vaadin-label>
+     </column>
+     <column>
+      <vaadin-password-field _id="pwd_Password1"></vaadin-password-field>
+     </column>
+    </row>
+    <row>
+     <column>
+      <vaadin-label plain-text _id="lbl_Password2">
+        Repeat password 
+      </vaadin-label>
+     </column>
+     <column>
+      <vaadin-password-field _id="pwd_Password2"></vaadin-password-field>
+     </column>
+    </row>
+    <row>
+     <column></column>
+     <column>
+      <vaadin-button style-name="friendly" plain-text _id="btn_Submit">
+        Submit 
+      </vaadin-button>
+     </column>
+    </row>
+   </vaadin-grid-layout>
+   <vaadin-label style-name="h1" width="286px" height="44px" plain-text _id="lbl_Title" :top="97px" :left="216px">
+     User registration 
+   </vaadin-label>
+   <vaadin-label visible="false" style-name="failure" width="399px" plain-text _id="lbl_Error" :top="417px" :left="221px">
+     This username already exists! 
+   </vaadin-label>
+  </vaadin-absolute-layout>
+ </body>
+</html>

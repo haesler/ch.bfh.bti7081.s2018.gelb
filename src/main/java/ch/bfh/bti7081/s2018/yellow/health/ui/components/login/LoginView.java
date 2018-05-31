@@ -4,12 +4,14 @@ public interface LoginView {
 	
 	interface LoginViewListener{
 
-		void buttonClick();
+		void but_loginClick();
+		void but_registerClick();
 
 		
 	}
 	public void addListener(LoginViewListener listener);
-	void buttonClick();
+	void but_loginClick();
+	void but_registerClick();
 	void setNotification(String value);
 	String getUsername();
 	String getPassword();

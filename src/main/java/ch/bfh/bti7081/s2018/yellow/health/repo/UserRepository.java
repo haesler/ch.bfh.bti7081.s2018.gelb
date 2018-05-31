@@ -10,7 +10,9 @@ import ch.bfh.bti7081.s2018.yellow.health.models.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 	
-	@Query("select password from User where username like %?1%")
+	@Query("select password from User where username = ?1")
 	String findPassword(String Username);
 
+	@Query("select username from User where username = ?1")
+	String checkUsername(String Username);
 }

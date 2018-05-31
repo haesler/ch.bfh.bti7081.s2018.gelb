@@ -26,6 +26,7 @@ public class LoginLayout extends AbsoluteLayout {
 	private Label lbl_Password;
 	private PasswordField txt_Password;
 	private Button but_login;
+	private Button but_register1;
 	private Label lbl_Notification;
 
 	public LoginLayout() {
@@ -50,6 +51,10 @@ public class LoginLayout extends AbsoluteLayout {
 
 	public Button getBut_login() {
 		return but_login;
+	}
+
+	public Button getBut_register1() {
+		return but_register1;
 	}
 
 	public Label getLbl_Notification() {

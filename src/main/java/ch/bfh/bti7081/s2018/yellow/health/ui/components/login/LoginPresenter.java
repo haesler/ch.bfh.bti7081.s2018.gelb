@@ -25,7 +25,7 @@ public class LoginPresenter implements LoginView.LoginViewListener {
 		
 	}
 	
-	public void buttonClick(){
+	public void but_loginClick(){
 		if (AuthService.login(view.getUsername(), view.getPassword()))
 		{
 			view.setNotification("success");
@@ -36,6 +36,11 @@ public class LoginPresenter implements LoginView.LoginViewListener {
 				           
 		}     
 		
+	}
+
+	@Override
+	public void but_registerClick() {
+	    ((MyUI)UI.getCurrent()).registrationContent();
 	}
 	
 	

@@ -19,11 +19,15 @@ import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 
 import ch.bfh.bti7081.s2018.yellow.health.models.User;
+import ch.bfh.bti7081.s2018.yellow.health.repo.UserRepository;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.login.AuthService;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.login.Login;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.login.LoginPresenter;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.login.LoginViewImpl;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.registration.RegistrationPresenter;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.registration.RegistrationViewImpl;
 import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.LoginLayout;
+import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.RegistrationLayout;
 
 
 /**
@@ -69,6 +73,17 @@ public class MyUI extends UI {
     		
     		setContent(new MainView(context));
     	}
+    }
+    
+    public void registrationContent() {
+    	// Create the model and the Vaadin view implementation
+    	RegistrationLayout model = new RegistrationLayout();
+		RegistrationViewImpl view  = new RegistrationViewImpl();
+		UserRepository repo = context.getBean(UserRepository.class);
+
+		// The presenter binds the model and view together
+		new RegistrationPresenter(model,view,repo);
+		setContent(view);
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
