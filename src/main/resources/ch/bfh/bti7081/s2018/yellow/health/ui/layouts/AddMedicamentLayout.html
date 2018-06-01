@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:true,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+ </head>
+ <body>
+  <vaadin-absolute-layout>
+   <vaadin-label visible="false" style-name="failure" width="542px" height="50px" plain-text _id="lbl_Message" :top="664px" :left="243px">
+     Please fill out the required fields 
+   </vaadin-label>
+   <vaadin-horizontal-layout>
+    <vaadin-vertical-layout size-auto>
+     <vaadin-horizontal-layout spacing="false" width="461px">
+      <vaadin-label style-name="h1" responsive height="48px" plain-text>
+        Medicament 
+      </vaadin-label>
+      <vaadin-button style-name="friendly" responsive plain-text _id="bu_save" :middle :right>
+        Save 
+      </vaadin-button>
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout>
+      <vaadin-grid-layout spacing width="546px" height="497px">
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_Name">
+           Name 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-field width="284px" _id="txt_Name"></vaadin-text-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label style-name="light" plain-text _id="lbl_Description">
+           Description 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-area width="286px" height="346px" _id="txt_Description"></vaadin-text-area>
+        </column>
+       </row>
+       <row></row>
+       <row></row>
+       <row></row>
+       <row></row>
+       <row></row>
+       <row></row>
+       <row></row>
+       <row></row>
+      </vaadin-grid-layout>
+      <vaadin-grid _id="gr_Medicaments"></vaadin-grid>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+   </vaadin-horizontal-layout>
+  </vaadin-absolute-layout>
+ </body>
+</html>

@@ -74,5 +74,10 @@ public class Medicament implements Serializable {
 
 		return medication;
 	}
+	
+	public void createMedicament(String name, String description){
+		this.setName(name);
+		this.setDescription(description);
+	}
 
 }
