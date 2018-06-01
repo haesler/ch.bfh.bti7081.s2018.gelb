@@ -207,7 +207,7 @@ Anwesend: Alle (ausser KÃ¶fer und Michaelis)
 #############################################################
 Anwesend: Alle
 
--Sprint 1 präsentiert
+-Sprint 1 prï¿½sentiert
 -Sprint 2 geplant
 
 #############################################################
@@ -237,5 +237,14 @@ Anwesend: Alle (ausser von Allmen)
 
 -Daily Scrum
 -Weiterarbeit am Projekt
+
+#############################################################
+
+01.06.2018:
+#############################################################
+Anwesend: Alle
+
+-Demo und Besprechung Sprint 2
+-Planung Sprint 3
 
 #############################################################
