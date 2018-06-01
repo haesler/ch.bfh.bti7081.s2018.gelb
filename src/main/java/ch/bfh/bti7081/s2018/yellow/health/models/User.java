@@ -75,4 +75,10 @@ public class User implements Serializable {
 		return patient;
 	}
 
+	
+	public void createUser(String user, String password) {
+		System.out.println("Create User object");
+		this.setUsername(user);
+		this.setPassword(password);
+	}
 }
