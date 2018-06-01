@@ -14,6 +14,7 @@ public enum AppViewType {
     PATIENT("Patienten",SearchPatientView.class, VaadinIcons.HOME),
     ADDCONTACT("neuer Kontakt",AddContactView.class, VaadinIcons.HOME),
 	ADDPATIENT("Neuer Patient",AddPatientView.class, VaadinIcons.HOME);
+	MEDICAMENT("Medikamente",AddMedicamentView.class, VaadinIcons.HOME);
 
     private final String viewName;
     private final Class<? extends View> viewClass;

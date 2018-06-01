@@ -5,6 +5,9 @@ import java.time.LocalDate;
 
 import com.vaadin.navigator.View;
 
+import ch.bfh.bti7081.s2018.yellow.health.models.Doctor;
+import ch.bfh.bti7081.s2018.yellow.health.models.Insurance;
+
 public interface AddPatientView extends View{
 	
 	interface AddPatientViewListener{
@@ -23,4 +26,8 @@ public interface AddPatientView extends View{
 	String getMobile();
 	String getMail();
 	Date getBirthday();
+	Date getStartdate();
+	Date getEnddate();
+	Insurance getInsurance();
+	Doctor getDoctor();
 }

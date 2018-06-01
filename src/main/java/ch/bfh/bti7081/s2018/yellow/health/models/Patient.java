@@ -196,7 +196,6 @@ public class Patient implements Serializable {
 	}
 	
 	
-	
 	public Contact getContact() {
 		return this.contact;
 	}
@@ -227,6 +226,16 @@ public class Patient implements Serializable {
 
 	public void setContacts(List<Contact> contacts) {
 		this.contacts = contacts;
+	}
+	
+	public void createPatient(byte active, java.sql.Date start, java.sql.Date end, Contact contact, Insurance insurance, Doctor doctor, User user){
+		this.setActive(active);
+		this.setStart(start);
+		this.setEnd(end);
+		this.setContact(contact);
+		this.setInsurance(insurance);
+		this.setDoctor(doctor);
+		this.setUser(user);
 	}
 
 }
