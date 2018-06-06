@@ -26,6 +26,10 @@ public class AddContactViewImpl extends AbsoluteLayout implements AddContactView
 		addComponent(addContactForm);
 	}
 	
+	public AddContactPresenter getPresenter() {
+		return this.presenter;
+	}
+	
 	@Override
 	public void buttonClick() {
 		for (AddContactViewListener listener: listeners){
@@ -94,6 +98,57 @@ public class AddContactViewImpl extends AbsoluteLayout implements AddContactView
 		else{
 			return false;
 		}
+	}
+
+	@Override
+	public void setName(String name) {
+		addContactForm.getTxt_Name().setValue(name);
+	}
+
+	@Override
+	public void setFirstName(String firstname) {
+		addContactForm.getTxt_FirstName().setValue(firstname);
+	}
+
+	@Override
+	public void setStreet(String street) {
+		addContactForm.getTxt_Street().setValue(street);
+		
+	}
+
+	@Override
+	public void setPLZ(Integer plz) {
+		addContactForm.getTxt_PLZ().setValue(plz.toString());
+		
+	}
+
+	@Override
+	public void setCity(String city) {
+		addContactForm.getTxt_City().setValue(city);
+		
+	}
+
+	@Override
+	public void setPhone(String phone) {
+		addContactForm.getTxt_Phone().setValue(phone);
+		
+	}
+
+	@Override
+	public void setMobile(String mobile) {
+		addContactForm.getTxt_Mobile().setValue(mobile);
+		
+	}
+
+	@Override
+	public void setMail(String mail) {
+		addContactForm.getTxt_Mail().setValue(mail);
+		
+	}
+
+	@Override
+	public void setBirthday(Date birthday) {
+		addContactForm.getDf_Birhday().setValue(birthday.toLocalDate());
 	}
 
 }

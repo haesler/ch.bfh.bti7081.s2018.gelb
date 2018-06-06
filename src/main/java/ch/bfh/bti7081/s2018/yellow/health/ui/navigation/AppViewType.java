@@ -17,7 +17,7 @@ public enum AppViewType {
 	ADDPATIENT("Neuer Patient",AddPatientView.class, VaadinIcons.HOME,true),
     ADDCONTACT("neuer Kontakt",AddContactView.class, VaadinIcons.HOME,true),
 	PATIENTEDIT("EditPatient",AddPatientView.class, VaadinIcons.HOME,false),
-	CONTACTEDIT("EditContact",AddPatientView.class, VaadinIcons.HOME,false),
+	CONTACTEDIT("EditContact",AddContactView.class, VaadinIcons.HOME,false),
 	MEDICAMENT("Medikamente",AddMedicamentView.class, VaadinIcons.HOME,true),
 	MEDICATION("Medikation",AddMedicationView.class, VaadinIcons.HOME,true);
 

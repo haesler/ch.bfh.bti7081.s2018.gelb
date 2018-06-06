@@ -30,4 +30,17 @@ public class AddContactPresenter implements AddContactView.AddContactViewListene
 		}
 	}
 
+	public void loadContact(Contact contact) {
+		this.contact = contact;
+		view.setName(contact.getLastname());
+		view.setFirstName(contact.getFirstname());
+		view.setStreet(contact.getStreet());
+		view.setPLZ(contact.getPlz());
+		view.setCity(contact.getCity());
+		view.setPhone(contact.getPhone());
+		view.setMobile(contact.getMobile());
+		view.setMail(contact.getMail());
+		view.setBirthday(new java.sql.Date(contact.getBirthday().getTime()));
+	}
+
 }

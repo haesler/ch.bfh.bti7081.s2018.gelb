@@ -13,7 +13,6 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.declarative.Design;
 
-import ch.bfh.bti7081.s2018.yellow.health.ui.components.patient.PatientViewImpl;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.sidebar.SideBarViewImpl;
 import ch.bfh.bti7081.s2018.yellow.health.ui.navigation.AppNavigator;
 
