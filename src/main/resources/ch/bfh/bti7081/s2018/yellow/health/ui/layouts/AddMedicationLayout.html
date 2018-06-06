@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:true,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+ </head>
+ <body>
+  <vaadin-absolute-layout>
+   <vaadin-vertical-layout responsive size-auto>
+    <vaadin-label style-name="h1" responsive height="48px" plain-text>
+      Add Medication 
+    </vaadin-label>
+    <vaadin-horizontal-layout responsive>
+     <vaadin-grid-layout responsive width="505px" height="400px">
+      <row>
+       <column>
+        <vaadin-label style-name="light" responsive plain-text>
+          Usage 
+        </vaadin-label>
+       </column>
+       <column>
+        <vaadin-text-field responsive width="285px" maxlength="45" _id="txt_usage"></vaadin-text-field>
+       </column>
+      </row>
+      <row>
+       <column>
+        <vaadin-label style-name="light" responsive plain-text _id="lbl_DateStart">
+          Start date 
+        </vaadin-label>
+       </column>
+       <column>
+        <vaadin-date-field responsive _id="df_StartDate"></vaadin-date-field>
+       </column>
+      </row>
+      <row>
+       <column>
+        <vaadin-label style-name="light" responsive plain-text _id="lbl_EndDate">
+          End date 
+        </vaadin-label>
+       </column>
+       <column>
+        <vaadin-date-field responsive _id="df_EndDate"></vaadin-date-field>
+       </column>
+      </row>
+      <row>
+       <column>
+        <vaadin-label style-name="light" responsive plain-text _id="lbl_active">
+          Active 
+        </vaadin-label>
+       </column>
+       <column>
+        <vaadin-check-box responsive checked _id="ckb_active"></vaadin-check-box>
+       </column>
+      </row>
+      <row>
+       <column></column>
+       <column>
+        <vaadin-button style-name="friendly" responsive plain-text _id="bu_save">
+          Save 
+        </vaadin-button>
+       </column>
+      </row>
+     </vaadin-grid-layout>
+     <vaadin-grid responsive _id="gr_Medications"></vaadin-grid>
+    </vaadin-horizontal-layout>
+    <vaadin-label visible="false" style-name="failure" responsive width="542px" height="50px" plain-text _id="lbl_Message">
+      Please fill out the required fields 
+    </vaadin-label>
+   </vaadin-vertical-layout>
+  </vaadin-absolute-layout>
+ </body>
+</html>

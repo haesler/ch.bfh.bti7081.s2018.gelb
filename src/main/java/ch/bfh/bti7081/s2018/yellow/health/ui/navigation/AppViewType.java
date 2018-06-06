@@ -9,13 +9,16 @@ import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchcontact.SearchCont
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchpatient.SearchPatientView;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.contact.AddContactView;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.medicament.AddMedicamentView;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.medication.AddMedicationView;
 
 public enum AppViewType {
     CONTACT("Kontakte",SearchContactView.class, VaadinIcons.HOME),
     PATIENT("Patienten",SearchPatientView.class, VaadinIcons.HOME),
     ADDCONTACT("neuer Kontakt",AddContactView.class, VaadinIcons.HOME),
 	ADDPATIENT("Neuer Patient",AddPatientView.class, VaadinIcons.HOME),
-	MEDICAMENT("Medikamente",AddMedicamentView.class, VaadinIcons.HOME);
+	MEDICAMENT("Medikamente",AddMedicamentView.class, VaadinIcons.HOME),
+	MEDICATION("Medikation",AddMedicationView.class, VaadinIcons.HOME);
+	
 
     private final String viewName;
     private final Class<? extends View> viewClass;
