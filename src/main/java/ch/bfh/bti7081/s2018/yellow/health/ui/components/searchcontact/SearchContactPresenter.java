@@ -3,8 +3,10 @@ package ch.bfh.bti7081.s2018.yellow.health.ui.components.searchcontact;
 import org.springframework.stereotype.Component;
 
 import com.vaadin.data.ValueProvider;
+import com.vaadin.ui.UI;
 
 import ch.bfh.bti7081.s2018.yellow.health.models.Contact;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.patient.AddPatientViewImpl;
 
 public class SearchContactPresenter implements SearchContactView.SearchContactViewListener{
 
@@ -28,6 +30,11 @@ public class SearchContactPresenter implements SearchContactView.SearchContactVi
     	  } else {
     		  model.dataProvider.clearFilters();
     	  }
+	}
+	
+	public void editContact(Contact contact) {
+		UI.getCurrent().getNavigator().navigateTo("EditContact");
+		//((AddPatientViewImpl)UI.getCurrent().getNavigator().getCurrentView()).getPresenter().loadPatient(contact);
 	}
 	
    private Boolean caseInsensitiveContains(String where, String what) {

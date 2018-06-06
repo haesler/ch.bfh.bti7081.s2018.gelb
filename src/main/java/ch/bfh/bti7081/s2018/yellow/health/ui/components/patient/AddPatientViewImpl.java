@@ -5,7 +5,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -32,38 +31,36 @@ public class AddPatientViewImpl extends AbsoluteLayout implements AddPatientView
 	private AddPatientLayout addPatientForm;
 	private AddPatientPresenter presenter;
 	AddPatientView view;
-
-@Autowired
+	
+	@Autowired
 	public AddPatientViewImpl(ContactRepository repoContact, PatientRepository repoPatient, DoctorRepository repoDoctor, InsuranceRepository repoInsurance){
         this.presenter=new AddPatientPresenter(this, repoContact, repoPatient);
-		addPatientForm = new AddPatientLayout();
+        addPatientForm = new AddPatientLayout();
         addPatientForm.getBut_Save().addClickListener(e -> this.buttonClick());
         addPatientForm.getBut_Save().setClickShortcut(KeyCode.ENTER);
-        this.setDoctor(repoDoctor.findAll());
-        this.setInsurance(repoInsurance.findAll());
+        this.setDoctorList(repoDoctor.findAll());
+        this.setInsuranceList(repoInsurance.findAll());
         addComponent(addPatientForm);
 	}
 	
-	public void setDoctor(List<Doctor> doctors){
-		addPatientForm.getDd_Doctor().setItems(doctors);
-		addPatientForm.getDd_Doctor().setItemCaptionGenerator(e -> e.getContact().getLastname());
-	}
-	
-	public void setInsurance(List<Insurance> insurances){
+	public void setInsuranceList(List<Insurance> insurances){
 		addPatientForm.getDd_Insurance().setItems(insurances);
 		addPatientForm.getDd_Insurance().setItemCaptionGenerator(e -> e.getName());
 	}
 	
+	public void setDoctorList(List<Doctor> doctors){
+		addPatientForm.getDd_Doctor().setItems(doctors);
+		addPatientForm.getDd_Doctor().setItemCaptionGenerator(e -> e.getContact().getLastname());
+	}
+	
 	@Override
 	public void buttonClick() {
-		System.out.println("buttonClick im AddPatientViewImpl");
 		for (AddPatientViewListener listener: listeners)
 			listener.buttonClick();
 	}
 	
 	@Override
 	public void addListener(AddPatientViewListener listener) {
-		System.out.println("addListener im AddPatientViewImpl");
 		listeners.add(listener);
 	}
 
@@ -136,8 +133,6 @@ public class AddPatientViewImpl extends AbsoluteLayout implements AddPatientView
 		addPatientForm.getLbl_Message().setVisible(true);
 	}
 	
-	
-	
 	public boolean check(){
 		if(this.getName()!=""){
 			return true;
@@ -146,4 +141,79 @@ public class AddPatientViewImpl extends AbsoluteLayout implements AddPatientView
 			return false;
 		}
 	}
+
+	@Override
+	public AddPatientPresenter getPresenter() {
+		return presenter;
+	}
+
+	@Override
+	public void setName(String name) {
+		addPatientForm.getTxt_Name().setValue(name);
+	}
+
+	@Override
+	public void setFirstName(String firstname) {
+		addPatientForm.getTxt_FirstName().setValue(firstname);
+	}
+
+	@Override
+	public void setStreet(String street) {
+		addPatientForm.getTxt_Street().setValue(street);
+		
+	}
+
+	@Override
+	public void setPLZ(Integer plz) {
+		addPatientForm.getTxt_PLZ().setValue(plz.toString());
+		
+	}
+
+	@Override
+	public void setCity(String city) {
+		addPatientForm.getTxt_City().setValue(city);
+	}
+
+	@Override
+	public void setPhone(String phone) {
+		addPatientForm.getTxt_Phone().setValue(phone);
+		
+	}
+
+	@Override
+	public void setMobile(String mobile) {
+		addPatientForm.getTxt_Mobile().setValue(mobile);	
+	}
+
+	@Override
+	public void setMail(String mail) {
+		addPatientForm.getTxt_Mail().setValue(mail);	
+	}
+
+	@Override
+	public void setBirthday(Date birthday) {
+		addPatientForm.getDf_Birhday().setValue(birthday.toLocalDate());
+	}
+
+	@Override
+	public void setStartdate(Date start) {
+		addPatientForm.getDf_Startdate().setValue(start.toLocalDate());
+	}
+
+	@Override
+	public void setEnddate(Date end) {
+		addPatientForm.getDf_Startdate().setValue(end.toLocalDate());
+	}
+
+	@Override
+	public void setInsurance(Insurance i) {
+		addPatientForm.getDd_Insurance().setValue(i);
+	}
+
+	@Override
+	public void setDoctor(Doctor d) {
+		addPatientForm.getDd_Doctor().setValue(d);
+	}
+	
+
 }

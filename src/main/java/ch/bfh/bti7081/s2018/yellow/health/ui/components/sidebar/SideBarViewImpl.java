@@ -67,7 +67,7 @@ public class SideBarViewImpl extends CustomComponent implements SideBarView, Cli
 	}
 	
 	private Component buildTitle() {
-	    Label logo = new Label("<strong>Dashboard</strong>",
+	    Label logo = new Label("<strong>Team-Yellow PMS</strong>",
 	            ContentMode.HTML);
 	    logo.setSizeUndefined();
 	    HorizontalLayout logoWrapper = new HorizontalLayout(logo);
@@ -76,29 +76,17 @@ public class SideBarViewImpl extends CustomComponent implements SideBarView, Cli
 	    logoWrapper.setSpacing(false);
 	    return logoWrapper;
 	}
-	
-	/*private User getCurrentUser() {
-	    return (User) VaadinSession.getCurrent()
-	            .getAttribute(User.class.getName());
-	}*/
 
 	private Component buildUserMenu() {
 	    final MenuBar settings = new MenuBar();
 	    settings.addStyleName("user-menu");
 	    //final User user = getCurrentUser();
-	    settingsItem = settings.addItem("",
-	            new ThemeResource("img/profile-pic-300px.jpg"), null);
+	    settingsItem = settings.addItem("abc",new ThemeResource("img/profile-pic-300px.jpg"), null);
 	    //updateUserName(null);
 	    settingsItem.addItem("Edit Profile", new Command() {
 	        @Override
 	        public void menuSelected(final MenuItem selectedItem) {
 	            //ProfilePreferencesWindow.open(user, false);
-	        }
-	    });
-	    settingsItem.addItem("Preferences", new Command() {
-	        @Override
-	        public void menuSelected(final MenuItem selectedItem) {
-	            //ProfilePreferencesWindow.open(user, true);
 	        }
 	    });
 	    settingsItem.addSeparator();
@@ -110,6 +98,7 @@ public class SideBarViewImpl extends CustomComponent implements SideBarView, Cli
 	    });
 	    return settings;
 	}
+	
 
 	private Component buildToggleButton() {
 	    Button valoMenuToggleButton = new Button("Menu", new ClickListener() {
@@ -136,8 +125,10 @@ public class SideBarViewImpl extends CustomComponent implements SideBarView, Cli
 	    
 	    
 	    for (final AppViewType view : AppViewType.values()) {
-	        Component menuItemComponent = new ValoMenuItemButton(view);
-	        menuItemsLayout.addComponent(menuItemComponent);
+	    	if(view.isVisible()) {
+		        Component menuItemComponent = new ValoMenuItemButton(view);
+		        menuItemsLayout.addComponent(menuItemComponent);
+	    	}
 	    }
 	    return menuItemsLayout;
 

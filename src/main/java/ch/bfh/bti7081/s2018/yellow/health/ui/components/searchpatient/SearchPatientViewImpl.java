@@ -20,6 +20,7 @@ import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.Grid.Column;
+import com.vaadin.ui.Grid.ItemClick;
 import com.vaadin.ui.Grid.SelectionMode;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.TextField;
@@ -31,8 +32,10 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.shared.ui.ValueChangeMode;
 
+import ch.bfh.bti7081.s2018.yellow.health.models.Contact;
 import ch.bfh.bti7081.s2018.yellow.health.models.Patient;
 import ch.bfh.bti7081.s2018.yellow.health.repo.PatientRepository;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchcontact.SearchContactView.SearchContactViewListener;
 
 
 @Component
@@ -63,6 +66,8 @@ public class SearchPatientViewImpl extends VerticalLayout implements SearchPatie
 		grid.setWidth("1500px");
 		grid.setHeight("600px");
 		
+		grid.addItemClickListener(e -> {itemclicked(e);});
+		
 		// Create a header row to hold column filters
 		HeaderRow filterRow = grid.appendHeaderRow();
 		layout.addComponent(grid);
@@ -89,7 +94,12 @@ public class SearchPatientViewImpl extends VerticalLayout implements SearchPatie
 			listener.filter1(text, valueProvider);
     }
 
-
+	private void itemclicked(ItemClick<Patient> e) {
+		if(e.getMouseEventDetails().isDoubleClick()) {
+			for (SearchPatientViewListener listener: listeners)
+				listener.editPatient(e.getItem());	
+		}
+    }	
 
 	public void addListener(SearchPatientViewListener listener){
 		listeners.add(listener);

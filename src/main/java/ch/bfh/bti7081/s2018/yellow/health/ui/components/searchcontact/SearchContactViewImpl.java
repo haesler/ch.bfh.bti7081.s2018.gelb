@@ -20,6 +20,7 @@ import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.Grid.Column;
+import com.vaadin.ui.Grid.ItemClick;
 import com.vaadin.ui.Grid.SelectionMode;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.TextField;
@@ -59,6 +60,8 @@ public class SearchContactViewImpl extends VerticalLayout implements SearchConta
         setMargin(false);
         setSpacing(false);
         
+        grid.addItemClickListener(e -> {itemclicked(e);});
+        
 		final VerticalLayout layout = new VerticalLayout();
 		grid.setWidth("1500px");
 		grid.setHeight("600px");
@@ -82,11 +85,19 @@ public class SearchContactViewImpl extends VerticalLayout implements SearchConta
         setComponentAlignment(layout, Alignment.MIDDLE_CENTER);		
 	}
 	
+	
 	private void refresh(String text, ValueProvider<Contact, ?> valueProvider) {
 		
 		for (SearchContactViewListener listener: listeners)
 			listener.filter1(text, valueProvider);
     }
+	
+	private void itemclicked(ItemClick<Contact> e) {
+		if(e.getMouseEventDetails().isDoubleClick()) {
+			for (SearchContactViewListener listener: listeners)
+				listener.editContact(e.getItem());	
+		}
+    }	
 
 
 

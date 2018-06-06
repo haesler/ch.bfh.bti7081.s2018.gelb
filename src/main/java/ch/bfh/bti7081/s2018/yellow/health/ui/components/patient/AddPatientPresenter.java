@@ -22,7 +22,7 @@ import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.AddPatientLayout;
 @SuppressWarnings("serial")
 public class AddPatientPresenter implements AddPatientView.AddPatientViewListener {
 
-	AddPatientLayout model;
+	Patient model;
 	AddPatientView view;
 	ContactRepository repoContact;
 	PatientRepository repoPatient;
@@ -30,24 +30,33 @@ public class AddPatientPresenter implements AddPatientView.AddPatientViewListene
 	Contact contact = new Contact();
 	User user = new User();
 	
-	
 	public AddPatientPresenter(AddPatientView view, ContactRepository repoContact, PatientRepository repoPatient){
+		this.model=model;
 		this.view=view;
 		this.repoContact=repoContact;
 		this.repoPatient=repoPatient;
-		view.addListener(this);	
-		
+		this.patient=patient;
+		view.addListener(this);
 	}
 	
-	/*public AddPatientPresenter(AddPatientView view, ContactRepository ContactRepository, PatientRepository PatientRepository){
-		this.view=view;
-		view.addListener(this);	
-		this.ContactRepository=ContactRepository;
-		this.PatientRepository=PatientRepository;
-		this.contact = new Contact();
-		this.patient = new Patient();	
+	
+	public void loadPatient(Patient patient) {
+		this.patient = patient;
+		this.contact=patient.getContact();
+		view.setName(contact.getLastname());
+		view.setFirstName(contact.getFirstname());
+		view.setStreet(contact.getStreet());
+		view.setPLZ(contact.getPlz());
+		view.setCity(contact.getCity());
+		view.setPhone(contact.getPhone());
+		view.setMobile(contact.getMobile());
+		view.setMail(contact.getMail());
+		view.setBirthday(new java.sql.Date(contact.getBirthday().getTime()));
+		view.setStartdate(new java.sql.Date(patient.getStart().getTime()));
+		view.setEnddate(new java.sql.Date(patient.getEnd().getTime()));
+		view.setDoctor(patient.getDoctor());
+		view.setInsurance(patient.getInsurance());
 	}
-	*/
 	
 	public void buttonClick() {
 		
@@ -63,6 +72,7 @@ public class AddPatientPresenter implements AddPatientView.AddPatientViewListene
 		patient.createPatient(active, view.getStartdate(), view.getEnddate(), contact, view.getInsurance(), view.getDoctor(), user);
 		repoPatient.save(patient);
 	}
+	
 	
 
 }

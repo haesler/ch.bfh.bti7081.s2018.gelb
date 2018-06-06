@@ -11,6 +11,7 @@ public interface SearchContactView extends View {
 	
 	interface SearchContactViewListener {
         void filter1(String value, ValueProvider<Contact, ?> valueProvider);
+        void editContact(Contact contact);
     }
 	
 	public void addListener(SearchContactViewListener listener);

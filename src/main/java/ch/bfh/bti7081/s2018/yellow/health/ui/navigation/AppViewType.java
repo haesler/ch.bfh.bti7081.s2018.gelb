@@ -12,24 +12,27 @@ import ch.bfh.bti7081.s2018.yellow.health.ui.components.medicament.AddMedicament
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.medication.AddMedicationView;
 
 public enum AppViewType {
-    CONTACT("Kontakte",SearchContactView.class, VaadinIcons.HOME),
-    PATIENT("Patienten",SearchPatientView.class, VaadinIcons.HOME),
-    ADDCONTACT("neuer Kontakt",AddContactView.class, VaadinIcons.HOME),
-	ADDPATIENT("Neuer Patient",AddPatientView.class, VaadinIcons.HOME),
-	MEDICAMENT("Medikamente",AddMedicamentView.class, VaadinIcons.HOME),
-	MEDICATION("Medikation",AddMedicationView.class, VaadinIcons.HOME);
-	
+    CONTACT("Kontakte",SearchContactView.class, VaadinIcons.HOME,true),
+    PATIENT("Patienten",SearchPatientView.class, VaadinIcons.HOME,true),
+	ADDPATIENT("Neuer Patient",AddPatientView.class, VaadinIcons.HOME,true),
+    ADDCONTACT("neuer Kontakt",AddContactView.class, VaadinIcons.HOME,true),
+	PATIENTEDIT("EditPatient",AddPatientView.class, VaadinIcons.HOME,false),
+	CONTACTEDIT("EditContact",AddPatientView.class, VaadinIcons.HOME,false),
+	MEDICAMENT("Medikamente",AddMedicamentView.class, VaadinIcons.HOME,true),
+	MEDICATION("Medikation",AddMedicationView.class, VaadinIcons.HOME,true);
 
     private final String viewName;
     private final Class<? extends View> viewClass;
     private final Resource icon;
+    private final boolean show;
 
-    AppViewType(final String viewName, final Class<? extends View> viewClass, final Resource icon) {
+    AppViewType(final String viewName, final Class<? extends View> viewClass, final Resource icon, final boolean show) {
         this.viewName = viewName;
         this.viewClass = viewClass;
         this.icon = icon;
+        this.show = show;
     }
-
+    
     public static AppViewType getByViewName(final String viewName) {
     	AppViewType result = null;
         for (AppViewType viewType : values()) {
@@ -39,6 +42,10 @@ public enum AppViewType {
             }
         }
         return result;
+    }
+    
+    public boolean isVisible() {
+    	return show;
     }
 
     public String getViewName() {
