@@ -37,12 +37,12 @@ public class AddMedicationPresenter implements AddMedicationView.AddMedicationVi
 			view.setNotification(true);
 		}
 	}
-	
-	public void filter11(String text, ValueProvider<Medication, ?> valueProvider) {
+	@Override
+	public void filter1(String text, ValueProvider<Medication, ?> valueProvider) {
 		if (text != null) {
-			//modelMeds.dataProvider.setFilter(valueProvider, s -> caseInsensitiveContains(s.toString(), text));
+			modelMeds.dataProvider.setFilter(valueProvider, s -> caseInsensitiveContains(s.toString(), text));
     	  } else {
-    		  //modelMeds.dataProvider.clearFilters();
+    		  modelMeds.dataProvider.clearFilters();
     	  }
 	}
 	
@@ -50,11 +50,7 @@ public class AddMedicationPresenter implements AddMedicationView.AddMedicationVi
         return where.toLowerCase().contains(what.toLowerCase());
     }
 
-	@Override
-	public void filter1(String value, ValueProvider<Medication, ?> valueProvider) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 
 }

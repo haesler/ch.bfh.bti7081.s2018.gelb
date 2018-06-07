@@ -6,7 +6,6 @@ import com.vaadin.ui.AbsoluteLayout;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.DateField;
-import com.vaadin.ui.Grid;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.declarative.Design;
@@ -31,7 +30,6 @@ public class AddMedicationLayout extends AbsoluteLayout {
 	private Label lbl_active;
 	private CheckBox ckb_active;
 	private Button bu_save;
-	private Grid gr_Medications;
 	private Label lbl_Message;
 
 	public AddMedicationLayout() {
@@ -68,10 +66,6 @@ public class AddMedicationLayout extends AbsoluteLayout {
 
 	public Button getBu_save() {
 		return bu_save;
-	}
-
-	public Grid getGr_Medications() {
-		return gr_Medications;
 	}
 
 	public Label getLbl_Message() {

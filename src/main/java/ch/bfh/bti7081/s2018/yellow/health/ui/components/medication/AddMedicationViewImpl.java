@@ -28,6 +28,7 @@ public class AddMedicationViewImpl extends AbsoluteLayout implements AddMedicati
 	List<AddMedicationViewListener> listeners = new ArrayList<AddMedicationViewListener>();
 	private AddMedicationPresenter presenter;
 	private AddMedicationLayout layout;
+	Grid<Medication> grid = new Grid<Medication>(Medication.class);
 
 	@Autowired	
 	public AddMedicationViewImpl(AddMedicationModel service, AddMedicationModel modelMeds){
@@ -36,15 +37,14 @@ public class AddMedicationViewImpl extends AbsoluteLayout implements AddMedicati
 		layout.getBu_save().addClickListener(e -> this.buttonClick());
 		addComponent(layout);
 		this.presenter = new AddMedicationPresenter(service, modelMeds, this);
-		//loadGridView();
+		loadGridView();
 	}
 	
 	private void loadGridView(){
-		Grid<Medication> grid = getGrid();
-		
+
 		// Create a header row to hold column filters
 		HeaderRow filterRow = grid.appendHeaderRow();
-		grid.setColumns("medicationID");
+		grid.setColumns("medicationID","start", "end", "active");
 		for (Column<Medication, ?> pid: grid.getColumns()) {
 		    HeaderCell cell = filterRow.getCell(pid.getId());
 		    final TextField filter = new TextField();
@@ -53,7 +53,10 @@ public class AddMedicationViewImpl extends AbsoluteLayout implements AddMedicati
 		    filter.addStyleName(ValoTheme.TEXTFIELD_TINY);
 		    cell.setComponent(filter);
 		}
-		addComponent(grid);
+		addComponent(grid, "left: 555px; top: 150px;");
+
+		
+		
 	}
 	
 	private void refresh(String text, ValueProvider<Medication, ?> valueProvider) {
@@ -103,12 +106,9 @@ public class AddMedicationViewImpl extends AbsoluteLayout implements AddMedicati
 
 	@Override
 	public Grid getGrid() {
-		return layout.getGr_Medications();	
+		return grid;
 	}
 	
-	public Medication getMedication(){
-		return (Medication) layout.getGr_Medications().getSelectedItems();
-	}
 	
 	@Override
 	public void showMedications(List<Medication> medications) {
