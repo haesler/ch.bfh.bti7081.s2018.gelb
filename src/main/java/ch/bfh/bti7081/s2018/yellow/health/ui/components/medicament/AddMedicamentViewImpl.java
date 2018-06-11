@@ -15,6 +15,7 @@ import ch.bfh.bti7081.s2018.yellow.health.models.Medicament;
 import ch.bfh.bti7081.s2018.yellow.health.repo.MedicamentRepository;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchcontact.SearchContactModel;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchcontact.SearchContactPresenter;
+import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.AddContactLayout;
 import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.AddMedicamentLayout;
 
 @Component
@@ -86,7 +87,9 @@ public class AddMedicamentViewImpl extends AbsoluteLayout implements AddMedicame
 
 	@Override
 	public void showMedicaments(List<Medicament> medicaments) {
-		
-		
+	}
+	
+	public AddMedicamentLayout getLayout(){
+		return layout;
 	}
 }

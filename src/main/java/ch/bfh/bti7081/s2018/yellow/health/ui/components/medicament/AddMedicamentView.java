@@ -7,6 +7,8 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 
 import ch.bfh.bti7081.s2018.yellow.health.models.Medicament;
+import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.AddContactLayout;
+import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.AddMedicamentLayout;
 
 public interface AddMedicamentView extends View {
 	
@@ -16,7 +18,7 @@ public interface AddMedicamentView extends View {
 	
 	public void addListener(AddMedicamentViewListener listener);
 	public void showMedicaments(List<Medicament> medicaments);
-	
+	AddMedicamentLayout getLayout();
 	void setNotification();
 	void buttonClick();
 	
