@@ -4,6 +4,7 @@ import java.sql.Date;
 
 import com.vaadin.navigator.View;
 
+import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.AddContactLayout;
 import ch.bfh.bti7081.s2018.yellow.health.models.Contact;
 
 public interface AddContactView extends View{
@@ -19,16 +20,17 @@ public interface AddContactView extends View{
 	String getName();
 	String getFirstName();
 	String getStreet();
-	Integer getPLZ();
+	String getPLZ();
 	String getCity();
 	String getPhone();
 	String getMobile();
 	String getMail();
 	Date getBirthday();
+	AddContactLayout getLayout();
 	void setName(String name);
 	void setFirstName(String firstname);
 	void setStreet(String street);
-	void setPLZ(Integer plz);
+	void setPLZ(String plz);
 	void setCity(String city);
 	void setPhone(String phone);
 	void setMobile(String mobile);
