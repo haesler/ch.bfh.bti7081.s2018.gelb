@@ -2,6 +2,7 @@ package ch.bfh.bti7081.s2018.yellow.health.models;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
 import java.util.List;
 
 
@@ -75,7 +76,12 @@ public class Medicament implements Serializable {
 		return medication;
 	}
 	
-	public void createMedicament(String name, String description){
+	public void createMedicament(){
+		this.setName("");
+		this.setDescription("");
+	}
+	
+	public void setInfo(String name, String description){
 		this.setName(name);
 		this.setDescription(description);
 	}

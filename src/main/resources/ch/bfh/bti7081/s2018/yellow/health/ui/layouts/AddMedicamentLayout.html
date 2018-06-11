@@ -7,51 +7,62 @@
  </head>
  <body>
   <vaadin-absolute-layout>
-   <vaadin-label visible="false" style-name="failure" width="542px" height="50px" plain-text _id="lbl_Message" :top="664px" :left="243px">
-     Please fill out the required fields 
-   </vaadin-label>
    <vaadin-horizontal-layout>
-    <vaadin-vertical-layout size-auto>
-     <vaadin-horizontal-layout spacing="false" width="461px">
+    <vaadin-vertical-layout size-auto itemtype="">
+     <vaadin-horizontal-layout responsive width="1103px" margin-left>
       <vaadin-label style-name="h1" responsive height="48px" plain-text>
         Medicament 
       </vaadin-label>
-      <vaadin-button style-name="friendly" responsive plain-text _id="bu_save" :middle :right>
-        Save 
-      </vaadin-button>
+      <vaadin-label visible="false" style-name="failure" responsive width="286px" height="38px" plain-text _id="lbl_Message" :bottom :right></vaadin-label>
      </vaadin-horizontal-layout>
-     <vaadin-horizontal-layout>
-      <vaadin-grid-layout spacing width="546px" height="497px">
-       <row>
-        <column>
-         <vaadin-label style-name="light" plain-text _id="lbl_Name">
-           Name 
-         </vaadin-label>
-        </column>
-        <column>
-         <vaadin-text-field width="284px" _id="txt_Name"></vaadin-text-field>
-        </column>
-       </row>
-       <row>
-        <column>
-         <vaadin-label style-name="light" plain-text _id="lbl_Description">
-           Description 
-         </vaadin-label>
-        </column>
-        <column>
-         <vaadin-text-area width="286px" height="346px" _id="txt_Description"></vaadin-text-area>
-        </column>
-       </row>
-       <row></row>
-       <row></row>
-       <row></row>
-       <row></row>
-       <row></row>
-       <row></row>
-       <row></row>
-       <row></row>
-      </vaadin-grid-layout>
-      <vaadin-grid _id="gr_Medicaments"></vaadin-grid>
+     <vaadin-horizontal-layout height="614px">
+      <vaadin-vertical-layout size-auto>
+       <vaadin-horizontal-layout width="676px">
+        <vaadin-button responsive plain-text _id="bu_new">
+          New 
+        </vaadin-button>
+        <vaadin-horizontal-layout :right>
+         <vaadin-button style-name="danger" responsive plain-text _id="bu_delete">
+           Delete 
+         </vaadin-button>
+        </vaadin-horizontal-layout>
+       </vaadin-horizontal-layout>
+       <vaadin-grid responsive width="675px" height="491px" data-item-type="ch.bfh.bti7081.s2018.yellow.health.models.Medicament" frozen-columns="2" _id="gr_Medicaments">
+        <table>
+         <colgroup>
+          <col column-id="name" sortable>
+          <col column-id="description" sortable>
+         </colgroup>
+         <thead>
+          <tr default>
+           <th plain-text column-ids="name">Name</th>
+           <th plain-text column-ids="description">Description</th>
+          </tr>
+         </thead>
+         <tbody></tbody>
+        </table>
+       </vaadin-grid>
+      </vaadin-vertical-layout>
+      <vaadin-vertical-layout size-auto>
+       <vaadin-horizontal-layout width="187px">
+        <vaadin-button style-name="friendly" responsive plain-text _id="bu_save" :right>
+          Save 
+        </vaadin-button>
+        <vaadin-button responsive plain-text _id="bu_cancel" :right>
+          Cancel 
+        </vaadin-button>
+       </vaadin-horizontal-layout>
+       <vaadin-form-layout responsive width-auto height="528px" margin-right margin-top="false" margin-bottom="false" _id="fl_edit">
+        <vaadin-label style-name="light" plain-text _id="lbl_Name">
+          Name 
+        </vaadin-label>
+        <vaadin-text-field width="284px" _id="txt_Name"></vaadin-text-field>
+        <vaadin-label style-name="light" plain-text _id="lbl_Description">
+          Description 
+        </vaadin-label>
+        <vaadin-text-area width="286px" height="346px" _id="txt_Description"></vaadin-text-area>
+       </vaadin-form-layout>
+      </vaadin-vertical-layout>
      </vaadin-horizontal-layout>
     </vaadin-vertical-layout>
    </vaadin-horizontal-layout>
