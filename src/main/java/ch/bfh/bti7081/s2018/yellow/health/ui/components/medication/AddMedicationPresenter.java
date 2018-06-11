@@ -31,8 +31,9 @@ public class AddMedicationPresenter implements AddMedicationView.AddMedicationVi
 			view.setNotification(false);
 			
 			//temp Paitent hardcoded, have to get the active patient
-			//Patient patient = new Patient();
-			//medication.createMedication(view.getMedicament(), patient, view.getActive(), view.getEndDate(), view.getStartDate(), view.getUsage());
+			Patient patient = new Patient();
+			patient.setPatientID(1);
+			medication.createMedication(view.getMedicament(), patient, view.getActive(), view.getEndDate(), view.getStartDate(), view.getUsage());
 			model.repo.save(medication);
 			model.dataProvider.refreshAll();
 		}else{

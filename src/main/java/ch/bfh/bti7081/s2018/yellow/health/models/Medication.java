@@ -26,6 +26,7 @@ public class Medication implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date start;
 
+	@Column(name="`usage`")
 	private String usage;
 
 	//bi-directional many-to-one association to Medicament
@@ -95,6 +96,15 @@ public class Medication implements Serializable {
 
 	public void setPatient(Patient patient) {
 		this.patient = patient;
+	}
+
+	public void createMedication(Medicament Medicament, Patient Patient, byte active, Date End, Date Start, String Usage){
+		this.setMedicament(Medicament);
+		this.setPatient(Patient);
+		this.setActive(active);
+		this.setEnd(End);
+		this.setStart(Start);
+		this.setUsage(Usage);		
 	}
 
 }

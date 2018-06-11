@@ -3,6 +3,7 @@ package ch.bfh.bti7081.s2018.yellow.health.ui.components.medication;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -85,7 +86,7 @@ public class AddMedicationViewImpl extends AbsoluteLayout implements AddMedicati
 
 	@Override
 	public String getUsage() {
-		return layout.getTxt_usage().getValue();
+		return layout.getTxt_usage().getValue().toString();
 	}
 
 	@Override
@@ -108,6 +109,12 @@ public class AddMedicationViewImpl extends AbsoluteLayout implements AddMedicati
 	@Override
 	public Grid getGrid() {
 		return grid;
+	}
+	
+	public Medicament getMedicament(){
+		
+		Set<Medicament> set = grid.getSelectedItems();
+		return set.iterator().next();
 	}
 	
 	
