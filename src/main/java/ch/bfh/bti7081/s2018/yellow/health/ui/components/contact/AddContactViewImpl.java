@@ -10,6 +10,7 @@ import com.vaadin.ui.AbsoluteLayout;
 
 import ch.bfh.bti7081.s2018.yellow.health.repo.ContactRepository;
 import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.AddContactLayout;
+import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.AddPatientLayout;
 
 @SuppressWarnings("serial")
 @Component
@@ -58,8 +59,8 @@ public class AddContactViewImpl extends AbsoluteLayout implements AddContactView
 	}
 
 	@Override
-	public Integer getPLZ() {
-		return Integer.parseInt(addContactForm.getTxt_PLZ().getValue());
+	public String getPLZ() {
+		return addContactForm.getTxt_PLZ().getValue();
 	}
 
 	@Override
@@ -99,6 +100,10 @@ public class AddContactViewImpl extends AbsoluteLayout implements AddContactView
 			return false;
 		}
 	}
+	
+	public AddContactLayout getLayout(){
+		return addContactForm;
+	}
 
 	@Override
 	public void setName(String name) {
@@ -117,7 +122,7 @@ public class AddContactViewImpl extends AbsoluteLayout implements AddContactView
 	}
 
 	@Override
-	public void setPLZ(Integer plz) {
+	public void setPLZ(String plz) {
 		addContactForm.getTxt_PLZ().setValue(plz.toString());
 		
 	}
@@ -150,5 +155,7 @@ public class AddContactViewImpl extends AbsoluteLayout implements AddContactView
 	public void setBirthday(Date birthday) {
 		addContactForm.getDf_Birhday().setValue(birthday.toLocalDate());
 	}
+
+	
 
 }
