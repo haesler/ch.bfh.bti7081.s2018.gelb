@@ -21,6 +21,7 @@ public class Contact implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int contactID;
 
+	@Temporal(TemporalType.DATE)
 	private Date birthday;
 
 	private String city;
@@ -35,7 +36,7 @@ public class Contact implements Serializable {
 
 	private String phone;
 
-	private int plz;
+	private String plz;
 
 	private String street;
 
@@ -66,7 +67,7 @@ public class Contact implements Serializable {
 		return this.birthday;
 	}
 
-	public void setBirthday(java.sql.Date date) {
+	public void setBirthday(Date date) {
 		this.birthday = date;
 	}
 
@@ -118,11 +119,11 @@ public class Contact implements Serializable {
 		this.phone = phone;
 	}
 
-	public int getPlz() {
+	public String getPlz() {
 		return this.plz;
 	}
 
-	public void setPlz(int plz) {
+	public void setPlz(String plz) {
 		this.plz = plz;
 	}
 
@@ -187,7 +188,7 @@ public class Contact implements Serializable {
 	}
 	
 	//Temp save all attribute
-	public void createContact(String fn, String ln, String str, int plz, String City, String Phone, String Mobile, String Mail, java.sql.Date date){
+	public void createContact(String fn, String ln, String str, String plz, String City, String Phone, String Mobile, String Mail, java.sql.Date date){
 		this.setFirstname(fn);
 		this.setLastname(ln);
 		this.setStreet(str);

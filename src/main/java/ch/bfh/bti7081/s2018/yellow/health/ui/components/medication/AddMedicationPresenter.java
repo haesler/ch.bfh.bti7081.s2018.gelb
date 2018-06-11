@@ -4,6 +4,7 @@ import com.vaadin.data.ValueProvider;
 
 
 import ch.bfh.bti7081.s2018.yellow.health.models.Medication;
+import ch.bfh.bti7081.s2018.yellow.health.models.Patient;
 
 public class AddMedicationPresenter implements AddMedicationView.AddMedicationViewListener {
 

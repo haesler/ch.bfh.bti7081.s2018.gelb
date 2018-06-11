@@ -7,7 +7,7 @@
  </head>
  <body>
   <vaadin-absolute-layout>
-   <vaadin-label visible="false" style-name="failure" width="542px" height="50px" plain-text _id="lbl_Message" :top="664px" :left="243px">
+   <vaadin-label visible="false" style-name="failure" width="542px" height="50px" plain-text _id="lbl_Message" :top="820px" :left="64px">
      Please fill out the required fields 
    </vaadin-label>
    <vaadin-grid-layout width="1261px" height="687px" :top="133px" :left="64px">
@@ -63,7 +63,7 @@
          </vaadin-label>
         </column>
         <column>
-         <vaadin-text-field width="284px" _id="txt_PLZ"></vaadin-text-field>
+         <vaadin-text-field width="284px" maxlength="4" _id="txt_PLZ"></vaadin-text-field>
         </column>
        </row>
        <row>
@@ -155,11 +155,7 @@
          </vaadin-label>
         </column>
         <column>
-         <vaadin-native-select data-item-type="java.lang.String" _id="dd_Insurance">
-          <option item="Option1">Option 1</option>
-          <option item="Option2">Option 2</option>
-          <option item="Option3">Option 3</option>
-         </vaadin-native-select>
+         <vaadin-native-select data-item-type="ch.bfh.bti7081.s2018.yellow.health.models.Insurance" _id="dd_Insurance"></vaadin-native-select>
         </column>
        </row>
        <row>
@@ -169,11 +165,7 @@
          </vaadin-label>
         </column>
         <column>
-         <vaadin-native-select data-item-type="java.lang.String" _id="dd_Doctor">
-          <option item="Option1">Option 1</option>
-          <option item="Option2">Option 2</option>
-          <option item="Option3">Option 3</option>
-         </vaadin-native-select>
+         <vaadin-native-select data-item-type="ch.bfh.bti7081.s2018.yellow.health.models.Doctor" _id="dd_Doctor"></vaadin-native-select>
         </column>
        </row>
       </vaadin-grid-layout>

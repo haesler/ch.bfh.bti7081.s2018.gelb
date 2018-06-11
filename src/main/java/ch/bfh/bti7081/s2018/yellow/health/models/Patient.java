@@ -179,11 +179,11 @@ public class Patient implements Serializable {
 		this.contact.setStreet(street);
 	}
 	
-	public int getPlz() {
+	public String getPlz() {
 		return this.contact.getPlz();
 	}
 
-	public void setPlz(int plz ) {
+	public void setPlz(String plz ) {
 		this.contact.setPlz(plz);
 	}
 	

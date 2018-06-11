@@ -32,12 +32,11 @@ public class AddMedicationViewImpl extends AbsoluteLayout implements AddMedicati
 
 	@Autowired	
 	public AddMedicationViewImpl(AddMedicationModel service, AddMedicationModel modelMeds){
-	
 		layout = new AddMedicationLayout();
 		layout.getBu_save().addClickListener(e -> this.buttonClick());
-		addComponent(layout);
 		this.presenter = new AddMedicationPresenter(service, modelMeds, this);
 		loadGridView();
+		addComponent(layout);
 	}
 	
 	private void loadGridView(){
