@@ -12,7 +12,9 @@ import org.springframework.stereotype.Component;
 import com.vaadin.server.Resource;
 import com.vaadin.ui.AbsoluteLayout;
 import com.vaadin.ui.Alignment;
+import com.vaadin.ui.DateField;
 import com.vaadin.ui.NativeSelect;
+import com.vaadin.ui.TextField;
 
 import ch.bfh.bti7081.s2018.yellow.health.models.Doctor;
 import ch.bfh.bti7081.s2018.yellow.health.models.Insurance;
@@ -34,7 +36,7 @@ public class AddPatientViewImpl extends AbsoluteLayout implements AddPatientView
 	
 	@Autowired
 	public AddPatientViewImpl(ContactRepository repoContact, PatientRepository repoPatient, DoctorRepository repoDoctor, InsuranceRepository repoInsurance){
-        this.presenter=new AddPatientPresenter(this, repoContact, repoPatient);
+        presenter=new AddPatientPresenter(this, repoContact, repoPatient);
         addPatientForm = new AddPatientLayout();
         addPatientForm.getBut_Save().addClickListener(e -> this.buttonClick());
         addPatientForm.getBut_Save().setClickShortcut(KeyCode.ENTER);
@@ -80,8 +82,8 @@ public class AddPatientViewImpl extends AbsoluteLayout implements AddPatientView
 	}
 
 	@Override
-	public Integer getPLZ() {
-		return Integer.parseInt(addPatientForm.getTxt_PLZ().getValue());
+	public String getPLZ() {
+		return addPatientForm.getTxt_PLZ().getValue();
 	}
 
 	@Override
@@ -133,6 +135,10 @@ public class AddPatientViewImpl extends AbsoluteLayout implements AddPatientView
 		addPatientForm.getLbl_Message().setVisible(true);
 	}
 	
+	public AddPatientLayout getLayout(){
+		return addPatientForm;
+	}
+	
 	public boolean check(){
 		if(this.getName()!=""){
 			return true;
@@ -144,76 +150,85 @@ public class AddPatientViewImpl extends AbsoluteLayout implements AddPatientView
 
 	@Override
 	public AddPatientPresenter getPresenter() {
-		return presenter;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public void setName(String name) {
-		addPatientForm.getTxt_Name().setValue(name);
-	}
-
-	@Override
-	public void setFirstName(String firstname) {
-		addPatientForm.getTxt_FirstName().setValue(firstname);
-	}
-
-	@Override
-	public void setStreet(String street) {
-		addPatientForm.getTxt_Street().setValue(street);
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void setPLZ(Integer plz) {
-		addPatientForm.getTxt_PLZ().setValue(plz.toString());
+	public void setFirstName(String firstname) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setStreet(String street) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setPLZ(String plz) {
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void setCity(String city) {
-		addPatientForm.getTxt_City().setValue(city);
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void setPhone(String phone) {
-		addPatientForm.getTxt_Phone().setValue(phone);
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void setMobile(String mobile) {
-		addPatientForm.getTxt_Mobile().setValue(mobile);	
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void setMail(String mail) {
-		addPatientForm.getTxt_Mail().setValue(mail);	
-	}
-
-	@Override
-	public void setBirthday(Date birthday) {
-		addPatientForm.getDf_Birhday().setValue(birthday.toLocalDate());
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void setStartdate(Date start) {
-		addPatientForm.getDf_Startdate().setValue(start.toLocalDate());
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void setEnddate(Date end) {
-		addPatientForm.getDf_Startdate().setValue(end.toLocalDate());
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void setInsurance(Insurance i) {
-		addPatientForm.getDd_Insurance().setValue(i);
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void setDoctor(Doctor d) {
-		addPatientForm.getDd_Doctor().setValue(d);
+		// TODO Auto-generated method stub
+		
 	}
-	
 
+	@Override
+	public void setBirthday(Date date) {
+		// TODO Auto-generated method stub
+		
+	}
 }

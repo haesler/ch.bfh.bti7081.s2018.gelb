@@ -4,9 +4,12 @@ import java.sql.Date;
 import java.time.LocalDate;
 
 import com.vaadin.navigator.View;
+import com.vaadin.ui.DateField;
+import com.vaadin.ui.TextField;
 
 import ch.bfh.bti7081.s2018.yellow.health.models.Doctor;
 import ch.bfh.bti7081.s2018.yellow.health.models.Insurance;
+import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.AddPatientLayout;
 
 public interface AddPatientView extends View{
 	
@@ -21,7 +24,7 @@ public interface AddPatientView extends View{
 	String getName();
 	String getFirstName();
 	String getStreet();
-	Integer getPLZ();
+	String getPLZ();
 	String getCity();
 	String getPhone();
 	String getMobile();
@@ -30,7 +33,7 @@ public interface AddPatientView extends View{
 	void setName(String name);
 	void setFirstName(String firstname);
 	void setStreet(String street);
-	void setPLZ(Integer plz);
+	void setPLZ(String plz);
 	void setCity(String city);
 	void setPhone(String phone);
 	void setMobile(String mobile);
@@ -42,6 +45,9 @@ public interface AddPatientView extends View{
 	void setBirthday(Date date);
 	Date getStartdate();
 	Date getEnddate();
+	AddPatientLayout getLayout();
+	
 	Insurance getInsurance();
 	Doctor getDoctor();
+	
 }
