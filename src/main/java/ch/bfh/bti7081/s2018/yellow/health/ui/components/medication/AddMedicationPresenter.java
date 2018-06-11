@@ -2,23 +2,24 @@ package ch.bfh.bti7081.s2018.yellow.health.ui.components.medication;
 
 import com.vaadin.data.ValueProvider;
 
-
+import ch.bfh.bti7081.s2018.yellow.health.models.Medicament;
 import ch.bfh.bti7081.s2018.yellow.health.models.Medication;
 import ch.bfh.bti7081.s2018.yellow.health.models.Patient;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.medicament.AddMedicamentModel;
 
 public class AddMedicationPresenter implements AddMedicationView.AddMedicationViewListener {
 
 	AddMedicationViewImpl view;
 	AddMedicationModel model;
-	AddMedicationModel modelMeds;
+	AddMedicamentModel modelMeds;
 	Medication medication = new Medication();
 	
-	public AddMedicationPresenter(AddMedicationModel model, AddMedicationModel modelMeds, AddMedicationViewImpl view){
+	public AddMedicationPresenter(AddMedicationModel model, AddMedicamentModel modelMeds, AddMedicationViewImpl view){
 		this.view = view;
 		this.model = model;
 		this.modelMeds = modelMeds;
 		
-		view.showMedications(modelMeds.medication);
+		view.showMedicaments(modelMeds.medicaments);
 		view.addListener(this);
 		view.getGrid().setDataProvider(modelMeds.dataProvider);
 	}
@@ -39,7 +40,7 @@ public class AddMedicationPresenter implements AddMedicationView.AddMedicationVi
 		}
 	}
 	@Override
-	public void filter1(String text, ValueProvider<Medication, ?> valueProvider) {
+	public void filter1(String text, ValueProvider<Medicament, ?> valueProvider) {
 		if (text != null) {
 			modelMeds.dataProvider.setFilter(valueProvider, s -> caseInsensitiveContains(s.toString(), text));
     	  } else {

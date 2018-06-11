@@ -16,7 +16,9 @@ import com.vaadin.ui.components.grid.HeaderCell;
 import com.vaadin.ui.components.grid.HeaderRow;
 import com.vaadin.ui.themes.ValoTheme;
 
+import ch.bfh.bti7081.s2018.yellow.health.models.Medicament;
 import ch.bfh.bti7081.s2018.yellow.health.models.Medication;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.medicament.AddMedicamentModel;
 import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.AddMedicationLayout;
 
 
@@ -28,10 +30,10 @@ public class AddMedicationViewImpl extends AbsoluteLayout implements AddMedicati
 	List<AddMedicationViewListener> listeners = new ArrayList<AddMedicationViewListener>();
 	private AddMedicationPresenter presenter;
 	private AddMedicationLayout layout;
-	Grid<Medication> grid = new Grid<Medication>(Medication.class);
+	Grid<Medicament> grid = new Grid<Medicament>(Medicament.class);
 
 	@Autowired	
-	public AddMedicationViewImpl(AddMedicationModel service, AddMedicationModel modelMeds){
+	public AddMedicationViewImpl(AddMedicationModel service, AddMedicamentModel modelMeds){
 		layout = new AddMedicationLayout();
 		layout.getBu_save().addClickListener(e -> this.buttonClick());
 		this.presenter = new AddMedicationPresenter(service, modelMeds, this);
@@ -43,8 +45,8 @@ public class AddMedicationViewImpl extends AbsoluteLayout implements AddMedicati
 
 		// Create a header row to hold column filters
 		HeaderRow filterRow = grid.appendHeaderRow();
-		grid.setColumns("medicationID","start", "end", "active");
-		for (Column<Medication, ?> pid: grid.getColumns()) {
+		grid.setColumns("name", "description");
+		for (Column<Medicament, ?> pid: grid.getColumns()) {
 		    HeaderCell cell = filterRow.getCell(pid.getId());
 		    final TextField filter = new TextField();
 		    filter.setPlaceholder("Filter");
@@ -58,7 +60,7 @@ public class AddMedicationViewImpl extends AbsoluteLayout implements AddMedicati
 		
 	}
 	
-	private void refresh(String text, ValueProvider<Medication, ?> valueProvider) {
+	private void refresh(String text, ValueProvider<Medicament, ?> valueProvider) {
 		for (AddMedicationViewListener listener: listeners)
 			listener.filter1(text, valueProvider);
 		
@@ -110,7 +112,7 @@ public class AddMedicationViewImpl extends AbsoluteLayout implements AddMedicati
 	
 	
 	@Override
-	public void showMedications(List<Medication> medications) {
+	public void showMedicaments(List<Medicament> medicament) {
 				
 	}
 	
