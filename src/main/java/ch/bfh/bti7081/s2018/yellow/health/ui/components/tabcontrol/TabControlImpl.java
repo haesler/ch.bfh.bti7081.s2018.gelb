@@ -76,24 +76,37 @@ public class TabControlImpl extends VerticalLayout implements TabControl {
 		layout.addComponent(close);
 		layout.setComponentAlignment(close, Alignment.TOP_RIGHT);
 		
+		HorizontalLayout bottom = new HorizontalLayout(); 
+		bottom.setSizeUndefined();
+		
 		Button save = new Button("Speichern");
 		save.setId("save");
 		save.setSizeUndefined();
 		save.addClickListener(e -> this.buttonClick(e.getButton()));
+		bottom.addComponent(save);
+		
 		
 		notification = new Label("");
-		notification.setSizeUndefined();
+		//notification.addStyleName("failure");
+		notification.setSizeFull();
+		bottom.addComponent(notification);
 		
+		bottom.setExpandRatio(notification, 1.0f);
 		
         addComponent(layout);
         setExpandRatio(layout, 1.0f);
-        addComponent(save);
-        addComponent(notification);
+        addComponent(bottom);
 		setComponentAlignment(layout, Alignment.TOP_CENTER);
 		
 		setSizeFull();
 		
 		this.presenter = new TabPresenter(this);
+		
+		for (TabControlListener listener: listeners) {
+			listener.setMainpage(this.tabpage_1.getPresenter());
+			listener.addTabpage(this.tabpage_2.getPresenter());
+			listener.addTabpage(this.tabpage_3.getPresenter());
+		}
 		
 	}
 
@@ -130,5 +143,12 @@ public class TabControlImpl extends VerticalLayout implements TabControl {
 	@Override
 	public AddMedicationViewImpl getTabpage3() {
 		return tabpage_3;
+	}
+
+	@Override
+	public void setNotification(String value,boolean visible) {
+		notification.setVisible(visible);
+		notification.setValue(value);
+		
 	}
 }

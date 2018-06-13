@@ -15,9 +15,8 @@ public interface TabControl extends View {
 	
 	interface TabControlListener {
         void buttonClick(String buttonName);
-        void valueChange(String txtFieldName, String value);
-        void loadPatient(Patient patient);
-        void savePatient();
+        void addTabpage(Tabpage page);
+        void setMainpage(Tabpage main);
     }
 	
 	public void addListener(TabControlListener listener);
@@ -28,5 +27,6 @@ public interface TabControl extends View {
 	public AddPatientViewImpl getTabpage1();
 	public AddPatientViewImpl getTabpage2();
 	public AddMedicationViewImpl getTabpage3();
+	public void setNotification(String value,boolean visible);
 
 }

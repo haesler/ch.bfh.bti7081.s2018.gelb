@@ -1,6 +1,8 @@
 package ch.bfh.bti7081.s2018.yellow.health.ui.components.tabcontrol;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder.Case;
 
@@ -17,15 +19,17 @@ public class TabPresenter implements TabControl.TabControlListener {
 	
 	private Patient patient;
 	private TabControl tabview;
+	private Tabpage mainpage;
+	private List<Tabpage> tabpages = new ArrayList<Tabpage>();
 	
 	
 	public TabPresenter(TabControl tabview) {
 		this.tabview = tabview;
-		System.out.println("TabPresenter constructor");
+		
+		tabview.setNotification("TEST", true);
 		
 		tabview.addListener(this);
 	}
-	
 	
 	@Override
 	public void buttonClick(String buttonName) {
@@ -40,35 +44,57 @@ public class TabPresenter implements TabControl.TabControlListener {
 		
 	}
 
-	@Override
-	public void valueChange(String txtFieldName, String value) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void loadPatient(Patient patient) {
 		this.patient = patient;
 		
-		tabview.getTabpage1().getPresenter().setPatient(patient);
-		tabview.getTabpage1().getPresenter().loadPatient();
-		//tabview.getTabpage2().getPresenter().loadPatient(patient);
-		tabview.getTabpage3().getPresenter().setPatient(patient);
-		tabview.getTabpage3().getPresenter().loadPatient();
+		mainpage.setPatient(patient);
+		mainpage.loadPatient();
+		
+		for(Tabpage page : tabpages) {
+			page.setPatient(patient);
+			page.loadPatient();
+		}
 		
 	}
 	
-	@Override
 	public void savePatient() {
-		//todo CheckInput
+		if(checkInput()) {
+			patient = mainpage.save();
+			
+			for(Tabpage page : tabpages) {
+				page.setPatient(patient);
+				page.loadPatient();
+			}	
+		}
 		
-		patient = tabview.getTabpage1().getPresenter().save();
-		//tabview.getTabpage2().getPresenter().setPatient(patient);
-		tabview.getTabpage3().getPresenter().setPatient(patient);
+	}
+	
+	public boolean checkInput() {
+		if (!mainpage.checkInput()) {
+			tabview.setNotification("Bitte überprüfen Sie Ihre Eingaben", true);
+			return false;
+		}
 		
-		tabview.getTabpage2().getPresenter().save();
-		tabview.getTabpage3().getPresenter().save();
+		for(Tabpage page : tabpages) {
+			if(!page.checkInput()) {
+				tabview.setNotification("Bitte überprüfen Sie Ihre Eingaben", true);
+				return false;
+			}
+		}
 		
+		tabview.setNotification("", false);
+		return true;
+	}
+	
+	@Override
+	public void addTabpage(Tabpage page) {
+		this.tabpages.add(page);
+	}
+
+
+	@Override
+	public void setMainpage(Tabpage main) {
+		this.mainpage = main;
 	}
 
 }
