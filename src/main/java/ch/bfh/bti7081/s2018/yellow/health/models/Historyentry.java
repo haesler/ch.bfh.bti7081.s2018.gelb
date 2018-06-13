@@ -60,7 +60,7 @@ public class Historyentry implements Serializable {
 		return this.date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(java.sql.Date date) {
 		this.date = date;
 	}
 
@@ -108,6 +108,14 @@ public class Historyentry implements Serializable {
 
 	public void setPatient(Patient patient) {
 		this.patient = patient;
+	}
+	
+	public void createEntry(Patient patient, String title, String entry, byte active, java.sql.Date date) {
+		this.setPatient(patient);
+		this.setTitle(title);
+		this.setEntry(entry);
+		this.setActive(active);
+		this.setDate(date);
 	}
 
 }
