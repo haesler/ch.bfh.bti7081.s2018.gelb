@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:true,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-vertical-split-panel split-position="7.2%">
+    <vaadin-vertical-layout spacing="false" responsive size-full margin="false">
+     <vaadin-label style-name="h1" responsive plain-text _id="lbl_title" :center>
+       History of User 
+     </vaadin-label>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-split-panel split-position="15.3%">
+     <vaadin-vertical-layout spacing="false" responsive size-full margin="false">
+      <vaadin-grid-layout responsive width="438px" height-full :center>
+       <row>
+        <column>
+         <vaadin-label plain-text _id="lbl_DateNew">
+           Date 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-date-field width="311px" _id="dt_DateNew" :right></vaadin-date-field>
+        </column>
+       </row>
+       <row>
+        <column>
+         <vaadin-label plain-text _id="lbl_TitleNew">
+           Title 
+         </vaadin-label>
+        </column>
+        <column>
+         <vaadin-text-field width="311px" _id="txt_TitleNew" :right></vaadin-text-field>
+        </column>
+       </row>
+       <row>
+        <column></column>
+        <column>
+         <vaadin-upload button-caption="Add attachement" responsive width="311px" _id="upl_UploadNew" :right></vaadin-upload>
+        </column>
+       </row>
+      </vaadin-grid-layout>
+     </vaadin-vertical-layout>
+     <vaadin-vertical-split-panel split-position="29.4%">
+      <vaadin-vertical-layout spacing="false" responsive size-full margin="false">
+       <vaadin-grid-layout responsive width="436px" height-full :center>
+        <row>
+         <column>
+          <vaadin-label plain-text _id="lbl_DescriptionNew">
+            Description 
+          </vaadin-label>
+         </column>
+         <column>
+          <vaadin-text-area width="310px" height-full _id="txt_DescNew" :right></vaadin-text-area>
+         </column>
+        </row>
+       </vaadin-grid-layout>
+      </vaadin-vertical-layout>
+      <vaadin-vertical-split-panel split-position="8.7%">
+       <vaadin-vertical-layout spacing="false" responsive size-full margin="false">
+        <vaadin-vertical-layout spacing="false" width="439px" height-full margin="false" :center>
+         <vaadin-label visible="false" style-name="failure" responsive width="99px" plain-text _id="lbl_Notify">
+           Label 
+         </vaadin-label>
+        </vaadin-vertical-layout>
+       </vaadin-vertical-layout>
+       <vaadin-vertical-layout spacing="false" responsive size-full margin="false">
+        <vaadin-accordion width="436px" height-full :center>
+         <tab caption="Tab" selected>
+          <vaadin-grid-layout></vaadin-grid-layout>
+         </tab>
+        </vaadin-accordion>
+       </vaadin-vertical-layout>
+      </vaadin-vertical-split-panel>
+     </vaadin-vertical-split-panel>
+    </vaadin-vertical-split-panel>
+   </vaadin-vertical-split-panel>
+  </vaadin-vertical-layout>
+ </body>
+</html>
