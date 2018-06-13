@@ -3,6 +3,9 @@ package ch.bfh.bti7081.s2018.yellow.health.ui.navigation;
 import org.springframework.context.ApplicationContext;
 
 import com.vaadin.navigator.Navigator;
+import com.vaadin.navigator.View;
+import com.vaadin.navigator.ViewProvider;
+import com.vaadin.navigator.Navigator.ClassBasedViewProvider;
 import com.vaadin.ui.ComponentContainer;
 import com.vaadin.ui.UI;
 

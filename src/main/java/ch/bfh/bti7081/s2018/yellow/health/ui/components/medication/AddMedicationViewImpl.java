@@ -131,4 +131,9 @@ public class AddMedicationViewImpl extends AbsoluteLayout implements AddMedicati
 			return false;
 		}
 	}
+
+	@Override
+	public AddMedicationPresenter getPresenter() {
+		return presenter;
+	}
 }

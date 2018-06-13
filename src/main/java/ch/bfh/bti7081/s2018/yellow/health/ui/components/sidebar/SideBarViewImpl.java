@@ -7,8 +7,8 @@ import com.vaadin.ui.MenuBar.Command;
 import com.vaadin.ui.MenuBar.MenuItem;
 import com.vaadin.ui.themes.ValoTheme;
 
-import ch.bfh.bti7081.s2018.yellow.health.ui.components.login.AuthService;
 import ch.bfh.bti7081.s2018.yellow.health.ui.navigation.AppViewType;
+import ch.bfh.bti7081.s2018.yellow.health.util.AuthService;
 
 import java.util.Collection;
 
@@ -80,15 +80,8 @@ public class SideBarViewImpl extends CustomComponent implements SideBarView, Cli
 	private Component buildUserMenu() {
 	    final MenuBar settings = new MenuBar();
 	    settings.addStyleName("user-menu");
-	    //final User user = getCurrentUser();
-	    settingsItem = settings.addItem("abc",new ThemeResource("img/profile-pic-300px.jpg"), null);
-	    //updateUserName(null);
-	    settingsItem.addItem("Edit Profile", new Command() {
-	        @Override
-	        public void menuSelected(final MenuItem selectedItem) {
-	            //ProfilePreferencesWindow.open(user, false);
-	        }
-	    });
+	    String username  = (String) VaadinSession.getCurrent().getAttribute(AuthService.SESSION_USERNAME);
+	    settingsItem = settings.addItem(username,new ThemeResource("img/profile-pic-300px.jpg"), null);
 	    settingsItem.addSeparator();
 	    settingsItem.addItem("Sign Out", new Command() {
 	        @Override

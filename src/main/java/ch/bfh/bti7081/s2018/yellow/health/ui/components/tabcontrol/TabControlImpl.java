@@ -1,13 +1,16 @@
 package ch.bfh.bti7081.s2018.yellow.health.ui.components.tabcontrol;
 
-import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.vaadin.server.Sizeable.Unit;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
+
+import com.vaadin.icons.VaadinIcons;
 import com.vaadin.ui.Alignment;
-import com.vaadin.ui.CustomComponent;
-import com.vaadin.ui.DateField;
-import com.vaadin.ui.DateTimeField;
-import com.vaadin.ui.FormLayout;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TabSheet;
@@ -16,102 +19,116 @@ import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 
 import ch.bfh.bti7081.s2018.yellow.health.models.Patient;
-import ch.bfh.bti7081.s2018.yellow.health.ui.components.tabcontrol.TabControl.PatientViewListener;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.medication.AddMedicationView;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.medication.AddMedicationViewImpl;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.patient.AddPatientView;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.patient.AddPatientViewImpl;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.patient.AddPatientView.AddPatientViewListener;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchpatient.SearchPatientView.SearchPatientViewListener;
+import ch.bfh.bti7081.s2018.yellow.health.ui.navigation.AppViewType;
 
+@Component
 public class TabControlImpl extends VerticalLayout implements TabControl {
 	
+	private TabPresenter presenter;
 	private TabSheet tab;
-	private VerticalLayout tabpage_1;
+	private AddPatientViewImpl tabpage_1;
+	private AddPatientViewImpl tabpage_2;
+	private AddMedicationViewImpl tabpage_3;
+	private Label notification;
+	List<TabControlListener> listeners = new ArrayList<TabControlListener>();
 	
-	
-	private DateField birthday;
-	private TextField street;
-	private TextField plz;
-	private TextField city;
-	private TextField firstname;
-	private TextField lastname;
-	private TextField mail;
-	private TextField mobile;
-	private TextField phone;
-	private DateTimeField start;
-	private DateTimeField end;
-	
-	public TabControlImpl() {
+	@Autowired
+	public TabControlImpl(ApplicationContext context) {
+		
+		
+		this.tabpage_1 = context.getBean(AddPatientViewImpl.class);
+		this.tabpage_2 = context.getBean(AddPatientViewImpl.class);
+		this.tabpage_3 = context.getBean(AddMedicationViewImpl.class);
+		
+		
+		this.tabpage_1.setSizeFull();
+		this.tabpage_2.setSizeFull();
+		this.tabpage_3.setSizeFull();
+		
+		HorizontalLayout layout = new HorizontalLayout();
+		layout.setSizeFull();
+		
         tab = new TabSheet();
-        tab.setHeight(100.0f, Unit.PERCENTAGE);
         tab.addStyleName(ValoTheme.TABSHEET_FRAMED);
         tab.addStyleName(ValoTheme.TABSHEET_PADDED_TABBAR);
         
-        initPage1();
-        tab.addTab(tabpage_1, "Patientendaten");
+        tab.addTab(this.tabpage_1, "Patientendaten");
+       // tab.addTab(this.tabpage_2, "Krankheitsverlauf");
+        tab.addTab(this.tabpage_3, "Medikation");
+        tab.setSizeFull();
         
-        addComponent(tab);
-		setComponentAlignment(tab, Alignment.MIDDLE_CENTER);
-	}
-	
-	public void initPage1() {
-		tabpage_1 = new VerticalLayout();
+        
+        layout.addComponent(tab);
+        layout.setExpandRatio(tab, 1.0f);
+		layout.setComponentAlignment(tab, Alignment.MIDDLE_CENTER);
 		
-		start = new DateTimeField("Patient von ");
-		start.setValue(LocalDateTime.now());
-		start.addStyleName("inline-label");
+		Button close = new Button(VaadinIcons.CLOSE);
+		close.setId("close");
+		close.setSizeUndefined();
+		close.addClickListener(e -> this.buttonClick(e.getButton()));
+		
+		layout.addComponent(close);
+		layout.setComponentAlignment(close, Alignment.TOP_RIGHT);
+		
+		Button save = new Button("Speichern");
+		save.setId("save");
+		save.setSizeUndefined();
+		save.addClickListener(e -> this.buttonClick(e.getButton()));
+		
+		notification = new Label("");
+		notification.setSizeUndefined();
 		
 		
-		end = new DateTimeField(" bis ");
-		end.setValue(LocalDateTime.now());
-		end.addStyleName("inline-label");
+        addComponent(layout);
+        setExpandRatio(layout, 1.0f);
+        addComponent(save);
+        addComponent(notification);
+		setComponentAlignment(layout, Alignment.TOP_CENTER);
 		
-		HorizontalLayout zeit = new HorizontalLayout();
-		zeit.addComponent(start);
-		zeit.addComponent(end);
+		setSizeFull();
 		
-		FormLayout form = new FormLayout();
-		
-		birthday = new DateField("Geburtstag");
-		street = new TextField("Strasse");
-		plz = new TextField("PLZ ");
-		city = new TextField("Ort");
-		firstname = new TextField("Vorname");
-		lastname = new TextField("Nachname");
-		mail = new TextField("E-Mail");
-		mobile = new TextField("Mobile ");
-		phone = new TextField("Telefon ");
-		
-		form.addComponent(zeit);
-		form.addComponent(birthday);
-		form.addComponent(firstname);
-		form.addComponent(lastname);
-		form.addComponent(plz);
-		form.addComponent(mail);
-		form.addComponent(mobile);
-		form.addComponent(phone);
-		
-		tabpage_1.addComponent(form);
-		
-	}
-	
-	@Override
-	public void addListener(PatientViewListener listener) {
-		// TODO Auto-generated method stub
+		this.presenter = new TabPresenter(this);
 		
 	}
 
+	private void buttonClick(Button button) {
+		for (TabControlListener listener: listeners)
+			listener.buttonClick(button.getId());
+	}
+
 	@Override
-	public void setPatient(Patient patient) {
-		// TODO Auto-generated method stub
+	public void addListener(TabControlListener listener) {
+		listeners.add(listener);
 		
 	}
 
-	@Override
-	public void clearText(TextField txtField) {
-		// TODO Auto-generated method stub
-		
+	public TabPresenter getPresenter() {
+		return presenter;
 	}
 
 	@Override
-	public VerticalLayout filterInit() {
-		// TODO Auto-generated method stub
-		return null;
+	public TabSheet getTab() {
+		return tab;
 	}
 
+	@Override
+	public AddPatientViewImpl getTabpage1() {
+		return tabpage_1;
+	}
+
+	@Override
+	public AddPatientViewImpl getTabpage2() {
+		return tabpage_2;
+	}
+
+	@Override
+	public AddMedicationViewImpl getTabpage3() {
+		return tabpage_3;
+	}
 }

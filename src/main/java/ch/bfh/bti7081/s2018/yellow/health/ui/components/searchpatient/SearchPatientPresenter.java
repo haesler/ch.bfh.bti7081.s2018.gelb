@@ -8,6 +8,7 @@ import com.vaadin.ui.UI;
 import ch.bfh.bti7081.s2018.yellow.health.models.Contact;
 import ch.bfh.bti7081.s2018.yellow.health.models.Patient;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.patient.AddPatientViewImpl;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.tabcontrol.TabControlImpl;
 
 public class SearchPatientPresenter implements SearchPatientView.SearchPatientViewListener{
 
@@ -34,12 +35,19 @@ public class SearchPatientPresenter implements SearchPatientView.SearchPatientVi
 	}
 
 	public void editPatient(Patient patient) {
-		UI.getCurrent().getNavigator().navigateTo("EditContact");
-		((AddPatientViewImpl)UI.getCurrent().getNavigator().getCurrentView()).getPresenter().loadPatient(patient);
+		UI.getCurrent().getNavigator().navigateTo("EditPatient");
+		((TabControlImpl)UI.getCurrent().getNavigator().getCurrentView()).getPresenter().loadPatient(patient);
 	}
 	
    private Boolean caseInsensitiveContains(String where, String what) {
         return where.toLowerCase().contains(what.toLowerCase());
     }
+
+
+	@Override
+	public void addPatientClicked() {
+		UI.getCurrent().getNavigator().navigateTo("AddPatient");
+		((TabControlImpl)UI.getCurrent().getNavigator().getCurrentView()).getPresenter().loadPatient(new Patient());
+	}
 
 }

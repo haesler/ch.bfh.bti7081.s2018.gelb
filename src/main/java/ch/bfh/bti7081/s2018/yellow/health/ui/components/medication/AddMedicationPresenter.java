@@ -6,13 +6,15 @@ import ch.bfh.bti7081.s2018.yellow.health.models.Medicament;
 import ch.bfh.bti7081.s2018.yellow.health.models.Medication;
 import ch.bfh.bti7081.s2018.yellow.health.models.Patient;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.medicament.AddMedicamentModel;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.tabcontrol.Tabpage;
 
-public class AddMedicationPresenter implements AddMedicationView.AddMedicationViewListener {
+public class AddMedicationPresenter implements AddMedicationView.AddMedicationViewListener, Tabpage {
 
-	AddMedicationViewImpl view;
-	AddMedicationModel model;
-	AddMedicamentModel modelMeds;
-	Medication medication = new Medication();
+	private AddMedicationViewImpl view;
+	private AddMedicationModel model;
+	private AddMedicamentModel modelMeds;
+	private Patient patient;
+	private Medication medication = new Medication();
 	
 	public AddMedicationPresenter(AddMedicationModel model, AddMedicamentModel modelMeds, AddMedicationViewImpl view){
 		this.view = view;
@@ -26,19 +28,7 @@ public class AddMedicationPresenter implements AddMedicationView.AddMedicationVi
 	
 	@Override
 	public void buttonClick() {
-		//get Form-input and save Medication
-		if(view.checkInput() == true){
-			view.setNotification(false);
-			
-			//temp Paitent hardcoded, have to get the active patient
-			Patient patient = new Patient();
-			patient.setPatientID(1);
-			medication.createMedication(view.getMedicament(), patient, view.getActive(), view.getEndDate(), view.getStartDate(), view.getUsage());
-			model.repo.save(medication);
-			model.dataProvider.refreshAll();
-		}else{
-			view.setNotification(true);
-		}
+		save();
 	}
 	@Override
 	public void filter1(String text, ValueProvider<Medicament, ?> valueProvider) {
@@ -54,6 +44,41 @@ public class AddMedicationPresenter implements AddMedicationView.AddMedicationVi
     }
 
 
+
+	public void loadPatient() {
+		//
+		
+	}
+
+	@Override
+	public void setPatient(Patient patient) {
+		this.patient = patient;
+		
+	}
+
+	@Override
+	public Patient save() {
+		//get Form-input and save Medication
+		if(view.checkInput() == true){
+			view.setNotification(false);
+			
+			//temp Paitent hardcoded, have to get the active patient
+			Patient patient = new Patient();
+			patient.setPatientID(1);
+			medication.createMedication(view.getMedicament(), patient, view.getActive(), view.getEndDate(), view.getStartDate(), view.getUsage());
+			model.repo.save(medication);
+			model.dataProvider.refreshAll();
+		}else{
+			view.setNotification(true);
+		}
+		
+		return patient;
+	}
+
+	@Override
+	public boolean checkInput() {
+		return view.checkInput();
+	}
 
 
 }

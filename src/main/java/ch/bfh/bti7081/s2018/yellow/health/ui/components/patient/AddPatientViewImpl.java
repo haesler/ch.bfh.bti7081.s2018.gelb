@@ -18,10 +18,12 @@ import com.vaadin.ui.TextField;
 
 import ch.bfh.bti7081.s2018.yellow.health.models.Doctor;
 import ch.bfh.bti7081.s2018.yellow.health.models.Insurance;
+import ch.bfh.bti7081.s2018.yellow.health.models.Patient;
 import ch.bfh.bti7081.s2018.yellow.health.repo.ContactRepository;
 import ch.bfh.bti7081.s2018.yellow.health.repo.DoctorRepository;
 import ch.bfh.bti7081.s2018.yellow.health.repo.InsuranceRepository;
 import ch.bfh.bti7081.s2018.yellow.health.repo.PatientRepository;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.tabcontrol.Tabpage;
 import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.AddPatientLayout;
 import com.vaadin.event.ShortcutAction.KeyCode;
 
@@ -150,85 +152,79 @@ public class AddPatientViewImpl extends AbsoluteLayout implements AddPatientView
 
 	@Override
 	public AddPatientPresenter getPresenter() {
-		// TODO Auto-generated method stub
-		return null;
+		return presenter;
 	}
 
 	@Override
 	public void setName(String name) {
-		// TODO Auto-generated method stub
-		
+		addPatientForm.getTxt_Name().setValue(name);		
 	}
 
 	@Override
 	public void setFirstName(String firstname) {
-		// TODO Auto-generated method stub
-		
+		addPatientForm.getTxt_FirstName().setValue(firstname);	
 	}
 
 	@Override
 	public void setStreet(String street) {
-		// TODO Auto-generated method stub
+		addPatientForm.getTxt_Street().setValue(street);	
 		
 	}
 
 	@Override
 	public void setPLZ(String plz) {
-		// TODO Auto-generated method stub
+		addPatientForm.getTxt_PLZ().setValue(plz);
 		
 	}
 
 	@Override
 	public void setCity(String city) {
-		// TODO Auto-generated method stub
+		addPatientForm.getTxt_City().setValue(city);
 		
 	}
 
 	@Override
 	public void setPhone(String phone) {
-		// TODO Auto-generated method stub
+		addPatientForm.getTxt_Phone().setValue(phone);
 		
 	}
 
 	@Override
 	public void setMobile(String mobile) {
-		// TODO Auto-generated method stub
-		
+		addPatientForm.getTxt_Mobile().setValue(mobile);
 	}
 
 	@Override
 	public void setMail(String mail) {
-		// TODO Auto-generated method stub
-		
+		addPatientForm.getTxt_Mail().setValue(mail);	
 	}
 
 	@Override
-	public void setStartdate(Date start) {
-		// TODO Auto-generated method stub
-		
+	public void setStartdate(LocalDate start) {
+		addPatientForm.getDf_Startdate().setValue(start);
 	}
 
 	@Override
-	public void setEnddate(Date end) {
-		// TODO Auto-generated method stub
+	public void setEnddate(LocalDate end) {
+		addPatientForm.getDf_Enddate().setValue(end);
 		
 	}
 
 	@Override
 	public void setInsurance(Insurance i) {
-		// TODO Auto-generated method stub
+		addPatientForm.getDd_Insurance().setValue(i);
 		
 	}
 
 	@Override
 	public void setDoctor(Doctor d) {
-		// TODO Auto-generated method stub
+		addPatientForm.getDd_Doctor().setValue(d);
 		
 	}
 
 	@Override
-	public void setBirthday(Date date) {
-		// TODO Auto-generated method stub
+	public void setBirthday(LocalDate date) {
+		addPatientForm.getDf_Birhday().setValue(date);
 		
 	}
 }

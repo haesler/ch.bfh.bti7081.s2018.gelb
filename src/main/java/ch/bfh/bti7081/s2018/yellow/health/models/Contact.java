@@ -72,7 +72,7 @@ public class Contact implements Serializable {
 	}
 
 	public String getCity() {
-		return this.city;
+		return (this.city==null?"":this.city);
 	}
 
 	public void setCity(String city) {
@@ -80,7 +80,7 @@ public class Contact implements Serializable {
 	}
 
 	public String getFirstname() {
-		return this.firstname;
+		return (this.firstname==null?"":this.firstname);
 	}
 
 	public void setFirstname(String firstname) {
@@ -88,7 +88,7 @@ public class Contact implements Serializable {
 	}
 
 	public String getLastname() {
-		return this.lastname;
+		return (this.lastname==null?"":this.lastname);
 	}
 
 	public void setLastname(String lastname) {
@@ -96,7 +96,7 @@ public class Contact implements Serializable {
 	}
 
 	public String getMail() {
-		return this.mail;
+		return (this.mail==null?"":this.mail);
 	}
 
 	public void setMail(String mail) {
@@ -104,7 +104,7 @@ public class Contact implements Serializable {
 	}
 
 	public String getMobile() {
-		return this.mobile;
+		return (this.mobile==null?"":this.mobile);
 	}
 
 	public void setMobile(String mobile) {
@@ -112,7 +112,7 @@ public class Contact implements Serializable {
 	}
 
 	public String getPhone() {
-		return this.phone;
+		return (this.phone==null?"":this.phone);
 	}
 
 	public void setPhone(String phone) {
@@ -120,7 +120,7 @@ public class Contact implements Serializable {
 	}
 
 	public String getPlz() {
-		return this.plz;
+		return (this.plz==null?"":this.plz);
 	}
 
 	public void setPlz(String plz) {
@@ -128,7 +128,7 @@ public class Contact implements Serializable {
 	}
 
 	public String getStreet() {
-		return this.street;
+		return (this.street==null?"":this.street);
 	}
 
 	public void setStreet(String street) {

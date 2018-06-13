@@ -9,6 +9,7 @@ import com.vaadin.ui.declarative.Design;
 import ch.bfh.bti7081.s2018.yellow.health.repo.UserRepository;
 import ch.bfh.bti7081.s2018.yellow.health.ui.MyUI;
 import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.LoginLayout;
+import ch.bfh.bti7081.s2018.yellow.health.util.AuthService;
 
 
 @SuppressWarnings("serial")

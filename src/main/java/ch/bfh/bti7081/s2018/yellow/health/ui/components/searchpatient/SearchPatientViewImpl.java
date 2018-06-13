@@ -82,12 +82,24 @@ public class SearchPatientViewImpl extends VerticalLayout implements SearchPatie
 			    filter.addStyleName(ValoTheme.TEXTFIELD_TINY);
 			    cell.setComponent(filter);
 		}
-
-
+		
+		layout.setExpandRatio(grid, 1.0f);
+		
+		Button addpatient = new Button("Neuer Patient");
+		addpatient.addClickListener(e -> {addPatientClicked();});
+		addpatient.setSizeUndefined();
+		layout.addComponent(addpatient);
+		
         addComponent(layout);
         setComponentAlignment(layout, Alignment.MIDDLE_CENTER);		
 	}
 	
+	public void addPatientClicked() {
+		for (SearchPatientViewListener listener: listeners)
+			listener.addPatientClicked();
+		
+	}
+
 	private void refresh(String text, ValueProvider<Patient, ?> valueProvider) {
 		
 		for (SearchPatientViewListener listener: listeners)
@@ -113,13 +125,13 @@ public class SearchPatientViewImpl extends VerticalLayout implements SearchPatie
 	}
 
 	@Override
-	public void buttonClick(ClickEvent event) {
+	public void showPatients(List<Patient> patient) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void showPatients(List<Patient> patient) {
+	public void buttonClick(ClickEvent event) {
 		// TODO Auto-generated method stub
 		
 	}

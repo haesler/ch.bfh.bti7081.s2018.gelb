@@ -13,10 +13,12 @@ public interface SearchPatientView extends View {
 	interface SearchPatientViewListener {
         void filter1(String value, ValueProvider<Patient, ?> valueProvider);
         void editPatient(Patient patient);
+        void addPatientClicked();
     }
 	
 	public void addListener(SearchPatientViewListener listener);
 	
 	public void showPatients(List<Patient> patient);
+	void addPatientClicked();
 	
 }

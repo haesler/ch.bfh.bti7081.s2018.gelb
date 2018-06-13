@@ -4,7 +4,7 @@ import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.View;
 import com.vaadin.server.Resource;
 
-import ch.bfh.bti7081.s2018.yellow.health.ui.components.patient.AddPatientView;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.tabcontrol.TabControl;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchcontact.SearchContactView;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchpatient.SearchPatientView;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.contact.AddContactView;
@@ -14,9 +14,9 @@ import ch.bfh.bti7081.s2018.yellow.health.ui.components.medication.AddMedication
 public enum AppViewType {
     CONTACT("Kontakte",SearchContactView.class, VaadinIcons.HOME,true),
     PATIENT("Patienten",SearchPatientView.class, VaadinIcons.HOME,true),
-	ADDPATIENT("Neuer Patient",AddPatientView.class, VaadinIcons.HOME,true),
+	ADDPATIENT("AddPatient",TabControl.class, VaadinIcons.HOME,false),
     ADDCONTACT("neuer Kontakt",AddContactView.class, VaadinIcons.HOME,true),
-	PATIENTEDIT("EditPatient",AddPatientView.class, VaadinIcons.HOME,false),
+	PATIENTEDIT("EditPatient",TabControl.class, VaadinIcons.HOME,false),
 	CONTACTEDIT("EditContact",AddContactView.class, VaadinIcons.HOME,false),
 	MEDICAMENT("Medikamente",AddMedicamentView.class, VaadinIcons.HOME,true),
 	MEDICATION("Medikation",AddMedicationView.class, VaadinIcons.HOME,true);

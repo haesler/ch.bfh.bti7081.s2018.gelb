@@ -1,4 +1,4 @@
-package ch.bfh.bti7081.s2018.yellow.health.ui.components.login;
+package ch.bfh.bti7081.s2018.yellow.health.util;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
@@ -14,6 +14,7 @@ import com.vaadin.ui.UI;
 
 import ch.bfh.bti7081.s2018.yellow.health.repo.UserRepository;
 import ch.bfh.bti7081.s2018.yellow.health.ui.MyUI;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.login.LoginViewImpl;
 
 @Service
 public class UserService {

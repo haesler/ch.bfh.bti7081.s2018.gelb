@@ -38,11 +38,12 @@ public interface AddPatientView extends View{
 	void setPhone(String phone);
 	void setMobile(String mobile);
 	void setMail(String mail);
-	void setStartdate(Date start);
-	void setEnddate(Date end);
+	void setStartdate(LocalDate start);
+	void setEnddate(LocalDate end);
 	void setInsurance(Insurance i);
 	void setDoctor(Doctor d);
-	void setBirthday(Date date);
+	void setBirthday(LocalDate date);
+	boolean check();
 	Date getStartdate();
 	Date getEnddate();
 	AddPatientLayout getLayout();

@@ -1,4 +1,4 @@
-package ch.bfh.bti7081.s2018.yellow.health.ui.components.login;
+package ch.bfh.bti7081.s2018.yellow.health.util;
 
 import java.util.Arrays;
 import java.util.Optional;
