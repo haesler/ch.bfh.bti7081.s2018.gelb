@@ -15,6 +15,7 @@ public interface AddHistoryView extends View{
 	String getDescription();
 	Date getDate();
 	String getAttachment();
+	AddHistoryPresenter getPresenter();
 	
 
 }

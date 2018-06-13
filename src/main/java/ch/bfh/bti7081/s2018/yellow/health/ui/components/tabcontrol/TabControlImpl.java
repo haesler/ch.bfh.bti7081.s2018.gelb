@@ -26,6 +26,7 @@ import ch.bfh.bti7081.s2018.yellow.health.ui.components.patient.AddPatientViewIm
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.patient.AddPatientView.AddPatientViewListener;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchpatient.SearchPatientView.SearchPatientViewListener;
 import ch.bfh.bti7081.s2018.yellow.health.ui.navigation.AppViewType;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.history.AddHistoryViewImpl;
 
 @Component
 public class TabControlImpl extends VerticalLayout implements TabControl {
@@ -33,7 +34,7 @@ public class TabControlImpl extends VerticalLayout implements TabControl {
 	private TabPresenter presenter;
 	private TabSheet tab;
 	private AddPatientViewImpl tabpage_1;
-	private AddPatientViewImpl tabpage_2;
+	private AddHistoryViewImpl tabpage_2;
 	private AddMedicationViewImpl tabpage_3;
 	private Label notification;
 	List<TabControlListener> listeners = new ArrayList<TabControlListener>();
@@ -43,7 +44,7 @@ public class TabControlImpl extends VerticalLayout implements TabControl {
 		
 		
 		this.tabpage_1 = context.getBean(AddPatientViewImpl.class);
-		this.tabpage_2 = context.getBean(AddPatientViewImpl.class);
+		this.tabpage_2 = context.getBean(AddHistoryViewImpl.class);
 		this.tabpage_3 = context.getBean(AddMedicationViewImpl.class);
 		
 		
@@ -59,7 +60,7 @@ public class TabControlImpl extends VerticalLayout implements TabControl {
         tab.addStyleName(ValoTheme.TABSHEET_PADDED_TABBAR);
         
         tab.addTab(this.tabpage_1, "Patientendaten");
-       // tab.addTab(this.tabpage_2, "Krankheitsverlauf");
+        tab.addTab(this.tabpage_2, "Krankheitsverlauf");
         tab.addTab(this.tabpage_3, "Medikation");
         tab.setSizeFull();
         
@@ -136,7 +137,7 @@ public class TabControlImpl extends VerticalLayout implements TabControl {
 	}
 
 	@Override
-	public AddPatientViewImpl getTabpage2() {
+	public AddHistoryViewImpl getTabpage2() {
 		return tabpage_2;
 	}
 

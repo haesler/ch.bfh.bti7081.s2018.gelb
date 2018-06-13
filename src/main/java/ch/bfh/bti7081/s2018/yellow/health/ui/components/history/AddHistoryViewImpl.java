@@ -12,6 +12,7 @@ import com.vaadin.ui.Alignment;
 import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.history.AddHistoryView.AddHistoryViewListener;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.tabcontrol.Tabpage;
 import ch.bfh.bti7081.s2018.yellow.health.repo.HistoryEntryRepository;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.history.AddHistoryPresenter;
 import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.AddHistoryLayout;
@@ -26,6 +27,10 @@ public class AddHistoryViewImpl extends VerticalLayout implements AddHistoryView
 	private HistoryEntryRepository repoHistory;
 	
 	private static AddHistoryViewImpl repo;
+	
+	public AddHistoryPresenter getPresenter() {
+		return presenter;
+	}
 	
 	@Autowired
 	public AddHistoryViewImpl() {
