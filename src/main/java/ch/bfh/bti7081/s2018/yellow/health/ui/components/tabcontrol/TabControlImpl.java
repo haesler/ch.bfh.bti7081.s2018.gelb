@@ -2,30 +2,22 @@ package ch.bfh.bti7081.s2018.yellow.health.ui.components.tabcontrol;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
-
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
-import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TabSheet;
-import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
-
-import ch.bfh.bti7081.s2018.yellow.health.models.Patient;
-import ch.bfh.bti7081.s2018.yellow.health.ui.components.medication.AddMedicationView;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.medication.AddMedicationViewImpl;
-import ch.bfh.bti7081.s2018.yellow.health.ui.components.patient.AddPatientView;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.patient.AddPatientViewImpl;
-import ch.bfh.bti7081.s2018.yellow.health.ui.components.patient.AddPatientView.AddPatientViewListener;
-import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchpatient.SearchPatientView.SearchPatientViewListener;
-import ch.bfh.bti7081.s2018.yellow.health.ui.navigation.AppViewType;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchMedication.SearchMedicationvVewImpl;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchhistory.SearchHistoryViewImpl;
+
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.history.AddHistoryViewImpl;
 
 @Component
@@ -36,6 +28,8 @@ public class TabControlImpl extends VerticalLayout implements TabControl {
 	private AddPatientViewImpl tabpage_1;
 	private AddHistoryViewImpl tabpage_2;
 	private AddMedicationViewImpl tabpage_3;
+	private SearchHistoryViewImpl tabpage_4;
+	private SearchMedicationvVewImpl tabpage_5;
 	private Label notification;
 	List<TabControlListener> listeners = new ArrayList<TabControlListener>();
 	
@@ -46,11 +40,14 @@ public class TabControlImpl extends VerticalLayout implements TabControl {
 		this.tabpage_1 = context.getBean(AddPatientViewImpl.class);
 		this.tabpage_2 = context.getBean(AddHistoryViewImpl.class);
 		this.tabpage_3 = context.getBean(AddMedicationViewImpl.class);
-		
+		this.tabpage_4 = context.getBean(SearchHistoryViewImpl.class);
+		this.tabpage_5 = context.getBean(SearchMedicationvVewImpl.class);
 		
 		this.tabpage_1.setSizeFull();
 		this.tabpage_2.setSizeFull();
 		this.tabpage_3.setSizeFull();
+		this.tabpage_4.setSizeFull();
+		this.tabpage_5.setSizeFull();
 		
 		HorizontalLayout layout = new HorizontalLayout();
 		layout.setSizeFull();
@@ -62,6 +59,8 @@ public class TabControlImpl extends VerticalLayout implements TabControl {
         tab.addTab(this.tabpage_1, "Patientendaten");
         tab.addTab(this.tabpage_2, "Krankheitsverlauf");
         tab.addTab(this.tabpage_3, "Medikation");
+        tab.addTab(this.tabpage_4, "Krankheitsverlauf durchsuchen");
+        tab.addTab(this.tabpage_5, "Medikation durchsuchen");
         tab.setSizeFull();
         
         
@@ -88,7 +87,7 @@ public class TabControlImpl extends VerticalLayout implements TabControl {
 		
 		
 		notification = new Label("");
-		//notification.addStyleName("failure");
+		notification.addStyleName("failure");
 		notification.setSizeFull();
 		bottom.addComponent(notification);
 		
@@ -107,6 +106,8 @@ public class TabControlImpl extends VerticalLayout implements TabControl {
 			listener.setMainpage(this.tabpage_1.getPresenter());
 			listener.addTabpage(this.tabpage_2.getPresenter());
 			listener.addTabpage(this.tabpage_3.getPresenter());
+			listener.addTabpage(this.tabpage_4.getPresenter());
+			listener.addTabpage(this.tabpage_5.getPresenter());
 		}
 		
 	}
@@ -144,6 +145,16 @@ public class TabControlImpl extends VerticalLayout implements TabControl {
 	@Override
 	public AddMedicationViewImpl getTabpage3() {
 		return tabpage_3;
+	}
+	
+	@Override
+	public SearchHistoryViewImpl getTabpage4() {
+		return tabpage_4;
+	}
+	
+	@Override
+	public SearchMedicationvVewImpl getTabpage5() {
+		return tabpage_5;
 	}
 
 	@Override

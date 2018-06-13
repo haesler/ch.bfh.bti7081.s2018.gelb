@@ -1,18 +1,9 @@
 package ch.bfh.bti7081.s2018.yellow.health.ui.components.tabcontrol;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-
-import javax.persistence.criteria.CriteriaBuilder.Case;
-
-import com.vaadin.ui.Component;
 import com.vaadin.ui.UI;
-import com.vaadin.ui.TabSheet.Tab;
-
-import ch.bfh.bti7081.s2018.yellow.health.models.Contact;
 import ch.bfh.bti7081.s2018.yellow.health.models.Patient;
-import ch.bfh.bti7081.s2018.yellow.health.models.User;
 
 public class TabPresenter implements TabControl.TabControlListener {
 

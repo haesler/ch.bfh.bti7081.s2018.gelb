@@ -1,16 +1,13 @@
 package ch.bfh.bti7081.s2018.yellow.health.ui.components.tabcontrol;
 
-import java.util.List;
 
 import com.vaadin.navigator.View;
 import com.vaadin.ui.TabSheet;
-import com.vaadin.ui.TextField;
-import com.vaadin.ui.VerticalLayout;
-
-import ch.bfh.bti7081.s2018.yellow.health.models.Patient;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.history.AddHistoryViewImpl;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.medication.AddMedicationViewImpl;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.patient.AddPatientViewImpl;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchMedication.SearchMedicationvVewImpl;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchhistory.SearchHistoryViewImpl;
 
 public interface TabControl extends View {
 	
@@ -28,6 +25,8 @@ public interface TabControl extends View {
 	public AddPatientViewImpl getTabpage1();
 	public AddHistoryViewImpl getTabpage2();
 	public AddMedicationViewImpl getTabpage3();
+	public SearchHistoryViewImpl getTabpage4();
+	public SearchMedicationvVewImpl getTabpage5();
 	public void setNotification(String value,boolean visible);
 
 }

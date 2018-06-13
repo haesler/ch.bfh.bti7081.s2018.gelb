@@ -4,10 +4,7 @@ package ch.bfh.bti7081.s2018.yellow.health.ui.components.searchcontact;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-
 import com.vaadin.data.provider.DataProvider;
 import com.vaadin.data.provider.ListDataProvider;
 import ch.bfh.bti7081.s2018.yellow.health.models.Contact;
