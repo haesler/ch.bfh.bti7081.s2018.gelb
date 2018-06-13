@@ -12,14 +12,13 @@ import ch.bfh.bti7081.s2018.yellow.health.ui.components.medicament.AddMedicament
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.medication.AddMedicationView;
 
 public enum AppViewType {
-    CONTACT("Kontakte",SearchContactView.class, VaadinIcons.HOME,true),
-    PATIENT("Patienten",SearchPatientView.class, VaadinIcons.HOME,true),
+    CONTACT("Contacts",SearchContactView.class, VaadinIcons.MALE,true),
+    PATIENT("Patients",SearchPatientView.class, VaadinIcons.NURSE,true),
 	ADDPATIENT("AddPatient",TabControl.class, VaadinIcons.HOME,false),
-    ADDCONTACT("neuer Kontakt",AddContactView.class, VaadinIcons.HOME,true),
+    ADDCONTACT("AddContact",AddContactView.class, VaadinIcons.HOME,false),
 	PATIENTEDIT("EditPatient",TabControl.class, VaadinIcons.HOME,false),
 	CONTACTEDIT("EditContact",AddContactView.class, VaadinIcons.HOME,false),
-	MEDICAMENT("Medikamente",AddMedicamentView.class, VaadinIcons.HOME,true),
-	MEDICATION("Medikation",AddMedicationView.class, VaadinIcons.HOME,true);
+	MEDICAMENT("Medikamente",AddMedicamentView.class, VaadinIcons.PILLS,true);
 
     private final String viewName;
     private final Class<? extends View> viewClass;

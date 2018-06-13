@@ -35,7 +35,7 @@ public class TabPresenter implements TabControl.TabControlListener {
 	public void buttonClick(String buttonName) {
 		switch (buttonName) {
 		case "close":
-			UI.getCurrent().getNavigator().navigateTo("Patienten");
+			UI.getCurrent().getNavigator().navigateTo("Patients");
 			break;
 		case "save":
 			savePatient();

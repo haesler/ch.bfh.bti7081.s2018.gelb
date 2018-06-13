@@ -6,8 +6,10 @@ import com.vaadin.data.ValueProvider;
 import com.vaadin.ui.UI;
 
 import ch.bfh.bti7081.s2018.yellow.health.models.Contact;
+import ch.bfh.bti7081.s2018.yellow.health.models.Patient;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.contact.AddContactViewImpl;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.patient.AddPatientViewImpl;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.tabcontrol.TabControlImpl;
 
 public class SearchContactPresenter implements SearchContactView.SearchContactViewListener{
 
@@ -41,5 +43,12 @@ public class SearchContactPresenter implements SearchContactView.SearchContactVi
    private Boolean caseInsensitiveContains(String where, String what) {
         return where.toLowerCase().contains(what.toLowerCase());
     }
+
+
+@Override
+public void addContactClicked() {
+	UI.getCurrent().getNavigator().navigateTo("AddContact");
+	((AddContactViewImpl)UI.getCurrent().getNavigator().getCurrentView()).getPresenter().loadContact(new Contact());	
+}
 
 }

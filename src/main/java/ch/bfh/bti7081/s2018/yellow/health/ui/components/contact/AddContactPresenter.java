@@ -2,6 +2,8 @@ package ch.bfh.bti7081.s2018.yellow.health.ui.components.contact;
 
 
 import com.vaadin.ui.Notification;
+import com.vaadin.ui.UI;
+
 import ch.bfh.bti7081.s2018.yellow.health.models.Contact;
 import ch.bfh.bti7081.s2018.yellow.health.repo.ContactRepository;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.validate.ContactValidate;
@@ -24,19 +26,19 @@ public class AddContactPresenter implements AddContactView.AddContactViewListene
 		view.addListener(this);
 	}
 	
-	public void buttonClick() {
-		//get Form-input and save Contact
-		/*if(view.checkInput() == true){
-			view.setNotification(false);
-			contact.createContact(view.getFirstName(), view.getName(), view.getStreet(), view.getPLZ(), view.getCity(), view.getPhone(), view.getMobile(), view.getMail(),view.getBirthday());
-			ContactRepository.save(contact);
+	public void buttonClick(String id) {
+		switch(id) {
+		case "save":
+			save();
+			break;
+		case "close":
+			UI.getCurrent().getNavigator().navigateTo("Contacts");
+			break;	
 		}
-		else{
-			view.setNotification(true);
-		}*/
-		//validateContact.isValid(view.getLayout().getTxt_FirstName(), view.getLayout().getTxt_Name(), view.getLayout().getTxt_Street(), view.getLayout().getTxt_PLZ(), view.getLayout().getTxt_City(), view.getLayout().getTxt_Phone(), view.getLayout().getTxt_Mobile(), view.getLayout().getTxt_Mail(),view.getLayout().getDf_Birhday());
 		
-		
+	}
+	
+	public void save() {
 		if(
 				validateContact.isValid(view.getLayout().getTxt_FirstName(), view.getLayout().getTxt_Name(), view.getLayout().getTxt_Street(), view.getLayout().getTxt_PLZ(), view.getLayout().getTxt_City(), view.getLayout().getTxt_Phone(), view.getLayout().getTxt_Mobile(), view.getLayout().getTxt_Mail(),view.getLayout().getDf_Birhday())
 		)		
@@ -45,9 +47,6 @@ public class AddContactPresenter implements AddContactView.AddContactViewListene
 			ContactRepository.save(contact);
 			Notification.show("Contact successfully saved");
 		}
-			
-			
-			
 	}
 
 	public void loadContact(Contact contact) {

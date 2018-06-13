@@ -6,7 +6,11 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.vaadin.icons.VaadinIcons;
 import com.vaadin.ui.AbsoluteLayout;
+import com.vaadin.ui.Alignment;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.HorizontalLayout;
 
 import ch.bfh.bti7081.s2018.yellow.health.repo.ContactRepository;
 import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.AddContactLayout;
@@ -21,10 +25,29 @@ public class AddContactViewImpl extends AbsoluteLayout implements AddContactView
 	private AddContactLayout addContactForm;
 	
 	public AddContactViewImpl(ContactRepository repo){
+		
+		HorizontalLayout layout = new HorizontalLayout();
+		
 		this.presenter = new AddContactPresenter(this, repo);
 		addContactForm = new AddContactLayout();
-		addContactForm.getBut_Save().addClickListener(e -> this.buttonClick());
-		addComponent(addContactForm);
+		addContactForm.getBut_Save().setId("save");
+		addContactForm.getBut_Save().addClickListener(e -> this.buttonClick(e.getButton().getId()));
+		addContactForm.setSizeFull();
+		
+		layout.addComponent(addContactForm);
+		layout.setExpandRatio(addContactForm, 1.0f);
+		layout.setComponentAlignment(addContactForm, Alignment.MIDDLE_CENTER);
+		
+		Button close = new Button(VaadinIcons.CLOSE);
+		close.setId("close");
+		close.setSizeUndefined();
+		close.addClickListener(e -> this.buttonClick(e.getButton().getId()));
+		
+		layout.addComponent(close);
+		layout.setComponentAlignment(close, Alignment.MIDDLE_LEFT);
+		
+		layout.setSizeFull();
+		addComponent(layout);
 	}
 	
 	public AddContactPresenter getPresenter() {
@@ -32,9 +55,9 @@ public class AddContactViewImpl extends AbsoluteLayout implements AddContactView
 	}
 	
 	@Override
-	public void buttonClick() {
+	public void buttonClick(String id) {
 		for (AddContactViewListener listener: listeners){
-			listener.buttonClick();
+			listener.buttonClick(id);
 		}
 	}
 	

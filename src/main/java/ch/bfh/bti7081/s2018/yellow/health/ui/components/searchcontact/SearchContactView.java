@@ -12,10 +12,12 @@ public interface SearchContactView extends View {
 	interface SearchContactViewListener {
         void filter1(String value, ValueProvider<Contact, ?> valueProvider);
         void editContact(Contact contact);
+    	void addContactClicked();
     }
 	
 	public void addListener(SearchContactViewListener listener);
 	
 	public void showContacts(List<Contact> contacts);
+	void addContactClicked();
 	
 }

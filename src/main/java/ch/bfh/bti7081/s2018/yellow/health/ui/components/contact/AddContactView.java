@@ -10,13 +10,13 @@ import ch.bfh.bti7081.s2018.yellow.health.models.Contact;
 public interface AddContactView extends View{
 	
 	interface AddContactViewListener{
-		public void buttonClick();
+		public void buttonClick(String id);
 		public void loadContact(Contact contact);
 	}
 	
 	public void addListener(AddContactViewListener listener);
 	void setNotification(Boolean value);
-	void buttonClick();
+	void buttonClick(String id);
 	String getName();
 	String getFirstName();
 	String getStreet();

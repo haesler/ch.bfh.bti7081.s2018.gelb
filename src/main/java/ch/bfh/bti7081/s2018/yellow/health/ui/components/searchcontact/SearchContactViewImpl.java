@@ -80,12 +80,24 @@ public class SearchContactViewImpl extends VerticalLayout implements SearchConta
 		    filter.addStyleName(ValoTheme.TEXTFIELD_TINY);
 		    cell.setComponent(filter);
 		}
+		
+		layout.setExpandRatio(grid, 1.0f);
+		
+		Button addcontact = new Button("Neuer Kontakt");
+		addcontact.addClickListener(e -> {addContactClicked();});
+		addcontact.setSizeUndefined();
+		layout.addComponent(addcontact);
 
         addComponent(layout);
         setComponentAlignment(layout, Alignment.MIDDLE_CENTER);		
 	}
 	
 	
+	public void addContactClicked() {
+		for (SearchContactViewListener listener: listeners)
+			listener.addContactClicked();		
+	}
+
 	private void refresh(String text, ValueProvider<Contact, ?> valueProvider) {
 		
 		for (SearchContactViewListener listener: listeners)
