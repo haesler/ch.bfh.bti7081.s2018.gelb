@@ -42,41 +42,41 @@ public class AddHistoryPresenter implements AddHistoryView.AddHistoryViewListene
 
 	@Override
 	public void loadPatient() {
-		//Schranz
-		
+		//Not used
+		return;
 	}
 
 	@Override
 	public boolean checkInput() {
-		System.out.println("btn_SubmitClick in AddHistoryPresenter.java");
+		System.out.println("checkInput in AddHistoryPresenter.java");
 		//Check if all entries are set
 		
 		try {
-			this.title = view.getTitle();
-			this.date = view.getDate();
-			this.desc = view.getDescription();
+			title = view.getTitle();
+			date = view.getDate();
+			desc = view.getDescription();
 		} finally {
 			//System.out.println("Can't create requiered variables.");
 		}
 		
-		if(this.title.isEmpty()) {
+		if(title.isEmpty()) {
 			System.out.println("Failure: Title is empty!");
 			view.setNotification("Title is empty!", "failure");
 			return false;
 		}
 		
-		if(this.date.toString().isEmpty()) {
+		if(date.toString().isEmpty()) {
 			System.out.println("Failure: Date is empty!");
 			view.setNotification("Date is empty!", "failure");
 			return false;
 		}
 		
-		if(this.desc.isEmpty()) {
+		if(desc.isEmpty()) {
 			System.out.println("Failure: Description is empty!");
 			view.setNotification("Description is empty!", "failure");
 			return false;
 		}
-		
+		System.out.println("Check Ok");
 		return true;
 	}
 
@@ -85,7 +85,7 @@ public class AddHistoryPresenter implements AddHistoryView.AddHistoryViewListene
 		//Save Entry
 		System.out.println("Success: Create Entry!");
 		patient.setPatientID(1);
-		historyentry.createEntry(this.patient, this.title, this.desc, (byte) 1, this.date);
+		historyentry.createEntry(patient, title, desc, (byte) 1, date);
 		
 		System.out.println("Patient: " + historyentry.getPatient().getPatientID());
 		System.out.println("Title: "+ historyentry.getTitle());

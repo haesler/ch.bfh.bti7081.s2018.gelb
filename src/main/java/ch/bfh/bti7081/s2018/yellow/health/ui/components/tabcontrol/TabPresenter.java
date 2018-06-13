@@ -71,13 +71,13 @@ public class TabPresenter implements TabControl.TabControlListener {
 	
 	public boolean checkInput() {
 		if (!mainpage.checkInput()) {
-			tabview.setNotification("Bitte überprüfen Sie Ihre Eingaben", true);
+			tabview.setNotification("Bitte überprüfen Sie Ihre Eingaben in Patient", true);
 			return false;
 		}
 		
 		for(Tabpage page : tabpages) {
 			if(!page.checkInput()) {
-				tabview.setNotification("Bitte überprüfen Sie Ihre Eingaben", true);
+				tabview.setNotification("Bitte überprüfen Sie Ihre Eingaben in "+page.getClass().getSimpleName(), true);
 				return false;
 			}
 		}

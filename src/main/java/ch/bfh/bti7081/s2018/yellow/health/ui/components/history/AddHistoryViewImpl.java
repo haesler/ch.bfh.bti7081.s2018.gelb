@@ -1,7 +1,6 @@
 package ch.bfh.bti7081.s2018.yellow.health.ui.components.history;
 
 import java.sql.Date;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,8 +10,6 @@ import org.springframework.stereotype.Service;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.VerticalLayout;
 
-import ch.bfh.bti7081.s2018.yellow.health.ui.components.history.AddHistoryView.AddHistoryViewListener;
-import ch.bfh.bti7081.s2018.yellow.health.ui.components.tabcontrol.Tabpage;
 import ch.bfh.bti7081.s2018.yellow.health.repo.HistoryEntryRepository;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.history.AddHistoryPresenter;
 import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.AddHistoryLayout;
@@ -56,9 +53,8 @@ public class AddHistoryViewImpl extends VerticalLayout implements AddHistoryView
 	}
 	
 	@Override
-	public java.sql.Date getDate() {
-		LocalDate tempDate = AddHistoryForm.getDt_DateNew().getValue();
-		return java.sql.Date.valueOf(tempDate);
+	public Date getDate() {
+		return java.sql.Date.valueOf(AddHistoryForm.getDt_DateNew().getValue());
 	}
 	
 	@Override
