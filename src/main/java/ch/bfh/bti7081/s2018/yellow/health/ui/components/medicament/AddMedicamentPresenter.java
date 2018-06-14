@@ -53,7 +53,7 @@ public class AddMedicamentPresenter implements AddMedicamentView.AddMedicamentVi
 	* @param buttonName	The name of the button that has been clicked
 	*/
 	@Override
-	public void buttonClick(String buttonName) {
+	public void buttonClick(String buttonName) { //Actions for Buttons
 		switch (buttonName) {
         case "Save":
         	saveMedicament(medicament);

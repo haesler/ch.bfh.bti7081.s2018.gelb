@@ -35,6 +35,14 @@ public class RegistrationPresenter implements RegistrationView.RegistrationViewL
 		//Make Notification invisible if visible
 		view.hideNotification();
 		
+		//Check: empty Password
+		System.out.println("Check empty password: " + view.getPassword1());
+		if(view.getPassword1().length() == 0) {
+			System.out.println("Error: Missing Password.");
+			view.setNotification("The password is missing.", "failure");
+			return;
+		}
+		
 		//Check: Passwords the same
 		System.out.println("Check passwords");
 		if(!view.getPassword1().equals(view.getPassword2())) {

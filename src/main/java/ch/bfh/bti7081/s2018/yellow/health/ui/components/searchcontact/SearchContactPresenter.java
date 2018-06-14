@@ -35,18 +35,18 @@ public class SearchContactPresenter implements SearchContactView.SearchContactVi
     	  }
 	}
 	
-	public void editContact(Contact contact) {
+	public void editContact(Contact contact) { //Open Contact Window and load the current selected Contact.
 		UI.getCurrent().getNavigator().navigateTo("EditContact");
 		((AddContactViewImpl)UI.getCurrent().getNavigator().getCurrentView()).getPresenter().loadContact(contact);
 	}
 	
-   private Boolean caseInsensitiveContains(String where, String what) {
+   private Boolean caseInsensitiveContains(String where, String what) { //for Validation
         return where.toLowerCase().contains(what.toLowerCase());
     }
 
 
 @Override
-public void addContactClicked() {
+public void addContactClicked() { //Open new empty Contact Window 
 	UI.getCurrent().getNavigator().navigateTo("AddContact");
 	((AddContactViewImpl)UI.getCurrent().getNavigator().getCurrentView()).getPresenter().loadContact(new Contact());	
 }

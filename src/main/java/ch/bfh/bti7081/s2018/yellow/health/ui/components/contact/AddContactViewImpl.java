@@ -25,7 +25,7 @@ public class AddContactViewImpl extends AbsoluteLayout implements AddContactView
 	private AddContactLayout addContactForm;
 	
 	public AddContactViewImpl(ContactRepository repo){
-		
+		//Create a layout for adding Contacts
 		HorizontalLayout layout = new HorizontalLayout();
 		
 		this.presenter = new AddContactPresenter(this, repo);

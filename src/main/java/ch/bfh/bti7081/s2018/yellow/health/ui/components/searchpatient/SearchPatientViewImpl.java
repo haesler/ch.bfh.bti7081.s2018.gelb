@@ -85,7 +85,7 @@ public class SearchPatientViewImpl extends VerticalLayout implements SearchPatie
 		
 		layout.setExpandRatio(grid, 1.0f);
 		
-		Button addpatient = new Button("Neuer Patient");
+		Button addpatient = new Button("New Patient");
 		addpatient.addClickListener(e -> {addPatientClicked();});
 		addpatient.setSizeUndefined();
 		layout.addComponent(addpatient);

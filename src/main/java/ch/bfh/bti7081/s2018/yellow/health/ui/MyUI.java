@@ -60,7 +60,7 @@ public class MyUI extends UI {
     }
     
     public void updateContent() {
-    	if (!AuthService.isAuthenticated()){
+    	if (!AuthService.isAuthenticated()){//Check if a Session is active
     		// Create the model and the Vaadin view implementation
     		LoginLayout model = new LoginLayout();
     		LoginViewImpl view  = new LoginViewImpl();

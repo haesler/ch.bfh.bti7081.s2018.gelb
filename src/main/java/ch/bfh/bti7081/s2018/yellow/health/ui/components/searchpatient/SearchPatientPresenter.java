@@ -34,7 +34,7 @@ public class SearchPatientPresenter implements SearchPatientView.SearchPatientVi
     	  }
 	}
 
-	public void editPatient(Patient patient) {
+	public void editPatient(Patient patient) {  //open Patient Window with the current selected Patient
 		UI.getCurrent().getNavigator().navigateTo("EditPatient");
 		((TabControlImpl)UI.getCurrent().getNavigator().getCurrentView()).getPresenter().loadPatient(patient);
 	}
@@ -45,7 +45,7 @@ public class SearchPatientPresenter implements SearchPatientView.SearchPatientVi
 
 
 	@Override
-	public void addPatientClicked() {
+	public void addPatientClicked() { //Open new empty Patient Window
 		UI.getCurrent().getNavigator().navigateTo("AddPatient");
 		((TabControlImpl)UI.getCurrent().getNavigator().getCurrentView()).getPresenter().loadPatient(new Patient());
 	}

@@ -27,12 +27,15 @@ public class LoginPresenter implements LoginView.LoginViewListener {
 	}
 	
 	public void but_loginClick(){
-		if (AuthService.login(view.getUsername(), view.getPassword()))
+		//login
+		if (AuthService.login(view.getUsername(), view.getPassword())) //Check if User and Password is valid
 		{
+			//Login is correct
 			view.setNotification("success");
 			((MyUI)UI.getCurrent()).isAuthenticated=true;
 		    ((MyUI)UI.getCurrent()).updateContent();
 		} else {
+				//Login failed
 				view.setNotification("Login failed");
 				           
 		}     
@@ -41,6 +44,7 @@ public class LoginPresenter implements LoginView.LoginViewListener {
 
 	@Override
 	public void but_registerClick() {
+		//Open window for register new Users
 	    ((MyUI)UI.getCurrent()).registrationContent();
 	}
 	

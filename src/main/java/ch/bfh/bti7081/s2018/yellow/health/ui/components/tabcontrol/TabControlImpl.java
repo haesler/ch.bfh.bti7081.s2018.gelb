@@ -34,7 +34,7 @@ public class TabControlImpl extends VerticalLayout implements TabControl {
 	List<TabControlListener> listeners = new ArrayList<TabControlListener>();
 	
 	@Autowired
-	public TabControlImpl(ApplicationContext context) {
+	public TabControlImpl(ApplicationContext context) { //Create the tabs
 		
 		
 		this.tabpage_1 = context.getBean(AddPatientViewImpl.class);
@@ -56,11 +56,11 @@ public class TabControlImpl extends VerticalLayout implements TabControl {
         tab.addStyleName(ValoTheme.TABSHEET_FRAMED);
         tab.addStyleName(ValoTheme.TABSHEET_PADDED_TABBAR);
         
-        tab.addTab(this.tabpage_1, "Patientendaten");
-        tab.addTab(this.tabpage_2, "Krankheitsverlauf");
-        tab.addTab(this.tabpage_3, "Medikation");
-        tab.addTab(this.tabpage_4, "Krankheitsverlauf durchsuchen");
-        tab.addTab(this.tabpage_5, "Medikation durchsuchen");
+        tab.addTab(this.tabpage_1, "Patient data");
+        tab.addTab(this.tabpage_2, "Disease progression");
+        tab.addTab(this.tabpage_3, "Medication");
+        tab.addTab(this.tabpage_4, "Browse disease progression");
+        tab.addTab(this.tabpage_5, "Medicationsearch");
         tab.setSizeFull();
         
         
@@ -79,7 +79,7 @@ public class TabControlImpl extends VerticalLayout implements TabControl {
 		HorizontalLayout bottom = new HorizontalLayout(); 
 		bottom.setSizeUndefined();
 		
-		Button save = new Button("Speichern");
+		Button save = new Button("Save");
 		save.setId("save");
 		save.setSizeUndefined();
 		save.addClickListener(e -> this.buttonClick(e.getButton()));

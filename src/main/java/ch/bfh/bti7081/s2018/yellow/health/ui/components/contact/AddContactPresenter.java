@@ -28,10 +28,10 @@ public class AddContactPresenter implements AddContactView.AddContactViewListene
 	
 	public void buttonClick(String id) {
 		switch(id) {
-		case "save":
+		case "save":  //Save Button
 			save();
 			break;
-		case "close":
+		case "close":  //Close Button
 			UI.getCurrent().getNavigator().navigateTo("Contacts");
 			break;	
 		}
@@ -40,16 +40,20 @@ public class AddContactPresenter implements AddContactView.AddContactViewListene
 	
 	public void save() {
 		if(
+				//Check if alle fields on the form are filled with the correct type
 				validateContact.isValid(view.getLayout().getTxt_FirstName(), view.getLayout().getTxt_Name(), view.getLayout().getTxt_Street(), view.getLayout().getTxt_PLZ(), view.getLayout().getTxt_City(), view.getLayout().getTxt_Phone(), view.getLayout().getTxt_Mobile(), view.getLayout().getTxt_Mail(),view.getLayout().getDf_Birhday())
 		)		
 		{
+			//Create a new Contact
 			contact.createContact(view.getFirstName(), view.getName(), view.getStreet(), view.getPLZ(), view.getCity(), view.getPhone(), view.getMobile(), view.getMail(),view.getBirthday());
+			//Save the current Contact on the database
 			ContactRepository.save(contact);
-			Notification.show("Contact successfully saved");
+			Notification.show("Contact successfully saved"); //Succes Notifcation
 		}
 	}
 
 	public void loadContact(Contact contact) {
+		//load a selected Contact from the serachContact
 		this.contact = contact;
 		view.setName(contact.getLastname());
 		view.setFirstName(contact.getFirstname());

@@ -83,7 +83,7 @@ public class SearchContactViewImpl extends VerticalLayout implements SearchConta
 		
 		layout.setExpandRatio(grid, 1.0f);
 		
-		Button addcontact = new Button("Neuer Kontakt");
+		Button addcontact = new Button("New Contact");
 		addcontact.addClickListener(e -> {addContactClicked();});
 		addcontact.setSizeUndefined();
 		layout.addComponent(addcontact);

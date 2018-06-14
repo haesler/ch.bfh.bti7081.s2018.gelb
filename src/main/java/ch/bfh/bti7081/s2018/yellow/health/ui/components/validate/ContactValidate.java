@@ -14,7 +14,7 @@ public class ContactValidate {
 	
 	
 	public boolean isValid(TextField txt_FirstName, TextField txt_Name, TextField txt_Street, TextField txt_PLZ, TextField txt_City, TextField txt_Phone,
-			TextField txt_Mobile, TextField txt_Mail, DateField df_Birthday) {
+			TextField txt_Mobile, TextField txt_Mail, DateField df_Birhday) {
 		boolean isValid = true;
 		if(check_Name(txt_Name)!=true) isValid=false;
 		if(check_Firstname(txt_FirstName)!=true) isValid=false;
@@ -24,7 +24,7 @@ public class ContactValidate {
 		if(check_Phone(txt_Phone)!=true)isValid=false;
 		if(check_Mobile(txt_Mobile)!=true) isValid=false;
 		if(check_Mail(txt_Mail)!=true) isValid=false;
-		if(check_Birthday(df_Birthday)!=true) isValid=false;
+		if(check_Birthday(df_Birhday)!=true) isValid=false;
 		return isValid;
 	}
 	
@@ -197,15 +197,15 @@ public class ContactValidate {
 		
 	}
 	
-	public boolean check_Birthday(DateField df_Birthday){
+	public boolean check_Birthday(DateField df_Birhday){
 		
 		//IsEmpty
-		if(df_Birthday.isEmpty()){
-			df_Birthday.setComponentError(null);
-			df_Birthday.setComponentError(new UserError("No Birthday entered"));
+		if(df_Birhday.isEmpty()){
+			df_Birhday.setComponentError(null);
+			df_Birhday.setComponentError(new UserError("No Birthday entered"));
 			return false;
 		}
-		df_Birthday.setComponentError(null);
+		df_Birhday.setComponentError(null);
 		return true;
 	}
 }

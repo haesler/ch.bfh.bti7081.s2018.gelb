@@ -92,6 +92,7 @@ public class AddPatientPresenter implements AddPatientView.AddPatientViewListene
 
 	@Override
 	public Patient save() {
+		//Validation
 		validateContact.isValid(view.getLayout().getTxt_FirstName(), view.getLayout().getTxt_Name(), view.getLayout().getTxt_Street(), view.getLayout().getTxt_PLZ(), view.getLayout().getTxt_City(), view.getLayout().getTxt_Phone(), view.getLayout().getTxt_Mobile(), view.getLayout().getTxt_Mail(),view.getLayout().getDf_Birhday());
 		validatePatient.isValid(view.getLayout().getDf_Startdate(), view.getLayout().getDf_Enddate(), view.getLayout().getDd_Insurance(), view.getLayout().getDd_Doctor());
 		//Validate Input Data
