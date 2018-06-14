@@ -53,7 +53,11 @@ public class SearchMedicationPresenter implements SearchMedicationViewListener, 
 
 	@Override
 	public void setPatient(Patient patient) {
-		// TODO Auto-generated method stub
+		//filter1(Integer.toString(patient.getPatientID()), view.grid.getColumn("PatientID").getValueProvider());
+		//model.findByPatient(patient.getPatientID());
+		//System.out.println(model.dataProvider.toString());
+		
+		//view.grid.getDataProvider().refreshAll();
 		
 	}
 

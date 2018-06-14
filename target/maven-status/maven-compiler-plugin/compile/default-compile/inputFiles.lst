@@ -43,6 +43,7 @@ C:\Users\stefa\eclipse-workspace\ch.bfh.bti7081.s2018.yellow_New\src\main\java\c
 C:\Users\stefa\eclipse-workspace\ch.bfh.bti7081.s2018.yellow_New\src\main\java\ch\bfh\bti7081\s2018\yellow\health\ui\components\searchpatient\SearchPatientModel.java
 C:\Users\stefa\eclipse-workspace\ch.bfh.bti7081.s2018.yellow_New\src\main\java\ch\bfh\bti7081\s2018\yellow\health\models\Doctor.java
 C:\Users\stefa\eclipse-workspace\ch.bfh.bti7081.s2018.yellow_New\src\main\java\ch\bfh\bti7081\s2018\yellow\health\models\Historyentry.java
+C:\Users\stefa\eclipse-workspace\ch.bfh.bti7081.s2018.yellow_New\src\main\java\ch\bfh\bti7081\s2018\yellow\health\models\History.java
 C:\Users\stefa\eclipse-workspace\ch.bfh.bti7081.s2018.yellow_New\src\main\java\ch\bfh\bti7081\s2018\yellow\health\ui\components\medication\AddMedicationView.java
 C:\Users\stefa\eclipse-workspace\ch.bfh.bti7081.s2018.yellow_New\src\main\java\ch\bfh\bti7081\s2018\yellow\health\ui\components\sidebar\SideBarView.java
 C:\Users\stefa\eclipse-workspace\ch.bfh.bti7081.s2018.yellow_New\src\main\java\ch\bfh\bti7081\s2018\yellow\health\ui\components\searchMedication\SearchMedicationvVewImpl.java
@@ -68,6 +69,7 @@ C:\Users\stefa\eclipse-workspace\ch.bfh.bti7081.s2018.yellow_New\src\main\java\c
 C:\Users\stefa\eclipse-workspace\ch.bfh.bti7081.s2018.yellow_New\src\main\java\ch\bfh\bti7081\s2018\yellow\health\ui\components\medicament\AddMedicamentLayoutManager.java
 C:\Users\stefa\eclipse-workspace\ch.bfh.bti7081.s2018.yellow_New\src\main\java\ch\bfh\bti7081\s2018\yellow\health\ui\layouts\RegistrationLayout.java
 C:\Users\stefa\eclipse-workspace\ch.bfh.bti7081.s2018.yellow_New\src\main\java\ch\bfh\bti7081\s2018\yellow\health\util\UserService.java
+C:\Users\stefa\eclipse-workspace\ch.bfh.bti7081.s2018.yellow_New\src\main\java\ch\bfh\bti7081\s2018\yellow\health\repo\HistoryRepository.java
 C:\Users\stefa\eclipse-workspace\ch.bfh.bti7081.s2018.yellow_New\src\main\java\ch\bfh\bti7081\s2018\yellow\health\ui\components\searchpatient\SearchPatientView.java
 C:\Users\stefa\eclipse-workspace\ch.bfh.bti7081.s2018.yellow_New\src\main\java\ch\bfh\bti7081\s2018\yellow\health\ui\layouts\AddContactLayout.java
 C:\Users\stefa\eclipse-workspace\ch.bfh.bti7081.s2018.yellow_New\src\main\java\ch\bfh\bti7081\s2018\yellow\health\models\Medicament.java

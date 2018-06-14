@@ -10,7 +10,13 @@ import java.util.Date;
  * 
  */
 @Entity
-@NamedQuery(name="Medication.findAll", query="SELECT m FROM Medication m")
+@NamedQueries({
+@NamedQuery(name="Medication.findAll", query="SELECT m FROM Medication m"),
+@NamedQuery(name="Medication.findPatient", query="SELECT m FROM Medication m where PatientID = 1"),
+@NamedQuery(name="Medication.findbyPatient", query="SELECT m FROM Medication m where PatientID = ?1"),
+}) 
+
+
 public class Medication implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -26,7 +32,6 @@ public class Medication implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date start;
 
-	@Column(name="`usage`")
 	private String usage;
 
 	//bi-directional many-to-one association to Medicament
@@ -98,13 +103,13 @@ public class Medication implements Serializable {
 		this.patient = patient;
 	}
 
-	public void createMedication(Medicament Medicament, Patient Patient, byte active, Date End, Date Start, String Usage){
-		this.setMedicament(Medicament);
-		this.setPatient(Patient);
-		this.setActive(active);
-		this.setEnd(End);
-		this.setStart(Start);
-		this.setUsage(Usage);		
-	}
+public void createMedication(Medicament Medicament, Patient Patient, byte active, Date End, Date Start, String Usage){
+	this.setMedicament(Medicament);
+	this.setPatient(Patient);
+	this.setActive(active);
+	this.setEnd(End);
+	this.setStart(Start);
+	this.setUsage(Usage);		
+}
 
 }

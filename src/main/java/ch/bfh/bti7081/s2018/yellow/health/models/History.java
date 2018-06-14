@@ -12,19 +12,19 @@ import java.util.List;
  */
 @Entity
 @NamedQueries({
-@NamedQuery(name="Historyentry.findAll", query="SELECT h FROM Historyentry h"),
-@NamedQuery(name="Historyentry.findPatient", query="SELECT h.entry, h.title FROM Historyentry h"), /*where PatientID = 1*/
-@NamedQuery(name="Historyentry.findbyPatient", query="SELECT entry, title FROM Historyentry h where PatientID = ?1"),
+@NamedQuery(name="History.findAll", query="SELECT h.entry, h.title, h.date, h.PatientID FROM History h"),
+@NamedQuery(name="History.findPatient", query="SELECT h.entry, h.title, h.date, h.PatientID  FROM History h"), /*where PatientID = 1*/
+@NamedQuery(name="History.findbyPatient", query="SELECT h.entry, h.title, h.date, h.PatientID  FROM History h where PatientID = ?1"),
 }) 
 
-public class Historyentry implements Serializable {
+public class History implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int historyEntryID;
+	//private int historyEntryID;
 
-	private byte active;
+	//private byte active;
 
 	@Temporal(TemporalType.DATE)
 	private Date date;
@@ -32,20 +32,18 @@ public class Historyentry implements Serializable {
 	private String entry;
 
 	private String title;
+	
+	private int PatientID;
 
 	//bi-directional many-to-one association to Attachment
-	@OneToMany(mappedBy="historyentry")
-	private List<Attachment> attachments;
-
+	//@OneToMany(mappedBy="historyentry")
+	//private List<Attachment> attachments;
 	//bi-directional many-to-one association to Patient
-	@ManyToOne
-	@JoinColumn(name="PatientID")
-	private Patient patient;
 
-	public Historyentry() {
+	public History() {
 	}
 
-	public int getHistoryEntryID() {
+	/*public int getHistoryEntryID() {
 		return this.historyEntryID;
 	}
 
@@ -61,29 +59,7 @@ public class Historyentry implements Serializable {
 		this.active = active;
 	}
 
-	public Date getDate() {
-		return this.date;
-	}
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-	public String getEntry() {
-		return this.entry;
-	}
-
-	public void setEntry(String entry) {
-		this.entry = entry;
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
 
 	public List<Attachment> getAttachments() {
 		return this.attachments;
@@ -121,6 +97,36 @@ public class Historyentry implements Serializable {
 		this.setEntry(entry);
 		this.setActive(active);
 		this.setDate(date);
+	}*/
+	
+	public int getPatient() {
+		return this.PatientID;
 	}
 
+	public void setPatient(int PatientID) {
+		this.PatientID = PatientID;
+	}
+	public Date getDate() {
+		return this.date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public String getEntry() {
+		return this.entry;
+	}
+
+	public void setEntry(String entry) {
+		this.entry = entry;
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
 }

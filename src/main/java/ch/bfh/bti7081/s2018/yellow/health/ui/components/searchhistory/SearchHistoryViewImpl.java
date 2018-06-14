@@ -32,6 +32,7 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.shared.ui.ValueChangeMode;
 
+import ch.bfh.bti7081.s2018.yellow.health.models.History;
 import ch.bfh.bti7081.s2018.yellow.health.models.Historyentry;
 import ch.bfh.bti7081.s2018.yellow.health.repo.HistoryEntryRepository;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.tabcontrol.Tabpage;
@@ -46,8 +47,8 @@ public class SearchHistoryViewImpl extends VerticalLayout implements SearchHisto
 	private SearchHistoryPresenter presenter;
 
 	
-	public Grid<Historyentry> grid = new Grid<Historyentry>(Historyentry.class);
-	//List<SearchHistoryViewListener> listeners = new ArrayList<SearchHistoryViewListener>();
+	public Grid<History> grid = new Grid<History>(History.class);
+	List<SearchHistoryViewListener> listeners = new ArrayList<SearchHistoryViewListener>();
 	
 	@Autowired
 	public SearchHistoryViewImpl(SearchHistoryModel service){
@@ -67,26 +68,26 @@ public class SearchHistoryViewImpl extends VerticalLayout implements SearchHisto
 		grid.setHeight("600px");
 		
 		// Create a header row to hold column filters
-		//HeaderRow filterRow = grid.appendHeaderRow();
+		HeaderRow filterRow = grid.appendHeaderRow();
 		layout.addComponent(grid);
 		
         grid.setColumns("title", "entry");
 		// Set up a filter for all columns
-		/*for (Column<Historyentry, ?> pid: grid.getColumns()) {
+		for (Column<History, ?> pid: grid.getColumns()) {
 		    HeaderCell cell = filterRow.getCell(pid.getId());
 		    final TextField filter = new TextField();
 		    filter.setPlaceholder("Filter");
 		    filter.addValueChangeListener(e -> {refresh(filter.getValue(),  pid.getValueProvider());});
 		    filter.addStyleName(ValoTheme.TEXTFIELD_TINY);
 		    cell.setComponent(filter);
-		}*/
+		}
 
         addComponent(layout);
         setComponentAlignment(layout, Alignment.MIDDLE_CENTER);		
 	}
 	
 	
-	/*private void refresh(String text, ValueProvider<Historyentry, ?> valueProvider) {
+	private void refresh(String text, ValueProvider<History, ?> valueProvider) {
 		
 		for (SearchHistoryViewListener listener: listeners)
 			listener.filter1(text, valueProvider);
@@ -99,12 +100,11 @@ public class SearchHistoryViewImpl extends VerticalLayout implements SearchHisto
 	}
 	
 		@Override
-	public void showEntrys(List<Historyentry> entry) {
+	public void showEntrys(List<History> entry) {
 		// TODO Auto-generated method stub
 		
 	}
 	
-	 */
 	@Override
 	public void valueChange(ValueChangeEvent<java.lang.String> event) {
 		// TODO Auto-generated method stub

@@ -22,7 +22,12 @@ public class SearchMedicationModel {
 	@Autowired
 	public SearchMedicationModel(MedicationRepository repo){
 		this.repo =repo;
-		medications = repo.findAll();
+		medications = repo.findPatient();
+		dataProvider =  DataProvider.ofCollection(medications);
+	}
+	
+	public void findByPatient(int Patient){
+		medications = repo.findbyPatient(Patient);
 		dataProvider =  DataProvider.ofCollection(medications);
 	}
 
