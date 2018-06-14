@@ -54,7 +54,11 @@ public class AddHistoryViewImpl extends VerticalLayout implements AddHistoryView
 	
 	@Override
 	public Date getDate() {
-		return java.sql.Date.valueOf(AddHistoryForm.getDt_DateNew().getValue());
+		if (AddHistoryForm.getDt_DateNew().getValue() != null) {
+			return java.sql.Date.valueOf(AddHistoryForm.getDt_DateNew().getValue());
+		}else {
+			return null;
+		}
 	}
 	
 	@Override

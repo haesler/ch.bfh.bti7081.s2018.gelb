@@ -17,7 +17,6 @@ public class TabPresenter implements TabControl.TabControlListener {
 	public TabPresenter(TabControl tabview) {
 		this.tabview = tabview;
 		
-		tabview.setNotification("TEST", true);
 		
 		tabview.addListener(this);
 	}
@@ -35,6 +34,9 @@ public class TabPresenter implements TabControl.TabControlListener {
 		
 	}
 
+	/**
+	 * Sets Patient-Model on every Tabpage and loads Data
+	 */
 	public void loadPatient(Patient patient) {
 		this.patient = patient;
 		
@@ -45,33 +47,40 @@ public class TabPresenter implements TabControl.TabControlListener {
 			page.setPatient(patient);
 			page.loadPatient();
 		}
+		tabview.setNotification("", false);
 		
 	}
-	
+
+	/**
+	 * Saves first Patient-Data and afterwards Data on every other Tabpage
+	 */
 	public void savePatient() {
 		if(checkInput()) {
 			patient = mainpage.save();
 			
-			for(Tabpage page : tabpages) {
+			/*for(Tabpage page : tabpages) {
 				page.setPatient(patient);
 				page.loadPatient();
-			}	
+			}*/	
 		}
 		
 	}
 	
+	/**
+	 * Validates Data of every Tabpage
+	 */
 	public boolean checkInput() {
 		if (!mainpage.checkInput()) {
-			tabview.setNotification("Bitte überprüfen Sie Ihre Eingaben in Patient", true);
+			tabview.setNotification("Please check your input on Patient-Tabpage", true);
 			return false;
 		}
 		
-		for(Tabpage page : tabpages) {
+		/*for(Tabpage page : tabpages) {
 			if(!page.checkInput()) {
-				tabview.setNotification("Bitte überprüfen Sie Ihre Eingaben in "+page.getClass().getSimpleName(), true);
+				tabview.setNotification("Please check your input  "+ page.getClass().getSimpleName(), true);
 				return false;
 			}
-		}
+		}*/
 		
 		tabview.setNotification("", false);
 		return true;

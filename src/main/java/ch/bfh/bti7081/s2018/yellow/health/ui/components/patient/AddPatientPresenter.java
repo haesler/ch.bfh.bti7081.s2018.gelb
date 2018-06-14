@@ -92,26 +92,16 @@ public class AddPatientPresenter implements AddPatientView.AddPatientViewListene
 
 	@Override
 	public Patient save() {
-		//Validation
-		validateContact.isValid(view.getLayout().getTxt_FirstName(), view.getLayout().getTxt_Name(), view.getLayout().getTxt_Street(), view.getLayout().getTxt_PLZ(), view.getLayout().getTxt_City(), view.getLayout().getTxt_Phone(), view.getLayout().getTxt_Mobile(), view.getLayout().getTxt_Mail(),view.getLayout().getDf_Birhday());
-		validatePatient.isValid(view.getLayout().getDf_Startdate(), view.getLayout().getDf_Enddate(), view.getLayout().getDd_Insurance(), view.getLayout().getDd_Doctor());
-		//Validate Input Data
-		if(
-				validateContact.isValid(view.getLayout().getTxt_FirstName(), view.getLayout().getTxt_Name(), view.getLayout().getTxt_Street(), view.getLayout().getTxt_PLZ(), view.getLayout().getTxt_City(), view.getLayout().getTxt_Phone(), view.getLayout().getTxt_Mobile(), view.getLayout().getTxt_Mail(),view.getLayout().getDf_Birhday())
-				&& validatePatient.isValid(view.getLayout().getDf_Startdate(), view.getLayout().getDf_Enddate(), view.getLayout().getDd_Insurance(), view.getLayout().getDd_Doctor())
-		){
-			
-			contact.createContact(view.getFirstName(), view.getName(), view.getStreet(), view.getPLZ(), view.getCity(), view.getPhone(), view.getMobile(), view.getMail(),view.getBirthday());
-			repoContact.save(contact);
-			
-			//Save Patient
-			byte active = 1;
-			user.setUsername("test");
-			user.setUserID(1);
-			patient.createPatient(active, view.getStartdate(), view.getEnddate(), contact, view.getInsurance(), view.getDoctor(), user);
-			patient=repoPatient.save(patient);
-			Notification.show("Patient successfully saved");
-		}
+		contact.createContact(view.getFirstName(), view.getName(), view.getStreet(), view.getPLZ(), view.getCity(), view.getPhone(), view.getMobile(), view.getMail(),view.getBirthday());
+		repoContact.save(contact);
+		
+		//Save Patient
+		byte active = 1;
+		user.setUsername("test");
+		user.setUserID(1);
+		patient.createPatient(active, view.getStartdate(), view.getEnddate(), contact, view.getInsurance(), view.getDoctor(), user);
+		patient=repoPatient.save(patient);
+		Notification.show("Patient successfully saved");
 		
 		return patient;
 	}
@@ -120,8 +110,11 @@ public class AddPatientPresenter implements AddPatientView.AddPatientViewListene
 
 	@Override
 	public boolean checkInput() {
-		// TODO Auto-generated method stub
-		return false;
+		return (
+				validateContact.isValid(view.getLayout().getTxt_FirstName(), view.getLayout().getTxt_Name(), view.getLayout().getTxt_Street(), view.getLayout().getTxt_PLZ(), view.getLayout().getTxt_City(), view.getLayout().getTxt_Phone(), view.getLayout().getTxt_Mobile(), view.getLayout().getTxt_Mail(),view.getLayout().getDf_Birhday())
+				&& validatePatient.isValid(view.getLayout().getDf_Startdate(), view.getLayout().getDf_Enddate(), view.getLayout().getDd_Insurance(), view.getLayout().getDd_Doctor())
+		);
+		
 	}
 
 }
