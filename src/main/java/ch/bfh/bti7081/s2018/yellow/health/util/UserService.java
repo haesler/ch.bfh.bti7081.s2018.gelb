@@ -10,8 +10,10 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.vaadin.server.VaadinSession;
 import com.vaadin.ui.UI;
 
+import ch.bfh.bti7081.s2018.yellow.health.models.User;
 import ch.bfh.bti7081.s2018.yellow.health.repo.UserRepository;
 import ch.bfh.bti7081.s2018.yellow.health.ui.MyUI;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.login.LoginViewImpl;
@@ -32,6 +34,8 @@ public class UserService {
    public UserService(UserRepository repo) {
     	UserService.repo = repo;
     }
+   
+
 
     
     public static boolean isAuthenticUser(String username, String password) {
@@ -45,7 +49,14 @@ public class UserService {
 		}     
     }
 
-
+    public static String getUserName()  {
+    	return (String) VaadinSession.getCurrent().getAttribute(AuthService.SESSION_USERNAME);
+    }
+    
+    public static String getPassword() {
+    	String Username = (String) VaadinSession.getCurrent().getAttribute(AuthService.SESSION_USERNAME);
+    	return repo.findPassword(Username);
+    }
 
     public static String rememberUser(String username) {
         String randomId = new BigInteger(130, random).toString(32);

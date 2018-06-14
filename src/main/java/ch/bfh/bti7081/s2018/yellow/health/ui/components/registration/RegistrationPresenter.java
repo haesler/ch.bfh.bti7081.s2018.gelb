@@ -12,6 +12,7 @@ import ch.bfh.bti7081.s2018.yellow.health.ui.MyUI;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.login.LoginView;
 import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.LoginLayout;
 import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.RegistrationLayout;
+import ch.bfh.bti7081.s2018.yellow.health.util.UserService;
 
 @SuppressWarnings("serial")
 public class RegistrationPresenter implements RegistrationView.RegistrationViewListener {
@@ -58,6 +59,13 @@ public class RegistrationPresenter implements RegistrationView.RegistrationViewL
 		//Switch to login
 		view.setNotification("User created", "success");
 		((MyUI)UI.getCurrent()).updateContent();
+	}
+	
+	public void loadRegister() {
+		user.createUser(UserService.getUserName(), UserService.getPassword());
+	
+		view.setName(user.getUsername());
+		view.setPassword1(user.getPassword());
 	}
 
 }

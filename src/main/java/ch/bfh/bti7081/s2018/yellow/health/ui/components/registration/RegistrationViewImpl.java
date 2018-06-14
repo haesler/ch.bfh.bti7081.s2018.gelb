@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.VerticalLayout;
 
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.tabcontrol.TabPresenter;
 import ch.bfh.bti7081.s2018.yellow.health.ui.layouts.RegistrationLayout;
 
 @Service
@@ -47,6 +48,10 @@ public class RegistrationViewImpl extends VerticalLayout implements Registration
 			RegistrationForm.getLbl_Error().setVisible(false);
 		}
 	}
+	
+	public RegistrationPresenter getPresenter() {
+		return presenter;
+	}
 
 	@Override
 	public void buttonClick() {
@@ -68,6 +73,16 @@ public class RegistrationViewImpl extends VerticalLayout implements Registration
 	@Override
 	public String getPassword2() {
 		return RegistrationForm.getPwd_Password2().getValue();
+	}
+	
+	@Override
+	public void setName(String name) {
+		RegistrationForm.getLbl_Name().setValue(name);
+	}
+	
+	@Override
+	public void setPassword1(String password) {
+		RegistrationForm.getPwd_Password1().setValue(password);
 	}
 
 }

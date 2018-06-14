@@ -15,4 +15,7 @@ public interface RegistrationView {
 	String getName();
 	String getPassword1();
 	String getPassword2();
+	void setName(String name);
+	void setPassword1(String password);
+	
 }
