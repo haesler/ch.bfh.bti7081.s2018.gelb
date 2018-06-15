@@ -50,6 +50,10 @@ public class SearchPatientViewImpl extends VerticalLayout implements SearchPatie
 	public Grid<Patient> grid = new Grid(Patient.class);
 	List<SearchPatientViewListener> listeners = new ArrayList<SearchPatientViewListener>();
 	
+	public SearchPatientPresenter getPresenter() {
+		return presenter;
+	}
+	
 	@Autowired
 	public SearchPatientViewImpl(SearchPatientModel service){
 		this.presenter = new SearchPatientPresenter(service, this);

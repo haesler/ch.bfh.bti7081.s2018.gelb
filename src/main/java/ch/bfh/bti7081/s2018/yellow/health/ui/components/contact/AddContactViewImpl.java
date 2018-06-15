@@ -32,19 +32,13 @@ public class AddContactViewImpl extends AbsoluteLayout implements AddContactView
 		addContactForm = new AddContactLayout();
 		addContactForm.getBut_Save().setId("save");
 		addContactForm.getBut_Save().addClickListener(e -> this.buttonClick(e.getButton().getId()));
+		addContactForm.getBut_Close().setId("close");
+		addContactForm.getBut_Close().addClickListener(e -> this.buttonClick(e.getButton().getId()));
 		addContactForm.setSizeFull();
 		
 		layout.addComponent(addContactForm);
 		layout.setExpandRatio(addContactForm, 1.0f);
 		layout.setComponentAlignment(addContactForm, Alignment.MIDDLE_CENTER);
-		
-		Button close = new Button(VaadinIcons.CLOSE);
-		close.setId("close");
-		close.setSizeUndefined();
-		close.addClickListener(e -> this.buttonClick(e.getButton().getId()));
-		
-		layout.addComponent(close);
-		layout.setComponentAlignment(close, Alignment.MIDDLE_LEFT);
 		
 		layout.setSizeFull();
 		addComponent(layout);

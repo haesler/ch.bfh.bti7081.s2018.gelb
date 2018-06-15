@@ -49,5 +49,10 @@ public class SearchPatientPresenter implements SearchPatientView.SearchPatientVi
 		UI.getCurrent().getNavigator().navigateTo("AddPatient");
 		((TabControlImpl)UI.getCurrent().getNavigator().getCurrentView()).getPresenter().loadPatient(new Patient());
 	}
+	
+	public void refresh() {
+		model.refresh();
+		view.grid.setDataProvider(model.dataProvider);
+	}
 
 }

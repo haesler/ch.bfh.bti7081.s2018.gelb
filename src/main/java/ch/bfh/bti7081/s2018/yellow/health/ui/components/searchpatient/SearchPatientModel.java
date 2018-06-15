@@ -27,5 +27,10 @@ public class SearchPatientModel {
 		patients = repo.findAll();
 		dataProvider =  DataProvider.ofCollection(patients);
 	}
+	
+	public void refresh() {
+		patients = repo.findAll();
+		dataProvider =  DataProvider.ofCollection(patients);		
+	}
 
 }

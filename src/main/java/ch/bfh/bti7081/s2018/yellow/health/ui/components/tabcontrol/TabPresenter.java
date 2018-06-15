@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import com.vaadin.ui.UI;
 import ch.bfh.bti7081.s2018.yellow.health.models.Patient;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchcontact.SearchContactViewImpl;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchpatient.SearchPatientPresenter;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchpatient.SearchPatientViewImpl;
 
 public class TabPresenter implements TabControl.TabControlListener {
 
@@ -26,6 +29,7 @@ public class TabPresenter implements TabControl.TabControlListener {
 		switch (buttonName) {
 		case "close":
 			UI.getCurrent().getNavigator().navigateTo("Patients");
+			((SearchPatientViewImpl)UI.getCurrent().getNavigator().getCurrentView()).getPresenter().refresh();
 			break;
 		case "save":
 			savePatient();
