@@ -71,7 +71,7 @@ public class SearchHistoryViewImpl extends VerticalLayout implements SearchHisto
 		HeaderRow filterRow = grid.appendHeaderRow();
 		layout.addComponent(grid);
 		
-        grid.setColumns("title", "entry");
+        grid.setColumns("title", "entry", "date");
 		// Set up a filter for all columns
 		for (Column<History, ?> pid: grid.getColumns()) {
 		    HeaderCell cell = filterRow.getCell(pid.getId());
