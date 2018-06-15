@@ -6,6 +6,7 @@ import com.vaadin.ui.UI;
 
 import ch.bfh.bti7081.s2018.yellow.health.models.Contact;
 import ch.bfh.bti7081.s2018.yellow.health.repo.ContactRepository;
+import ch.bfh.bti7081.s2018.yellow.health.ui.components.searchcontact.SearchContactViewImpl;
 import ch.bfh.bti7081.s2018.yellow.health.ui.components.validate.ContactValidate;
 
 public class AddContactPresenter implements AddContactView.AddContactViewListener {
@@ -33,6 +34,7 @@ public class AddContactPresenter implements AddContactView.AddContactViewListene
 			break;
 		case "close":  //Close Button
 			UI.getCurrent().getNavigator().navigateTo("Contacts");
+			((SearchContactViewImpl)UI.getCurrent().getNavigator().getCurrentView()).getPresenter().refresh();
 			break;	
 		}
 		
@@ -63,7 +65,9 @@ public class AddContactPresenter implements AddContactView.AddContactViewListene
 		view.setPhone(contact.getPhone());
 		view.setMobile(contact.getMobile());
 		view.setMail(contact.getMail());
-		view.setBirthday(new java.sql.Date(contact.getBirthday().getTime()));
+		if(contact.getBirthday() != null) {
+			view.setBirthday(new java.sql.Date(contact.getBirthday().getTime()));
+		}
 	}
 
 }

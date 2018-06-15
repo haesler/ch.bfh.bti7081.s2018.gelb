@@ -55,6 +55,10 @@ public class SearchContactViewImpl extends VerticalLayout implements SearchConta
 		loadView();
 	}
 	
+	public SearchContactPresenter getPresenter() {
+		return presenter;
+	}
+	
 	private void loadView() {
 		setSizeFull();
         setMargin(false);

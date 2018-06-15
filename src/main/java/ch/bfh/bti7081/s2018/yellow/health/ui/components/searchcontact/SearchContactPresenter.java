@@ -35,6 +35,11 @@ public class SearchContactPresenter implements SearchContactView.SearchContactVi
     	  }
 	}
 	
+	public void refresh() {
+		model.refresh();
+		view.grid.setDataProvider(model.dataProvider);
+	}
+	
 	public void editContact(Contact contact) { //Open Contact Window and load the current selected Contact.
 		UI.getCurrent().getNavigator().navigateTo("EditContact");
 		((AddContactViewImpl)UI.getCurrent().getNavigator().getCurrentView()).getPresenter().loadContact(contact);

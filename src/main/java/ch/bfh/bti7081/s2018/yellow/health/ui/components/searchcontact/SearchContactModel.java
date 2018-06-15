@@ -24,5 +24,12 @@ public class SearchContactModel {
 		contacts = repo.findAll();
 		dataProvider =  DataProvider.ofCollection(contacts);
 	}
+	
+	public void refresh() {
+		this.repo =repo;
+		contacts = repo.findAll();
+		dataProvider = DataProvider.ofCollection(contacts);
+		dataProvider.refreshAll();
+	}
 
 }
