@@ -41,6 +41,7 @@ public class AddContactLayout extends AbsoluteLayout {
 	private Label lbl_Birthday;
 	private DateField df_Birhday;
 	private Button but_Save;
+	private Button but_Close;
 
 	public AddContactLayout() {
 		Design.read(this);
@@ -124,5 +125,9 @@ public class AddContactLayout extends AbsoluteLayout {
 
 	public Button getBut_Save() {
 		return but_Save;
+	}
+
+	public Button getBut_Close() {
+		return but_Close;
 	}
 }
